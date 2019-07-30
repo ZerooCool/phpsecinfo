@@ -34,3 +34,17 @@ Le CHANGELOG n'est pas présent pour suivre l'évolution de ce projet.
 Cette version doit être basée sur la v0.2.1 2007 ou v0.2.2 2009 ?
 Cette mise à jour n'a pas du prendre en compte les précédentes mises à jour de la v0.2.2 ou de la v2.0.1a -> v2.0.2 de 2016.
 Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo
+
+# Installer PhpSecInfo v0.2.1 2007
+<code>Télécharger PhpSecInfo depuis le site officiel :
+sudo wget http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
+sudo mv phpsecinfo-20070406 phpsecinfo
+cd phpsecinfo
+sudo bash -c "cat <<EOIPFW >> .htaccess
+# Accès réservé à l'administrateur !
+# Adresse IP de l'administrateur :
+Require ip xx.xx.xxx.xx
+EOIPFW"
+sudo chmod 444 .htaccess
+cd ..
+sudo chown www-data:www-data -R phpsecinfo</code>
