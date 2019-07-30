@@ -1,22 +1,27 @@
 # PhpSecInfo
 
 Les versions de PhpSecInfo en 2019 !
+```
 https://github.com/ZerooCool/phpsecinfo
 https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
+```
 
 ## PhpSecInfo
-Version v0.2.1 2007
-
-Version v0.2.2 2009
-
-Version v2.0.1a -> v2.0.2 2016
+```
+Version officielle v0.2.1 2007
+Version officielle améliorée par le développeur ayant participé au développement précédent v0.2.2 2009
+Version non officielle v2.0.1a -> v2.0.2 2016
+```
 
 ## SecurityInfo
+```
 Alternative basée sur la v0.2.1 2007 ou v0.2.2 2009 ?
-
 La version de SecurityInfo est une version améliorée de PhpSecInfo v0.2.1 en v0.2.1.1 2019 ou v0.2.2 en v0.2.2.1 2019.
+```
 
 # Vérifier les CHANGELOG
+Le lien officiel pour télécharger la version de PhpSecInfo de 2007 v0.2.1 :
+http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
 
 Le lien officiel pour télécharger la version de PhpSecInfo de 2009 v0.2.2 :
 https://github.com/funkatron/phpsecinfo - https://github.com/funkatron/phpsecinfo/blob/master/CHANGELOG
