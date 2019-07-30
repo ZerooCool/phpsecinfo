@@ -14,7 +14,7 @@ Version v2.0.1a -> v2.0.2 2016
 ## SecurityInfo
 Alternative basée sur la v0.2.1 2007 ou v0.2.2 2009 ?
 
-De ce fait la version de SecurityInfo est une version améliorée de PhpSecInfo v0.2.1.1 2019 ou v0.2.2.1 2019.
+La version de SecurityInfo est une version améliorée de PhpSecInfo v0.2.1 en v0.2.1.1 2019 ou v0.2.2 en v0.2.2.1 2019.
 
 # Vérifier les CHANGELOG
 
