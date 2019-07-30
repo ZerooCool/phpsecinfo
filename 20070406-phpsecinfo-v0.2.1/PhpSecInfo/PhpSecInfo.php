@@ -415,7 +415,7 @@ class PhpSecInfo
 <body>
 	<div class="header">
 		<h1><?php echo $page_title ?></h1>
-		<h2>PhpSecInfo Version <?php echo PHPSECINFO_VERSION ?>; build <?php echo PHPSECINFO_BUILD ?> &middot; <a href="<?php echo PHPSECINFO_URL ?>">Project Homepage</a></h2>
+		<h2>PhpSecInfo Version <?php echo PHPSECINFO_VERSION ?>; build <?php echo PHPSECINFO_BUILD ?> &middot; <a href="<?php echo PHPSECINFO_URL ?>">Project Homepage</a> - <a href="PhpSecInfo/phpinfo.php">Consulter phpinfo()</a></h2>
 	</div>
 
 	<div class="container">
