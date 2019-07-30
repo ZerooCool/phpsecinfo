@@ -22,3 +22,8 @@ Le lien officiel pour télécharger la version de SecurityInfo de 2019.
 Le fichier CHANGELOG n'est pas présent.
 Cette mise à jour n'a pas du prendre en compte les précédentes mises à jour de la v0.2.2 ou de la v2.0.1a -> v2.0.2 de 2016.
 https://github.com/matomo-org/plugin-SecurityInfo
+
+Un fork de PhpSecInfo vers SecurityInfo.
+Le CHANGELOG n'est pas présent pour suivre l'évolution de ce projet.
+Cette mise à jour n'a pas du prendre en compte les précédentes mises à jour de la v0.2.2 ou de la v2.0.1a -> v2.0.2 de 2016.
+Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo
