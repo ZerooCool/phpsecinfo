@@ -43,12 +43,14 @@ sudo wget http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
 sudo mv phpsecinfo-20070406 phpsecinfo
 
 3- Ajouter un fichier .htaccess pour ne pas rendre le rendu de PhpSecInfo public :
+```
 cd phpsecinfo
 sudo bash -c "cat <<EOIPFW >> .htaccess
 # Accès réservé à l'administrateur !
 # Adresse IP de l'administrateur :
 Require ip xx.xx.xxx.xx
 EOIPFW"
+```
 
 4- Protéger le fichier .htaccess
 sudo chmod 444 .htaccess
