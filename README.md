@@ -1,9 +1,9 @@
 # PhpSecInfo
 
-Les versions de PhpSecInfo en 2019 !
+Les 4 versions de PhpSecInfo identifiées en 2019 par Zer00CooL :
 ```
-https://github.com/ZerooCool/phpsecinfo
-https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
+Github : https://github.com/ZerooCool/phpsecinfo
+Wiki : https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
 ```
 
 ## PhpSecInfo
