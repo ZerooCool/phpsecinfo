@@ -52,7 +52,7 @@
  * // Récupère les résultats standard sous forme de chaîne :
  * $html = $psi->getOutput();
  *
- * // L'envoyer au navigateur
+ * // L'envoyer au navigateur :
  * echo $html;
  * </code>
  */
