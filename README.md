@@ -36,7 +36,8 @@ Cette mise à jour n'a pas du prendre en compte les précédentes mises à jour 
 Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo
 
 # Installer PhpSecInfo v0.2.1 2007
-`# Télécharger PhpSecInfo depuis le site officiel :
+`
+# Télécharger PhpSecInfo depuis le site officiel :
 sudo wget http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
 sudo mv phpsecinfo-20070406 phpsecinfo
 cd phpsecinfo
@@ -47,4 +48,5 @@ Require ip xx.xx.xxx.xx
 EOIPFW"
 sudo chmod 444 .htaccess
 cd ..
-sudo chown www-data:www-data -R phpsecinfo`
+sudo chown www-data:www-data -R phpsecinfo
+`
