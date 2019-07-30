@@ -37,10 +37,14 @@ Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https:/
 
 # Installer PhpSecInfo v0.2.1 2007
 1- Télécharger PhpSecInfo depuis le site officiel :
+```
 sudo wget http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
+```
 
 2- Renommer le dossier :
+```
 sudo mv phpsecinfo-20070406 phpsecinfo
+```
 
 3- Ajouter un fichier .htaccess pour ne pas rendre le rendu de PhpSecInfo public :
 ```
@@ -53,8 +57,12 @@ EOIPFW"
 ```
 
 4- Protéger le fichier .htaccess
+```
 sudo chmod 444 .htaccess
+```
 
 5- Changer le propriétaire du dossier phpsecinfo pour permettre l'affichage depuis le navigateur :
+```
 cd ..
 sudo chown www-data:www-data -R phpsecinfo
+```
