@@ -56,7 +56,7 @@ Require ip xx.xx.xxx.xx
 EOIPFW"
 ```
 
-4- Protéger le fichier .htaccess
+4- Protéger le fichier .htaccess :
 ```
 sudo chmod 444 .htaccess
 ```
