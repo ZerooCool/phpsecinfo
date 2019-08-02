@@ -83,15 +83,17 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
 
 	/**
 	 * Set the messages specific to this test
-	 *
 	 */
 	function _setMessages() {
 		parent::_setMessages();
 
-		$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
-		$this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'upload_tmp_dir is enabled, which is the recommended setting. Make sure your upload_tmp_dir path is not world-readable');
-$this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'unable to retrieve file permissions on upload_tmp_dir');
-		$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'upload_tmp_dir is disabled, or is set to a common world-writable directory. This typically allows other users on this server to access temporary copies of files uploaded via your PHP scripts. You should set upload_tmp_dir to a non-world-readable directory');
+                $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
+                $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'upload_tmp_dir is enabled, which is the
+                                                recommended setting. Make sure your upload_tmp_dir path is not world-readable');
+                $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'Unable to retrieve file permissions on upload_tmp_dir');
+                $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'upload_tmp_dir is disabled, or is set to a
+                                                common world-writable directory. This typically allows other users on this server
+                                                to access temporary copies of files uploaded via your PHP scripts. You should set
+                                                upload_tmp_dir to a non-world-readable directory');
 	}
-
 }
