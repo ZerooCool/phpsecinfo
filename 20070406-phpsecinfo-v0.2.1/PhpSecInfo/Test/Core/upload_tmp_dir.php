@@ -96,4 +96,5 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
                                                 to access temporary copies of files uploaded via your PHP scripts. You should set
                                                 upload_tmp_dir to a non-world-readable directory');
 	}
+
 }
