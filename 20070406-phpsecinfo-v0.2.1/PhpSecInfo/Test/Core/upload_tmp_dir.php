@@ -99,5 +99,10 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
                                                 common world-writable directory. This typically allows other users on this server
                                                 to access temporary copies of files uploaded via your PHP scripts. You should set
                                                 upload_tmp_dir to a non-world-readable directory');
+<<<<<<< HEAD
     }
+=======
+	}
+
+>>>>>>> 80f10ea2fa4d24139aa70d640362a6e9febf2fc9
 }
