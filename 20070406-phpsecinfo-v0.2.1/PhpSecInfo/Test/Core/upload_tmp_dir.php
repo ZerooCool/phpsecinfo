@@ -74,7 +74,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
-        // rewrite current_value to display perms
+        // Rewrite current_value to display perms
         $this->current_value .= " (" . substr(sprintf('%o', $perms), - 4) . ")";
 
         return PHPSECINFO_TEST_RESULT_NOTICE;
