@@ -96,12 +96,5 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
                                                 to access temporary copies of files uploaded via your PHP scripts. You should set
                                                 upload_tmp_dir to a non-world-readable directory');
         
-        // Vérifier que Eclipse est configuré pour indenter PHP en PSR-2.
-        
-        // Fenêtre / Préférences / PHP / Code Style / Formatter / Active profile: PSR-2
-        
-        // Indenter le code PHP en PSR-2 depuis le fichier ouvert, faire un clic droit sur le code, Code source, Formater.
-        
-        // Cette méthode directement depuis Eclipse devrait éviter la perte de la fin de ligne Windows spécifique au dépôt Github créé initialement sous Windows.
     }
 }
