@@ -9,7 +9,7 @@
 /**
  * require the PhpSecInfo_Test_Core class
  */
-require_once ('PhpSecInfo/Test/Test_Core.php');
+require_once('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for upload_tmp_dir
@@ -50,14 +50,15 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     function isTestable()
     {
         if ($this->osIsWindows()) {
-            return FALSE;
+            return false;
         } else {
-            return TRUE;
+            return true;
         }
     }
 
     /**
-     * Check if upload_tmp_dir matches PHPSECINFO_TEST_COMMON_TMPDIR, or is word-writable
+     * Check if upload_tmp_dir matches PHPSECINFO_TEST_COMMON_TMPDIR, or is
+     * word-writable
      *
      * This is still unix-specific, and it's possible that for now
      * this test should be disabled under Windows builds.
@@ -69,8 +70,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
         $perms = @fileperms($this->current_value);
         if ($perms === false) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } else if ($this->current_value && ! preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
-
+        } elseif ($this->current_value && ! preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
@@ -96,6 +96,4 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
                                                 to access temporary copies of files uploaded via your PHP scripts. You should set
                                                 upload_tmp_dir to a non-world-readable directory');
     }
-    // Projet importé sur Linux.
-    // Test de fin de ligne façon windows avec l'IDE Eclipse.
 }
