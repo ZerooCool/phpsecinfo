@@ -7,7 +7,7 @@
  */
 
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
 require_once('PhpSecInfo/Test/Test_Core.php');
 
