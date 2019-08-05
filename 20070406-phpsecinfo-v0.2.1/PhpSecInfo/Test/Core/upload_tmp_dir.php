@@ -1,7 +1,6 @@
 <?php
 /**
  * Test Class for upload_tmp_dir
- *
  * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
@@ -13,7 +12,6 @@ require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for upload_tmp_dir
- *
  * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
