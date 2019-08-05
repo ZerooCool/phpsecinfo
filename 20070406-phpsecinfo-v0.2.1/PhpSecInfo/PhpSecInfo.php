@@ -1,33 +1,27 @@
 <?php
 /**
  * Main class file
- *
  * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
-
 /**
  * The default language setting if none is set/retrievable
- *
  */
 define ('PHPSECINFO_LANG_DEFAULT', 'en');
 
 /**
- * a general version string to differentiate releases
- *
+ * A general version string to differentiate releases
  */
 define ('PHPSECINFO_VERSION', '0.2.1');
 
 /**
- * a YYYYMMDD date string to indicate "build" date
- *
+ * A YYYYMMDD date string to indicate "build" date
  */
 define ('PHPSECINFO_BUILD', '20070406');
 
 /**
  * Homepage for phpsecinfo project
- *
  */
 define ('PHPSECINFO_URL', 'http://phpsecinfo.com');
 
@@ -677,12 +671,7 @@ class PhpSecInfo
 		$output = ob_get_clean();
 		return $output;
 	}
-
-
-
-
 }
-
 
 
 
@@ -696,4 +685,3 @@ function phpsecinfo() {
 	$psi->loadAndRun();
 	$psi->renderOutput();
 }
-
