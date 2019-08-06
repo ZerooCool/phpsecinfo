@@ -20,42 +20,42 @@ require_once('PhpSecInfo/Test/Test.php');
 class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
 {
 
-	/**
-	 * This value is used to group test results together.
-	 *
-	 * For example, all tests related to the mysql lib should be grouped under "mysql."
-	 *
-	 * @var string
-	 */
-	var $test_group = 'CGI';
+    /**
+     * This value is used to group test results together.
+     *
+     * For example, all tests related to the mysql lib should be grouped under "mysql."
+     *
+     * @var string
+     */
+    var $test_group = 'CGI';
 
 
 
-	/**
-	 * "CGI" tests should only be run if we're running as a CGI.  The best way I could think of
-	 * to test this was to preg against the php_sapi_name() return value.
-	 *
-	 * @return boolean
-	 */
-	function isTestable() {
-		/*if ( preg_match('/^cgi.*$/', php_sapi_name()) ) {
-			return true;
-		} else {
-			return false;
-		}*/
-		return strpos(php_sapi_name(), 'cgi') === 0;
-	}
+    /**
+     * "CGI" tests should only be run if we're running as a CGI.  The best way I could think of
+     * to test this was to preg against the php_sapi_name() return value.
+     *
+     * @return boolean
+     */
+    function isTestable()
+    {
+        /*if ( preg_match('/^cgi.*$/', php_sapi_name()) ) {
+            return true;
+        } else {
+            return false;
+        }*/
+        return strpos(php_sapi_name(), 'cgi') === 0;
+    }
 
 
-	/**
-	 * Set the messages for CGI tests
-	 *
-	 */
-	function _setMessages() {
-		parent::_setMessages();
+    /**
+     * Set the messages for CGI tests
+     *
+     */
+    function _setMessages()
+    {
+        parent::_setMessages();
 
-		$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
-
-	}
-
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
+    }
 }

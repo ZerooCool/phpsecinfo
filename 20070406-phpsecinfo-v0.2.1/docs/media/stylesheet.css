@@ -35,8 +35,8 @@ dd { margin-left: 0px; padding-left: 1em; }
 
 .description {}
 .short-description { font-weight: bold; color: #666666; }
-.tags {	padding-left: 0em; margin-left: 3em; color: #666666; list-style-type: square; }
-.parameters {	padding-left: 0em; margin-left: 3em; font-style: italic; list-style-type: square; }
+.tags { padding-left: 0em; margin-left: 3em; color: #666666; list-style-type: square; }
+.parameters {   padding-left: 0em; margin-left: 3em; font-style: italic; list-style-type: square; }
 .redefinitions { font-size: 8pt; padding-left: 0em; margin-left: 2em; }
 .package {  }
 .package-title { font-weight: bold; font-size: 14pt; border-bottom: 1px solid black }
@@ -45,8 +45,8 @@ dd { margin-left: 0px; padding-left: 1em; }
 .tutorial { border-width: thin; border-color: #0066ff }
 .tutorial-nav-box { width: 100%; border: 1px solid #999999; background-color: #F8F8F8; }
 .nav-button-disabled { color: #999999; }
-.nav-button:active, 
-.nav-button:focus, 
+.nav-button:active,
+.nav-button:focus,
 .nav-button:hover { background-color: #DDDDDD; outline: 1px solid #999999; text-decoration: none }
 .folder-title { font-style: italic }
 
@@ -93,7 +93,7 @@ dd { margin-left: 0px; padding-left: 1em; }
 /* Syntax highlighting */
 
 .src-code {  border: 1px solid #336699; padding: 1em; background-color: #EEEEEE; }
-*[class="src-code"] {	line-height : 0.5em }
+*[class="src-code"] {   line-height : 0.5em }
 
 .src-comm { color: green; }
 .src-id {  }
