@@ -70,5 +70,5 @@ sudo chmod 444 .htaccess
 5- Changer le propriétaire du dossier phpsecinfo pour permettre l'affichage depuis le navigateur :
 ```
 cd ..
-sudo chown www-data:www-data -R phpsecinfo
+sudo chown www-data:www-data -R phpsecinfo/
 ```
