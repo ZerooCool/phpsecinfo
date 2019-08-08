@@ -47,7 +47,6 @@ class PhpSecInfo_Test_Functions_Apache_Setenv extends PhpSecInfo_Test_Functions
 
     /**
      * Checks to see if the function is enabled
-     *
      * @return integer
      *
      */
