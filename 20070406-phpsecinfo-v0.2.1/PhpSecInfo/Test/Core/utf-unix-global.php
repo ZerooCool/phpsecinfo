@@ -20,6 +20,7 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
 
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
+     *
      * @public string
      */
     public $test_name = "expose_php";
