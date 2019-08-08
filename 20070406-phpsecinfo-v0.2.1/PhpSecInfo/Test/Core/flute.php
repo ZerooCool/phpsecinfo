@@ -22,7 +22,6 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
 
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
-     *
      * @public string
      */
     public $test_name = "allow_url_fopen";
