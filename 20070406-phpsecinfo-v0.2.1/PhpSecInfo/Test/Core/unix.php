@@ -62,6 +62,7 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 
     /**
      * Checks the GID of the PHP process to make sure it is above PHPSECINFO_MIN_SAFE_GID
+     *
      * @see PHPSECINFO_MIN_SAFE_GID
      */
     function _execTest()
