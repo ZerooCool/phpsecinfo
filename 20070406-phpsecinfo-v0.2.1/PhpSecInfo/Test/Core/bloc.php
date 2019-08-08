@@ -1,6 +1,6 @@
 <?php
 /**
- * Test class for apache_setenv
+ * Test class for escapeshellcmd
  *
  * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
@@ -11,7 +11,7 @@
 require_once ('PhpSecInfo/Test/Test_Functions.php');
 
 /**
- * Test class for function apache_setenv
+ * Test class for function escapeshellcmd
  *
  * Checks if dangerous functionality is enabled.
  *
@@ -19,7 +19,7 @@ require_once ('PhpSecInfo/Test/Test_Functions.php');
  * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
-class PhpSecInfo_Test_Functions_Apache_Setenv extends PhpSecInfo_Test_Functions
+class PhpSecInfo_Test_Functions_Escapeshellcmd extends PhpSecInfo_Test_Functions
 {
 
     /**
@@ -27,7 +27,7 @@ class PhpSecInfo_Test_Functions_Apache_Setenv extends PhpSecInfo_Test_Functions
      *
      * @public string
      */
-    public $test_name = "apache_setenv";
+    public $test_name = "escapeshellcmd";
 
     public $recommended_value = 'Disabled';
 
@@ -47,6 +47,7 @@ class PhpSecInfo_Test_Functions_Apache_Setenv extends PhpSecInfo_Test_Functions
 
     /**
      * Checks to see if the function is enabled
+     *
      * @return integer
      *
      */
