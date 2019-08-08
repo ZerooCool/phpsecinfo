@@ -29,7 +29,7 @@
 *.less     text
 *.od       text
 *.onlydata text
-*.php      text
+*.php      text eol=lf
 *.pl       text
 *.py       text
 *.rb       text
