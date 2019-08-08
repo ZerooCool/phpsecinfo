@@ -1,7 +1,6 @@
 <?php
 /**
  * Test class for PHP Version
- *
  * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
