@@ -11,7 +11,6 @@ require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test class for PHP Version
- *
  * Checks the current PHP Version against EOL Versions.
  *
  *
