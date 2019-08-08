@@ -40,7 +40,6 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
     }
 
     /**
-     * Checks to see if allow_url_fopen is enabled
      */
     function _execTest()
     {
