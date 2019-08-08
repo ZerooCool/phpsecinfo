@@ -1,7 +1,6 @@
 <?php
 /**
  * Test class for expose_php
- * 
  * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
