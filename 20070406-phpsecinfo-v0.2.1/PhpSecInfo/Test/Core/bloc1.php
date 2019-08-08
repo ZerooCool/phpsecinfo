@@ -31,7 +31,6 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
      * "CGI" tests should only be run if we're running as a CGI.
      * The best way I could think of
      * to test this was to preg against the php_sapi_name() return value.
-     *
      * @return boolean
      */
     function isTestable()
@@ -46,9 +45,6 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
         return strpos(php_sapi_name(), 'cgi') === 0;
     }
 
-    /**
-     * Set the messages for CGI tests
-     */
     function _setMessages()
     {
         parent::_setMessages();
