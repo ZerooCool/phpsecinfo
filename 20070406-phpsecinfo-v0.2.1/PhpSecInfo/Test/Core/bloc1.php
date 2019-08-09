@@ -72,5 +72,6 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
+ // ko
     }
 }
