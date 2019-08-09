@@ -1,9 +1,10 @@
 <?php
 class class_name {
 	function test() {
-	echo();
+	echo("");
 	}
 }
-echo();
+echo("");
+//Kill Windows ..
 
 ?>
