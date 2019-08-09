@@ -4,5 +4,6 @@ class class_name {
 	echo();
 	}
 }
+echo();
 
 ?>
