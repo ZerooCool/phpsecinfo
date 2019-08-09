@@ -8,32 +8,33 @@
 /**
  * require the main PhpSecInfo class
  */
-require_once('PhpSecInfo/Test/Test.php');
+require_once ('PhpSecInfo/Test/Test.php');
+
 /**
  * This is a skeleton class for PhpSecInfo "Session" tests
+ *
  * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Session extends PhpSecInfo_Test
 {
-	
-	/**
-	 * This value is used to group test results together.
-	 * 
-	 * For example, all tests related to the mysql lib should be grouped under "mysql."
-	 *
-	 * @public string
-	 */
-	public $test_group = 'Session';
-	
-	/**
-	 * "Session" tests should pretty much be always testable, so the default is
-	 * just to return true
-	 * 
-	 * @return boolean
-	 */
-	function isTestable() {
-		
-		return true;
-	}
-	
+
+    /**
+     * This value is used to group test results together.
+     *
+     * For example, all tests related to the mysql lib should be grouped under "mysql."
+     *
+     * @public string
+     */
+    public $test_group = 'Session';
+
+    /**
+     * "Session" tests should pretty much be always testable, so the default is
+     * just to return true
+     *
+     * @return boolean
+     */
+    function isTestable()
+    {
+        return true;
+    }
 }
