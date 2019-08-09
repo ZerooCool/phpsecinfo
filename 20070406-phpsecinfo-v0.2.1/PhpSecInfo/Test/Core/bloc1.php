@@ -65,13 +65,9 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
         return strpos(php_sapi_name(), 'cgi') === 0;
     }
 
-    /**
-     * Set the messages for CGI tests
-     */
     function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
- // ko
     }
 }
