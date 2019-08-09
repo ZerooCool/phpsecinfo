@@ -10,21 +10,11 @@
  */
 require_once ('PhpSecInfo/Test/Test.php');
 
-/**
- * This is a skeleton class for PhpSecInfo "Session" tests
- *
- * @package PhpSecInfo
+
  */
 class PhpSecInfo_Test_Session extends PhpSecInfo_Test
 {
 
-    /**
-     * This value is used to group test results together.
-     *
-     * For example, all tests related to the mysql lib should be grouped under "mysql."
-     *
-     * @public string
-     */
     public $test_group = 'Session';
 
     /**
@@ -37,4 +27,7 @@ class PhpSecInfo_Test_Session extends PhpSecInfo_Test
     {
         return true;
     }
+    // Erreur uniquement sous PHP !
+    // Le code n'était pas fermé avec la balise php fermante. PSR-2 veut alors faire un espace forcé et attend la suite du code !!!
 }
+?>
