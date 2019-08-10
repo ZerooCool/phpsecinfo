@@ -8,10 +8,11 @@
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
+require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for upload_tmp_dir
+ *
  * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
