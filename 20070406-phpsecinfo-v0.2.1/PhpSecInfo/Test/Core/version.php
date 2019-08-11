@@ -55,7 +55,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 	 	}
 	 	
 	 		// Attempt to fetch from server
-	 		$uri = 'https://raw.githubusercontent.com/bigdeej/PhpSecInfo/master/.version.json';
+	 		$uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v0.2.1/20070406-phpsecinfo-v0.2.1/.version.json';
 	 		$ch = curl_init();
 	 		$timeout = 5;
 	 		
