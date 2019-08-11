@@ -26,7 +26,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 	 * @public string
 	 */
 	public $test_name = "version_number";
-	public $recommended_value = '7.4.0';
+	public $recommended_value = '7.3.0';
 	public $last_eol_value = '5.6.15';
 	
 	private $_message_ok = "You are running a current stable version of PHP!";
