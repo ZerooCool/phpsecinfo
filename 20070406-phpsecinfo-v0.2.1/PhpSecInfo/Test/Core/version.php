@@ -26,6 +26,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 	 * @public string
 	 */
 	public $test_name = "version_number";
+	// Cette ligne ne semble pas influencer la version recommandée qui est gérée depuis le fichier .version.json directement.
 	public $recommended_value = '7.3.0';
 	public $last_eol_value = '5.6.15';
 	
@@ -33,7 +34,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 	
 	function _retrieveCurrentValue() {
 		$this->current_value = PHP_VERSION;
-//		$this->current_value = '7.4.0';
+//		$this->current_value = '7.3.0';
 	}
 	
 	
