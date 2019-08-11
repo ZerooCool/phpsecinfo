@@ -1,20 +1,21 @@
-###### Zer00CooL v3 2019-2020 ######
+###### Inclus v3 2019-2020 - Version Zer00CooL ######
 Ajout du fichier .gitattributes pour la collaboration Linux / Windows.
 Ajout d'une fin de ligne vide à la fin de chaque fichier.
 Indentation des fichiers aux normes PSR-2.
 Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
+###############################
+# Version basée sur la v0.2.1 #
+###############################
 
 
-###### Inclure SecurityInfo ######
+###### A inclure SecurityInfo ! ######
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
-
 
 ###### A inclure la v2.0.2 ! ######
 v2.0.2 (Dec 5, 2016)
 - Updated PHP Version Test
 - Added PHP7 Support for Version Test
-
 
 ###### A inclure la v2.0.1a (Dec 1, 2015) ! ######
 Les modifications suivantes ne sont pas présentes dans l'historique. Faire un diff pour les localiser.
@@ -32,7 +33,6 @@ Les modifications suivantes ne sont pas présentes dans l'historique. Faire un d
 - Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB
 - Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB
 
-
 ###### A inclure la v0.2.2 ! ######
 v0.2.2
 - requires are now resolved relative to base phpsecinfo path, so PhpSecInfo does
@@ -47,6 +47,7 @@ v0.2.2
   methods before giving up
 - Minor CSS fixes in HTML view <Thomas Corbiere>
 ######
+
 
 ##############################################################
 # La version de base utilisée pour inclure les modifications #
