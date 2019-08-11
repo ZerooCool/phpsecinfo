@@ -44,7 +44,9 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
      * We are disabling this function on Windows OSes right now until
      * we can be certain of the proper way to check world-readability
      *
-     * @return unknown
+     * https://github.com/matomo-org/plugin-SecurityInfo/commit/6fa8ce0729b47bfd72f108f524bdeab1b77d2226#diff-af85a9dee2b2562f601a8f87c7f345d7
+     *
+     * @return bool
      */
     function isTestable()
     {
@@ -69,7 +71,9 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
         $perms = @fileperms($this->current_value);
         if ($perms === false) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } elseif ($this->current_value && ! preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
+        } elseif ($this->current_value
+            /* && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) */
+            && ! preg_match("%^" . PHPSECINFO_TEST_COMMON_TMPDIR . "(/|$)%", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
