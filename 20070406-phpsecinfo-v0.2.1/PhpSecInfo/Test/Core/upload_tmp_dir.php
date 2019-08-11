@@ -44,9 +44,8 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
      * We are disabling this function on Windows OSes right now until
      * we can be certain of the proper way to check world-readability
      *
-     * https://github.com/matomo-org/plugin-SecurityInfo/commit/6fa8ce0729b47bfd72f108f524bdeab1b77d2226#diff-af85a9dee2b2562f601a8f87c7f345d7
-     *
      * @return bool
+     * https://github.com/matomo-org/plugin-SecurityInfo/commit/6fa8ce0729b47bfd72f108f524bdeab1b77d2226#diff-af85a9dee2b2562f601a8f87c7f345d7
      */
     function isTestable()
     {
