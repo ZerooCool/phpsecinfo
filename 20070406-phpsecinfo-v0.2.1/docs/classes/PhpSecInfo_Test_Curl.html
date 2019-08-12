@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">40</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-741528028"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-741528028" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/PhpSecInfo.html">PhpSecInfo</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test.html">PhpSecInfo_Test</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Cgi.html">PhpSecInfo_Test_Cgi</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Cgi_Force_Redirect.html">PhpSecInfo_Test_Cgi_Force_Redirect</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core.html">PhpSecInfo_Test_Core</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Allow_Url_Fopen.html">PhpSecInfo_Test_Core_Allow_Url_Fopen</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Allow_Url_Include.html">PhpSecInfo_Test_Core_Allow_Url_Include</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Display_Errors.html">PhpSecInfo_Test_Core_Display_Errors</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Expose_Php.html">PhpSecInfo_Test_Core_Expose_Php</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_File_Uploads.html">PhpSecInfo_Test_Core_File_Uploads</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Gid.html">PhpSecInfo_Test_Core_Gid</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Magic_Quotes_GPC.html">PhpSecInfo_Test_Core_Magic_Quotes_GPC</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Memory_Limit.html">PhpSecInfo_Test_Core_Memory_Limit</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Open_Basedir.html">PhpSecInfo_Test_Core_Open_Basedir</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Post_Max_Size.html">PhpSecInfo_Test_Core_Post_Max_Size</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Register_Globals.html">PhpSecInfo_Test_Core_Register_Globals</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Uid.html">PhpSecInfo_Test_Core_Uid</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Upload_Max_Filesize.html">PhpSecInfo_Test_Core_Upload_Max_Filesize</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Upload_Tmp_Dir.html">PhpSecInfo_Test_Core_Upload_Tmp_Dir</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Core_Version.html">PhpSecInfo_Test_Core_Version</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Curl.html">PhpSecInfo_Test_Curl</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Curl_File_Support.html">PhpSecInfo_Test_Curl_File_Support</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Dir.html">PhpSecInfo_Test_Dir</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Session.html">PhpSecInfo_Test_Session</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Session_Save_Path.html">PhpSecInfo_Test_Session_Save_Path</a></li>
+                                                    <li class="class"><a href="../classes/PhpSecInfo_Test_Session_Use_Trans_Sid.html">PhpSecInfo_Test_Session_Use_Trans_Sid</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>PhpSecInfo_Test_Curl</h1>
+                    <p><em>This is a skeleton class for PhpSecInfo &quot;Curl&quot; tests</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_PhpSecInfo_Test" class="">PhpSecInfo_Test()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test_Curl.html#method_isTestable" class="">isTestable()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method__execTest" class="">_execTest()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test_Curl.html#method__setMessages" class="">_setMessages()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method__retrieveCurrentValue" class="">_retrieveCurrentValue()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_test" class="">test()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getResult" class="">getResult()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getMessage" class="">getMessage()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_setMessageForResult" class="">setMessageForResult()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getCurrentTestValue" class="">getCurrentTestValue()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getRecommendedTestValue" class="">getRecommendedTestValue()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method__setResult" class="">_setResult()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method__setMessage" class="">_setMessage()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getMoreInfoURL" class="">getMoreInfoURL()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getTestName" class="">getTestName()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_setTestName" class="">setTestName()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getTestGroup" class="">getTestGroup()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_setTestGroup" class="">setTestGroup()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_returnBytes" class="">returnBytes()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getStringValue" class="">getStringValue()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getBooleanIniValue" class="">getBooleanIniValue()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_sys_get_temp_dir" class="">sys_get_temp_dir()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_osIsWindows" class="">osIsWindows()</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#method_getUnixId" class="">getUnixId()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/PhpSecInfo_Test_Curl.html#property_test_group" class="">$test_group</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property_test_name" class="">$test_name</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property_recommended_value" class="">$recommended_value</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property__result" class="">$_result</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property__message" class="">$_message</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property__language" class="">$_language</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property_current_value" class="">$current_value</a><br />
+                                                                    <a href="../classes/PhpSecInfo_Test.html#property__messages" class="">$_messages</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Test.Test_Curl.html"><div class="path-wrapper">Test/Test_Curl.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">PhpSecInfo</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/PhpSecInfo_Test.html">\PhpSecInfo_Test</a></div>
+                                                                                                    <div class="namespace-wrapper">\PhpSecInfo_Test_Curl</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_test_group" name="property_test_group" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$test_group</h3>
+                <pre class="signature">$test_group : string</pre>
+                <p><em>This value is used to group test results together.</em></p>
+                <p>For example, all tests related to the mysql lib should be grouped under &quot;mysql.&quot;</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_test_name" name="property_test_name" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$test_name</h3>
+                <pre class="signature">$test_name : </pre>
+                <p><em>This should be a &lt;b&gt;unique&lt;/b&gt;, human-readable identifier for this test</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>string</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_recommended_value" name="property_recommended_value" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$recommended_value</h3>
+                <pre class="signature">$recommended_value : </pre>
+                <p><em>This is the recommended value the test will be looking for</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>mixed</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__result" name="property__result" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$_result</h3>
+                <pre class="signature">$_result : </pre>
+                <p><em>The result returned from the test</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>integer</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__message" name="property__message" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$_message</h3>
+                <pre class="signature">$_message : </pre>
+                <p><em>The message corresponding to the result of the test</em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>string</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__language" name="property__language" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$_language</h3>
+                <pre class="signature">$_language : </pre>
+                <p><em>the language code.</em></p>
+                <p>Should be a pointer to the setting in the PhpSecInfo object</p>
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>string</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_current_value" name="property_current_value" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$current_value</h3>
+                <pre class="signature">$current_value : </pre>
+                <p><em>Enter description here.</em></p>
+                <p>..</p>
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>mixed</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__messages" name="property__messages" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$_messages</h3>
+                <pre class="signature">$_messages : </pre>
+                <p><em>This is a hash of messages that correspond to various test result levels.</em></p>
+                <p>There are five messages, each corresponding to one of the result constants
+(PHPSECINFO_TEST_RESULT_OK, PHPSECINFO_TEST_RESULT_NOTICE, PHPSECINFO_TEST_RESULT_WARN,
+PHPSECINFO_TEST_RESULT_ERROR, PHPSECINFO_TEST_RESULT_NOTRUN)</p>
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            public
+                        </th>
+                        <td>
+                                                            <p>array</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_PhpSecInfo_Test" name="method_PhpSecInfo_Test" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">PhpSecInfo_Test()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">PhpSecInfo_Test() : \PhpSecInfo_Test</pre>
+                <p><em>Constructor for Test skeleton class</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/PhpSecInfo_Test.html">\PhpSecInfo_Test</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isTestable" name="method_isTestable" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isTestable()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isTestable() : boolean</pre>
+                <p><em>&quot;Curl&quot; tests should only be run if the curl extension is installed.  We can check
+for this by seeing if the function curl_init() is defined</em></p>
+                <p>This is a terrible name, but I couldn't think of a better one atm.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__execTest" name="method__execTest" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">_execTest()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_execTest() : integer</pre>
+                <p><em>The &quot;meat&quot; of the test.</em></p>
+                <p>This is where the real test code goes. You should override this when extending</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__setMessages" name="method__setMessages" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">_setMessages()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_setMessages() </pre>
+                <p><em>Set the messages for Curl tests</em></p>
+                <p>Using this method rather than setting $this-&gt;_messages directly allows result
+messages to be inherited. This is broken out into a separate function rather
+than the constructor for ease of extension purposes (php4 is whack, man).</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__retrieveCurrentValue" name="method__retrieveCurrentValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">_retrieveCurrentValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_retrieveCurrentValue() </pre>
+                <p><em>Placeholder - extend for tests</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_test" name="method_test" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">test()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">test() </pre>
+                <p><em>This is the wrapper that executes the test and sets the result code and message</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getResult" name="method_getResult" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getResult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getResult() : integer</pre>
+                <p><em>Retrieves the result</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMessage" name="method_getMessage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMessage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMessage() : string</pre>
+                <p><em>Retrieves the message for the current result</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMessageForResult" name="method_setMessageForResult" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMessageForResult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMessageForResult(integer  <span class="argument">$result_code</span>, string  <span class="argument">$language_code</span>, string  <span class="argument">$message</span>) </pre>
+                <p><em>Sets the message for a given result code and language
+&lt;code&gt;
+$this-&gt;setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, &#039;en&#039;, &#039;This test cannot be run&#039;);
+&lt;/code&gt;</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$result_code </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$language_code </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$message </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCurrentTestValue" name="method_getCurrentTestValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCurrentTestValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCurrentTestValue() : string</pre>
+                <p><em>returns the current value.</em></p>
+                <p>This function should be used to access the
+value for display. All values are cast as strings</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRecommendedTestValue" name="method_getRecommendedTestValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRecommendedTestValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRecommendedTestValue() : string</pre>
+                <p><em>returns the recommended value.</em></p>
+                <p>This function should be used to access the
+value for display. All values are cast as strings</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__setResult" name="method__setResult" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">_setResult()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_setResult(integer  <span class="argument">$result_code</span>) </pre>
+                <p><em>Sets the result code</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$result_code </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__setMessage" name="method__setMessage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">_setMessage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_setMessage(integer  <span class="argument">$result_code</span>, string  <span class="argument">$language_code</span>) </pre>
+                <p><em>Sets the $this-&gt;_message variable based on the passed result and language codes</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$result_code </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$language_code </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMoreInfoURL" name="method_getMoreInfoURL" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMoreInfoURL()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMoreInfoURL() : string|boolean</pre>
+                <p><em>Returns a link to a page with detailed information about the test
+URL is formatted as PHPSECINFO_TEST_MOREINFO_BASEURL + testName</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string|boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../namespaces/default.html#constant_PHPSECINFO_TEST_MOREINFO_BASEURL"><span class="namespace-wrapper">\PHPSECINFO_TEST_MOREINFO_BASEURL</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTestName" name="method_getTestName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTestName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTestName() : string</pre>
+                <p><em>This retrieves the name of this test.</em></p>
+                <p>If a name has not been set, this returns a formatted version of the class name.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTestName" name="method_setTestName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTestName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTestName(string  <span class="argument">$test_name</span>) </pre>
+                <p><em>sets the test name</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$test_name </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTestGroup" name="method_getTestGroup" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTestGroup()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTestGroup() : string</pre>
+                <p><em>Returns the test group this test belongs to</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTestGroup" name="method_setTestGroup" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTestGroup()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTestGroup(string  <span class="argument">$test_group</span>) </pre>
+                <p><em>sets the test group</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$test_group </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_returnBytes" name="method_returnBytes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">returnBytes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">returnBytes(string  <span class="argument">$val</span>) : integer</pre>
+                <p><em>This function takes the shorthand notation used in memory limit settings for PHP
+and returns the byte value.</em></p>
+                <p>Totally stolen from <a href="http://us3.php.net/manual/en/function.ini-get.php">http://us3.php.net/manual/en/function.ini-get.php</a>
+<code>
+echo 'post_max_size in bytes = ' . $this-&gt;return_bytes(ini_get('post_max_size'));
+</code></p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$val </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="http://php.net/manual/en/function.ini-get.php"><span class="namespace-wrapper">http://php.net/manual/en/function.ini-get.php</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getStringValue" name="method_getStringValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getStringValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getStringValue(mixed  <span class="argument">$val</span>) : string</pre>
+                <p><em>This just does the usual PHP string casting, except for
+the boolean FALSE value, where the string &quot;0&quot; is returned
+instead of an empty string</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$val </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBooleanIniValue" name="method_getBooleanIniValue" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBooleanIniValue()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBooleanIniValue(string  <span class="argument">$ini_key</span>) : boolean|mixed</pre>
+                <p><em>This method converts the several possible return values from
+allegedly &quot;boolean&quot; ini settings to proper booleans
+Properly converted input values are: &#039;off&#039;, &#039;on&#039;, &#039;false&#039;, &#039;true&#039;, &#039;&#039;, &#039;0&#039;, &#039;1&#039;
+(the last two might not be neccessary, but I&#039;d rather be safe)
+If the ini_value doesn&#039;t match any of those, the value is returned as-is.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ini_key </td>
+                                <td><p>the ini_key you need the value of</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_sys_get_temp_dir" name="method_sys_get_temp_dir" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">sys_get_temp_dir()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sys_get_temp_dir() : string|NULL</pre>
+                <p><em>sys_get_temp_dir provides some temp dir detection capability
+that is lacking in versions of PHP that do not have the
+sys_get_temp_dir() function</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string|NULL
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_osIsWindows" name="method_osIsWindows" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">osIsWindows()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">osIsWindows() : boolean</pre>
+                <p><em>A quick function to determine whether we&#039;re running on Windows.</em></p>
+                <p>Uses the PHP_OS constant.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUnixId" name="method_getUnixId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUnixId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUnixId() : array|boolean</pre>
+                <p><em>Returns an array of data returned from the UNIX &#039;id&#039; command
+includes uid, username, gid, groupname, and groups (if &quot;exec&quot;
+is enabled).</em></p>
+                <p>Groups is an array of all the groups the user
+belongs to. Keys are the group ids, values are the group names.
+returns FALSE if no suitable function is available to retrieve
+the data</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array|boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PhpSecInfo_Test.html"><div class="path-wrapper">\PhpSecInfo_Test</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Test_Curl.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Test/Test_Curl.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 12th, 2019 at 18:21.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
