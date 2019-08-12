@@ -1,6 +1,7 @@
 <?php
 /**
  * Skeleton Test class file
+ * 
  * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
@@ -10,11 +11,11 @@
  */
 require_once ('PhpSecInfo/PhpSecInfo.php');
 
-define('PHPSECINFO_TEST_RESULT_OK', -1);
-define('PHPSECINFO_TEST_RESULT_NOTICE', -2);
-define('PHPSECINFO_TEST_RESULT_WARN', -4);
-define('PHPSECINFO_TEST_RESULT_ERROR', -1024);
-define('PHPSECINFO_TEST_RESULT_NOTRUN', -2048);
+define('PHPSECINFO_TEST_RESULT_OK', - 1);
+define('PHPSECINFO_TEST_RESULT_NOTICE', - 2);
+define('PHPSECINFO_TEST_RESULT_WARN', - 4);
+define('PHPSECINFO_TEST_RESULT_ERROR', - 1024);
+define('PHPSECINFO_TEST_RESULT_NOTRUN', - 2048);
 define('PHPSECINFO_TEST_COMMON_TMPDIR', '/tmp');
 define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinfo/tests/');
 
@@ -22,37 +23,44 @@ define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinf
  * This is a skeleton class for PhpSecInfo tests You should extend this to make a "group" skeleton
  * to categorize tests under, then make a subdir with your group name that contains test classes
  * extending your group skeleton class.
+ *
  * @package PhpSecInfo
  */
 class PhpSecInfo_Test
 {
+
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
+     *
      * @public string
      */
     public $test_group = 'misc';
 
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
+     *
      * @public string
      */
     public $test_name = 'misc_test';
 
     /**
      * This is the recommended value the test will be looking for
+     *
      * @public mixed
      */
     public $recommended_value = "bar";
 
     /**
      * The result returned from the test
+     *
      * @public integer
      */
     public $_result = PHPSECINFO_TEST_RESULT_NOTRUN;
 
     /**
      * The message corresponding to the result of the test
+     *
      * @public string
      */
     public $_message;
@@ -60,12 +68,14 @@ class PhpSecInfo_Test
     /**
      * the language code.
      * Should be a pointer to the setting in the PhpSecInfo object
+     *
      * @public string
      */
     public $_language = PHPSECINFO_LANG_DEFAULT;
 
     /**
      * Enter description here...
+     *
      * @public mixed
      */
     public $current_value;
@@ -75,12 +85,14 @@ class PhpSecInfo_Test
      * There are five messages, each corresponding to one of the result constants
      * (PHPSECINFO_TEST_RESULT_OK, PHPSECINFO_TEST_RESULT_NOTICE, PHPSECINFO_TEST_RESULT_WARN,
      * PHPSECINFO_TEST_RESULT_ERROR, PHPSECINFO_TEST_RESULT_NOTRUN)
+     *
      * @public array
      */
     public $_messages = array();
 
     /**
      * Constructor for Test skeleton class
+     *
      * @return PhpSecInfo_Test
      */
     function PhpSecInfo_Test()
@@ -96,6 +108,7 @@ class PhpSecInfo_Test
      * this test is for a particular library, it shouldn't be run if the lib isn't
      * loaded).
      * This is a terrible name, but I couldn't think of a better one atm.
+     *
      * @return boolean
      */
     function isTestable()
@@ -106,6 +119,7 @@ class PhpSecInfo_Test
     /**
      * The "meat" of the test.
      * This is where the real test code goes. You should override this when extending
+     *
      * @return integer
      */
     function _execTest()
@@ -147,6 +161,7 @@ class PhpSecInfo_Test
 
     /**
      * Retrieves the result
+     *
      * @return integer
      */
     function getResult()
@@ -156,6 +171,7 @@ class PhpSecInfo_Test
 
     /**
      * Retrieves the message for the current result
+     *
      * @return string
      */
     function getMessage()
@@ -172,6 +188,7 @@ class PhpSecInfo_Test
      * <code>
      * $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
      * </code>
+     *
      * @param integer $result_code
      * @param string $language_code
      * @param string $message
@@ -193,6 +210,7 @@ class PhpSecInfo_Test
      * returns the current value.
      * This function should be used to access the
      * value for display. All values are cast as strings
+     *
      * @return string
      */
     function getCurrentTestValue()
@@ -204,6 +222,7 @@ class PhpSecInfo_Test
      * returns the recommended value.
      * This function should be used to access the
      * value for display. All values are cast as strings
+     *
      * @return string
      */
     function getRecommendedTestValue()
@@ -213,6 +232,7 @@ class PhpSecInfo_Test
 
     /**
      * Sets the result code
+     *
      * @param integer $result_code
      */
     function _setResult($result_code)
@@ -222,6 +242,7 @@ class PhpSecInfo_Test
 
     /**
      * Sets the $this->_message variable based on the passed result and language codes
+     *
      * @param integer $result_code
      * @param string $language_code
      */
@@ -235,6 +256,7 @@ class PhpSecInfo_Test
     /**
      * Returns a link to a page with detailed information about the test
      * URL is formatted as PHPSECINFO_TEST_MOREINFO_BASEURL + testName
+     *
      * @see PHPSECINFO_TEST_MOREINFO_BASEURL
      * @return string|boolean
      */
@@ -252,6 +274,7 @@ class PhpSecInfo_Test
     /**
      * This retrieves the name of this test.
      * If a name has not been set, this returns a formatted version of the class name.
+     *
      * @return string
      */
     function getTestName()
@@ -265,6 +288,7 @@ class PhpSecInfo_Test
 
     /**
      * sets the test name
+     *
      * @param string $test_name
      */
     function setTestName($test_name)
@@ -274,6 +298,7 @@ class PhpSecInfo_Test
 
     /**
      * Returns the test group this test belongs to
+     *
      * @return string
      */
     function getTestGroup()
@@ -283,6 +308,7 @@ class PhpSecInfo_Test
 
     /**
      * sets the test group
+     *
      * @param string $test_group
      */
     function setTestGroup($test_group)
@@ -297,6 +323,7 @@ class PhpSecInfo_Test
      * <code>
      * echo 'post_max_size in bytes = ' . $this->return_bytes(ini_get('post_max_size'));
      * </code>
+     *
      * @link http://php.net/manual/en/function.ini-get.php
      * @param string $val
      * @return integer
@@ -327,6 +354,7 @@ class PhpSecInfo_Test
      * This just does the usual PHP string casting, except for
      * the boolean FALSE value, where the string "0" is returned
      * instead of an empty string
+     *
      * @param mixed $val
      * @return string
      */
@@ -345,7 +373,9 @@ class PhpSecInfo_Test
      * Properly converted input values are: 'off', 'on', 'false', 'true', '', '0', '1'
      * (the last two might not be neccessary, but I'd rather be safe)
      * If the ini_value doesn't match any of those, the value is returned as-is.
-     * @param string $ini_key   the ini_key you need the value of
+     *
+     * @param string $ini_key
+     *            the ini_key you need the value of
      * @return boolean|mixed
      */
     function getBooleanIniValue($ini_key)
@@ -383,6 +413,7 @@ class PhpSecInfo_Test
      * sys_get_temp_dir provides some temp dir detection capability
      * that is lacking in versions of PHP that do not have the
      * sys_get_temp_dir() function
+     *
      * @return string|NULL
      */
     function sys_get_temp_dir()
@@ -402,6 +433,7 @@ class PhpSecInfo_Test
     /**
      * A quick function to determine whether we're running on Windows.
      * Uses the PHP_OS constant.
+     *
      * @return boolean
      */
     function osIsWindows()
@@ -416,10 +448,12 @@ class PhpSecInfo_Test
     /**
      * Returns an array of data returned from the UNIX 'id' command
      * includes uid, username, gid, groupname, and groups (if "exec"
-     * is enabled). Groups is an array of all the groups the user
+     * is enabled).
+     * Groups is an array of all the groups the user
      * belongs to. Keys are the group ids, values are the group names.
      * returns FALSE if no suitable function is available to retrieve
      * the data
+     *
      * @return array|boolean
      */
     function getUnixId()
