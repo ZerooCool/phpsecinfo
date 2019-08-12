@@ -19,14 +19,12 @@ v2.0.2 (Dec 5, 2016)
 
 ###### A inclure la v2.0.1a (Dec 1, 2015) ! ######
 Les modifications suivantes ne sont pas présentes dans l'historique. Faire un diff pour les localiser.
-- New development team - FORK see GitHub below
 - Removed PHP4 Support
 - Updated to PHP5 Objects
 - Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format
-- Removed Container: PhpSecInfo_Test_Core_CURL
-- Removed Test: PhpSecInfo_Test_Core_CURL_File_Support
-- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal>
-- New branch created on GitHub for source: https://github.com/bigdeej/phpsecinfo
+- Removed Container: PhpSecInfo_Test_Core_CURL (Why ?)
+- Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (Why ?)
+- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal> (OK)
 - Added output (HTML) template support
 - Upgraded output (HTML) to Bootstrap 2.0
 - Updated Test: PhpSecInfo_Test_Core_Memory_Limit - 8MB is far too low for 2016 default memory limit should be below 200MB today
