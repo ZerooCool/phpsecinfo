@@ -48,7 +48,6 @@ class PhpSecInfo_Test_Functions_Popen extends PhpSecInfo_Test_Functions
      * Checks to see if the function is enabled
      *
      * @return integer
-     *
      */
     function _execTest()
     {
