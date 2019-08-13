@@ -249,7 +249,18 @@ class PhpSecInfo_Test
     function _setMessage($result_code, $language_code)
     {
         $messages = $this->_messages[$result_code];
-        $message = $messages[$language_code];
+        
+        // $message = $messages[$language_code];
+        // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
+        if ( $messages[$language_code] === $_language )
+        {
+            $langue_defaut ="en";
+            $message = $messages[$langue_defaut];
+        } else {
+            $langue_definie = PHPSECINFO_LANG_DEFAULT;
+            $message = $messages[$langue_definie];
+        }
+        
         $this->_message = $message;
     }
 

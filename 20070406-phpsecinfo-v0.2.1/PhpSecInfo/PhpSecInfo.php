@@ -9,7 +9,7 @@
  * The default language setting if none is set/retrievable
  * Le paramètre de langue par défaut si aucun n'est défini/récupérable
  */
-define('PHPSECINFO_LANG_DEFAULT', 'en');
+define('PHPSECINFO_LANG_DEFAULT', 'fr');
 
 /**
  * A general version string to differentiate releases
