@@ -236,7 +236,7 @@ class PhpSecInfo
      * This is the main output method.
      * The look and feel mimics phpinfo()
      */
-    function renderOutput($page_title = "Security Information About PHP")
+    function renderOutput($page_title = "PHP Security Information")
     {
 
         /**
@@ -486,9 +486,8 @@ DIV.moreinfo {
 <body>
 	<div class="header">
 		<h1><?php echo $page_title ?></h1>
-		<h2>PhpSecInfo Version <?php echo PHPSECINFO_VERSION ?>; Build <?php echo PHPSECINFO_BUILD ?> &middot; <a
-				href="<?php echo PHPSECINFO_URL ?>">Project Homepage</a> - <a
-				href="PhpSecInfo/phpinfo.php">Consulter phpinfo()</a>
+		<h2>PhpSecInfo Version <?php echo PHPSECINFO_VERSION ?> - Last update : <?php echo PHPSECINFO_BUILD ?> - <a
+				href="<?php echo PHPSECINFO_URL ?>">Project Homepage</a> - <a href="PhpSecInfo/phpinfo.php">Consulter phpinfo()</a>
 		</h2>
 	</div>
 
