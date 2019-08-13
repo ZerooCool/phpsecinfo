@@ -12,11 +12,6 @@ Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
-###### A inclure la v2.0.2 ! ######
-v2.0.2 (Dec 5, 2016)
-- Updated PHP Version Test
-- Added PHP7 Support for Version Test
-
 ###### A inclure la v0.2.2 ! ######
 v0.2.2
 - requires are now resolved relative to base phpsecinfo path, so PhpSecInfo does
@@ -32,10 +27,15 @@ v0.2.2
 - Minor CSS fixes in HTML view <Thomas Corbiere>
 ######
 
+###### A été inclus v2.0.2 ! ######
+v2.0.2 (Dec 5, 2016)
+- Updated PHP Version Test (OK)
+- Added PHP7 Support for Version Test (OK)
+
 ###### En progression - Inclure la v2.0.1a (Dec 1, 2015) ######
-- Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
-- Removed Container: PhpSecInfo_Test_Core_CURL (NO)
-- Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
+# Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
+# Removed Container: PhpSecInfo_Test_Core_CURL (NO)
+# Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
 
 - Updated to PHP5 Objects with public value (OK)
 - Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format (PhpSecInfo.php) (OK)
@@ -44,6 +44,7 @@ v0.2.2
 - Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
 - Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
 
+# Where is :
 - Added output (HTML) template support (Where ?)
 - Upgraded output (HTML) to Bootstrap 2.0 (Where ?)
 

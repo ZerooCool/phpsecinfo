@@ -82,6 +82,4 @@ echo $html;
 
 ### HOW CAN I OFFER FEEDBACK, REPORT BUGS, COMPLAIN, ETC.?
 
-The best way is to subscribe to and post on the PHPSecInfo Mailing List:
-
-http://lists.phpsec.org/mailman/listinfo/phpsecinfo
+The best way is to follow our project on Github : https://github.com/ZerooCool/phpsecinfo/issues

@@ -39,7 +39,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     function _retrieveCurrentValue()
     {
         $this->current_value = PHP_VERSION;
-        // $this->current_value = '7.3.0';
+        // $this->current_value = '5.4.15';
     }
 
     /**
