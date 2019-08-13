@@ -145,11 +145,17 @@ class PhpSecInfo_Test
      */
     function _setMessages()
     {
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be safe');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be considered safe');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This could potentially be a security issue');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'This setting may be a serious security problem');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Ce paramètre peut constituer un grave problème de sécurité');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'fr', 'Une erreur s\'est produite lors de l\'exécution de ce test');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Ce test ne peut pas être exécuté');
     }
 
     /**
@@ -259,9 +265,9 @@ class PhpSecInfo_Test
     function _setMessage($result_code, $language_code)
     {
         $messages = $this->_messages[$result_code];
-        
-        // $message = $messages[$language_code];
+
         // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
+        // $message = $messages[$language_code];
         if ( $messages[$language_code] === $_language )
         {
             // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
