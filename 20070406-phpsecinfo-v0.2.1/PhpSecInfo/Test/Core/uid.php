@@ -6,12 +6,10 @@
  * @author Ed Finkler <coj@funkatron.com>
  */
 
-
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
 require_once('PhpSecInfo/Test/Test_Core.php');
-
 
 /**
  * the minimum "safe" UID that php should be executing as.  This can vary,
@@ -31,11 +29,10 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "user_id";
-
-    var $recommended_value = PHPSECINFO_MIN_SAFE_UID;
+    public $test_name = "user_id";
+    public $recommended_value = PHPSECINFO_MIN_SAFE_UID;
 
     /**
      * This test only works under Unix OSes
@@ -52,7 +49,6 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
         }
         return true;
     }
-
 
     function _retrieveCurrentValue()
     {
@@ -78,15 +74,12 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
         return PHPSECINFO_TEST_RESULT_WARN;
     }
 
-
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'PHP is executing as what is probably a non-privileged user');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" user, which could be a serious security vulnerability.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');

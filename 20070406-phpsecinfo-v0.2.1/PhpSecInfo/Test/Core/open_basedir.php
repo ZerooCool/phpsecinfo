@@ -6,11 +6,10 @@
  * @author Ed Finkler <coj@funkatron.com>
  */
 
-
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
+require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for open_basedir
@@ -23,22 +22,19 @@ class PhpSecInfo_Test_Core_Open_Basedir extends PhpSecInfo_Test_Core
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "open_basedir";
+    public $test_name = "open_basedir";
 
-    var $recommended_value = true;
+    public $recommended_value = true;
 
-    
     function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('open_basedir');
     }
-    
-    
+
     /**
      * Checks to see if allow_url_fopen is enabled
-     *
      */
     function _execTest()
     {
@@ -48,16 +44,13 @@ class PhpSecInfo_Test_Core_Open_Basedir extends PhpSecInfo_Test_Core
 
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
-        
-    
+
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-        
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'open_basedir is enabled, which is the
 				recommended setting. Keep in mind that other web applications not written in PHP will not
 				be restricted by this setting.');

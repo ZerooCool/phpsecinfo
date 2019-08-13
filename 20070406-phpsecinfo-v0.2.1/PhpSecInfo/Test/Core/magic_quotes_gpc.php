@@ -6,12 +6,10 @@
  * @author Ed Finkler <coj@funkatron.com>
  */
 
-
-
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
+require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for magic_quotes_gpc
@@ -20,22 +18,20 @@ require_once('PhpSecInfo/Test/Test_Core.php');
  */
 class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
 {
+
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "magic_quotes_gpc";
+    public $test_name = "magic_quotes_gpc";
 
-
-    var $recommended_value = false;
-
+    public $recommended_value = false;
 
     function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('magic_quotes_gpc');
     }
-
 
     /**
      * magic_quotes_gpc has been removed since PHP 6.0
@@ -44,13 +40,11 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
      */
     function isTestable()
     {
-        return version_compare(PHP_VERSION, '6', '<') ;
+        return version_compare(PHP_VERSION, '6', '<');
     }
-
 
     /**
      * Checks to see if allow_url_fopen is enabled
-     *
      */
     function _execTest()
     {
@@ -61,16 +55,12 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
 
-
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running PHP 6 or later and magic_quotes_gpc has been removed');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'magic_quotes_gpc is disabled, which is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'magic_quotes_gpc is enabled.  This

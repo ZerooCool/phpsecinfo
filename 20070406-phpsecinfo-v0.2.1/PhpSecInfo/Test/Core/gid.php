@@ -6,18 +6,20 @@
  */
 
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
+require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
- * the minimum "safe" UID that php should be executing as.  This can vary,
+ * the minimum "safe" UID that php should be executing as.
+ * This can vary,
  * but in general 100 seems like a good min.
  */
 define('PHPSECINFO_MIN_SAFE_GID', 100);
 
 /**
  * Test class for GID
+ *
  * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
@@ -25,13 +27,16 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
-     * @var string
+     *
+     * @public string
      */
-    var $test_name = "group_id";
-    var $recommended_value = PHPSECINFO_MIN_SAFE_GID;
+    public $test_name = "group_id";
+
+    public $recommended_value = PHPSECINFO_MIN_SAFE_GID;
 
     /**
      * This test only works under Unix OSes
+     *
      * @return boolean
      */
     function isTestable()
@@ -58,6 +63,7 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 
     /**
      * Checks the GID of the PHP process to make sure it is above PHPSECINFO_MIN_SAFE_GID
+     *
      * @see PHPSECINFO_MIN_SAFE_GID
      */
     function _execTest()

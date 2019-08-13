@@ -6,12 +6,10 @@
  * @author Ed Finkler <coj@funkatron.com>
  */
 
-
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
 require_once('PhpSecInfo/Test/Test_Core.php');
-
 
 /**
  * Test Class for register_globals
@@ -20,23 +18,18 @@ require_once('PhpSecInfo/Test/Test_Core.php');
  */
 class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "register_globals";
-
-
-    var $recommended_value = false;
-
+    public $test_name = "register_globals";
+    public $recommended_value = false;
 
     function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('register_globals');
     }
-
 
     /**
      * register_globals has been removed since PHP 6.0
@@ -48,11 +41,8 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
         return version_compare(PHP_VERSION, '6', '<') ;
     }
 
-
-
     /**
      * Checks to see if allow_url_fopen is enabled
-     *
      */
     function _execTest()
     {
@@ -63,15 +53,12 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
         return PHPSECINFO_TEST_RESULT_WARN;
     }
 
-
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running PHP 6 or later and register_globals has been removed');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'register_globals is disabled, which is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'register_globals is enabled.  This could be a serious security risk.  You should disable register_globals immediately');

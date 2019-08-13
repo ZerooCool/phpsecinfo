@@ -8,7 +8,7 @@
 
 
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
 require_once('PhpSecInfo/Test/Test_Core.php');
 
@@ -19,15 +19,13 @@ require_once('PhpSecInfo/Test/Test_Core.php');
  */
 class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "expose_php";
-    
-    var $recommended_value = false;
+    public $test_name = "expose_php";
+    public $recommended_value = false;
     
     function _retrieveCurrentValue()
     {
@@ -36,27 +34,21 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
                     
     /**
      * Checks to see if expose_php is enabled
-     *
      */
     function _execTest()
     {
-        
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
-        
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
         
-    
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-        
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'expose_php is disabled, which is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'expose_php is enabled.  This adds
 				the PHP "signature" to the web server header, including the PHP version number.  This

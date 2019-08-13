@@ -7,14 +7,14 @@
  */
 
 /**
- * require the PhpSecInfo_Test_Core class
+ * Require the PhpSecInfo_Test_Core class
  */
 require_once('PhpSecInfo/Test/Test_Core.php');
 
 /**
- * The max recommended size for the upload_max_filesize setting, in bytes
+ * The max recommended size for the upload_max_filesize setting, in bytes (33554432)
  */
-define('PHPSECINFO_UPLOAD_MAXLIMIT', 1024 * 256);
+define('PHPSECINFO_UPLOAD_MAXLIMIT', 32*1024*1024);
 
 /**
  * Test Class for upload_max_filesize
@@ -27,11 +27,11 @@ class PhpSecInfo_Test_Core_Upload_Max_Filesize extends PhpSecInfo_Test_Core
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "upload_max_filesize";
+    public $test_name = "upload_max_filesize";
 
-    var $recommended_value = PHPSECINFO_UPLOAD_MAXLIMIT;
+    public $recommended_value = PHPSECINFO_UPLOAD_MAXLIMIT;
 
     function _retrieveCurrentValue()
     {

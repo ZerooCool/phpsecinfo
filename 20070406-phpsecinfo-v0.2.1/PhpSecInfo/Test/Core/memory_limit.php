@@ -8,17 +8,15 @@
  * @author  Mark Wallaert <mark@autumnweave.com>
  */
 
+/**
+ * Require the PhpSecInfo_Test_Core class
+ */
+require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
- * require the PhpSecInfo_Test_Core class
+ * The max recommended size for the memory_limit setting, in bytes (8388608)
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
-
-/**
- * The max recommended size for the memory_limit setting, in bytes
- *
- */
-define('PHPSECINFO_MEMORY_LIMIT', 8*1024*1024);
+define('PHPSECINFO_MEMORY_LIMIT', 8 * 1024 * 1024);
 
 /**
  * Test Class for memory_limit setting
@@ -28,21 +26,19 @@ define('PHPSECINFO_MEMORY_LIMIT', 8*1024*1024);
 class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
 {
 
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
-     * @var string
+     * @public string
      */
-    var $test_name = "memory_limit";
+    public $test_name = "memory_limit";
 
-    var $recommended_value = PHPSECINFO_MEMORY_LIMIT;
+    public $recommended_value = PHPSECINFO_MEMORY_LIMIT;
 
     function _retrieveCurrentValue()
     {
-        $this->current_value =  $this->returnBytes(ini_get('memory_limit'));
+        $this->current_value = $this->returnBytes(ini_get('memory_limit'));
     }
-
 
     /**
      * Check to see if the memory_limit setting is enabled.
@@ -56,7 +52,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      */
     function _execTest()
     {
-        if (!$this->current_value) {
+        if (! $this->current_value) {
             return PHPSECINFO_TEST_RESULT_WARN;
         } elseif ($this->returnBytes($this->current_value) <= PHPSECINFO_MEMORY_LIMIT) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -64,12 +60,11 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
 
-
     /**
      * Set the messages specific to this test
      *
-     * @access  public
-     * @return  null
+     * @access public
+     * @return null
      */
     function _setMessages()
     {
