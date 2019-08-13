@@ -17,20 +17,6 @@ v2.0.2 (Dec 5, 2016)
 - Updated PHP Version Test
 - Added PHP7 Support for Version Test
 
-###### A inclure la v2.0.1a (Dec 1, 2015) ! ######
-Les modifications suivantes ne sont pas présentes dans l'historique. Faire un diff pour les localiser.
-- Removed PHP4 Support
-- Updated to PHP5 Objects
-- Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format
-- Removed Container: PhpSecInfo_Test_Core_CURL (Why ?)
-- Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (Why ?)
-- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal> (OK)
-- Added output (HTML) template support
-- Upgraded output (HTML) to Bootstrap 2.0
-- Updated Test: PhpSecInfo_Test_Core_Memory_Limit - 8MB is far too low for 2016 default memory limit should be below 200MB today
-- Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB
-- Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB
-
 ###### A inclure la v0.2.2 ! ######
 v0.2.2
 - requires are now resolved relative to base phpsecinfo path, so PhpSecInfo does
@@ -46,6 +32,20 @@ v0.2.2
 - Minor CSS fixes in HTML view <Thomas Corbiere>
 ######
 
+###### En progression - Inclure la v2.0.1a (Dec 1, 2015) ######
+- Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
+- Removed Container: PhpSecInfo_Test_Core_CURL (NO)
+- Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
+
+- Updated to PHP5 Objects with public value (OK)
+- Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format (PhpSecInfo.php) (OK)
+- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal> (OK)
+- Updated Test: PhpSecInfo_Test_Core_Memory_Limit - 8MB is far too low for 2016 default memory limit should be below 200MB today (OK)
+- Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
+- Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
+
+- Added output (HTML) template support (Where ?)
+- Upgraded output (HTML) to Bootstrap 2.0 (Where ?)
 
 ##############################################################
 # La version de base utilisée pour inclure les modifications #

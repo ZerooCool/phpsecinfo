@@ -17,9 +17,9 @@ define('PHPSECINFO_LANG_DEFAULT', 'en');
 define('PHPSECINFO_VERSION', '0.2.1 (2007) + v2.0.2 (2015)');
 
 /**
- * A YYYYMMDD date string to indicate "build" date
+ * A YYYY.MM.DD date string to indicate "build" date
  */
-define('PHPSECINFO_BUILD', '20190813');
+define('PHPSECINFO_BUILD', '2019.08.13');
 
 /**
  * Homepage for phpsecinfo project
