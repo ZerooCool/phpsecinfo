@@ -1,4 +1,6 @@
 ###### Inclus v3 2019-2020 - Version Zer00CooL ######
+Intégration du français par défaut, si la traduction en français n'existe pas l'anglais est affiché.
+Intégration des correctifs de BigDeej
 Ajout du fichier .gitattributes pour la collaboration Linux / Windows.
 Ajout d'une fin de ligne vide à la fin de chaque fichier.
 Indentation des fichiers aux normes PSR-2.
