@@ -7,28 +7,28 @@
 
 /**
  * The default language setting if none is set/retrievable
+ * Le paramètre de langue par défaut si aucun n'est défini/récupérable
  */
 define('PHPSECINFO_LANG_DEFAULT', 'en');
 
 /**
  * A general version string to differentiate releases
  */
-define('PHPSECINFO_VERSION', '0.2.1');
+define('PHPSECINFO_VERSION', '0.2.1 (2007) + v2.0.2 (2015)');
 
 /**
  * A YYYYMMDD date string to indicate "build" date
  */
-define('PHPSECINFO_BUILD', '20070406');
+define('PHPSECINFO_BUILD', '20190813');
 
 /**
  * Homepage for phpsecinfo project
  */
-define('PHPSECINFO_URL', 'http://phpsecinfo.com');
+define('PHPSECINFO_URL', 'https://github.com/ZerooCool/phpsecinfo/');
 
 /**
  * This is the main class for the phpsecinfo system.  It's responsible for
- * dynamically loading tests, running those tests, and generating the results
- * output
+ * dynamically loading tests, running those tests, and generating the results output
  *
  * Example:
  * <code>
@@ -39,7 +39,7 @@ define('PHPSECINFO_URL', 'http://phpsecinfo.com');
  * If you want to capture the output, or just grab the test results and display them
  * in your own way, you'll need to do slightly more work.
  *
- * Example:
+ * Example :
  * <code>
  * require_once('PhpSecInfo/PhpSecInfo.php');
  * // instantiate the class
@@ -59,7 +59,6 @@ define('PHPSECINFO_URL', 'http://phpsecinfo.com');
  * echo $html;
  * </code>
  *
- *
  * The procedural function "phpsecinfo" is defined below this class.
  * @see phpsecinfo()
  *
@@ -74,9 +73,9 @@ class PhpSecInfo
     /**
      * An array of tests to run
      *
-     * @var array PhpSecInfo_Test
+     * @public array PhpSecInfo_Test
      */
-    var $tests_to_run = array();
+    public $tests_to_run = array();
 
     /**
      * An array of results.  Each result is an associative array:
@@ -85,10 +84,9 @@ class PhpSecInfo
      * $result['message'] = "a string describing the test results and what they mean";
      * </code>
      *
-     * @var array
+     * @public array
      */
-    var $test_results = array();
-
+    public $test_results = array();
 
     /**
      * An array of tests that were not run
@@ -98,37 +96,34 @@ class PhpSecInfo
      * $result['message'] = "a string explaining why the test was not run";
      * </code>
      *
-     * @var array
+     * @public array
      */
-    var $tests_not_run = array();
-
+    public $tests_not_run = array();
 
     /**
      * The language code used.  Defaults to PHPSECINFO_LANG_DEFAULT, which
      * is 'en'
      *
-     * @var string
+     * @public string
      * @see PHPSECINFO_LANG_DEFAULT
      */
-    var $language = PHPSECINFO_LANG_DEFAULT;
-
+    public $language = PHPSECINFO_LANG_DEFAULT;
 
     /**
      * An array of integers recording the number of test results in each category.  Categories can include
      * some or all of the PHPSECINFO_TEST_* constants.  Constants are the keys, # of results are the values.
      *
-     * @var array
+     * @public array
      */
-    var $result_counts = array();
+    public $result_counts = array();
 
 
     /**
      * The number of tests that have been run
      *
-     * @var integer
+     * @public integer
      */
-    var $num_tests_run = 0;
-
+    public $num_tests_run = 0;
 
     /**
      * Constructor
@@ -138,7 +133,6 @@ class PhpSecInfo
     function PhpSecInfo()
     {
     }
-
 
     /**
      * recurses through the Test subdir and includes classes in each test group subdir,
@@ -165,16 +159,17 @@ class PhpSecInfo
 
             while (false !== ($entry = $this_dir->read())) {
                 if (!is_dir($this_dir->path.DIRECTORY_SEPARATOR.$entry)) {
-                    include_once $this_dir->path.DIRECTORY_SEPARATOR.$entry;
+                    require_once $this_dir->path.DIRECTORY_SEPARATOR.$entry;
                     $classNames[] = "PhpSecInfo_Test_".$test_dir."_".basename($entry, '.php');
                 }
             }
         }
 
+        // store Class Names
         // modded this to not throw a PHP5 STRICT notice, although I don't like passing by value here
+        // pour ne pas lancer une notification PHP5 STRICT, bien que je n'aime pas passer par valeur ici
         $this->tests_to_run = $classNames;
     }
-
 
     /**
      * This runs the tests in the tests_to_run array and
@@ -196,7 +191,7 @@ class PhpSecInfo
         foreach ($this->tests_to_run as $testClass) {
 
             /**
-             * @var $test PhpSecInfo_Test
+             * @public $test PhpSecInfo_Test
              */
             $test = new $testClass();
 
@@ -210,7 +205,7 @@ class PhpSecInfo
                         );
                 $this->test_results[$test->getTestGroup()][$test->getTestName()] = $rs;
 
-                // initialize if not yet set
+                // Initialize if not yet set
                 if (!isset($this->result_counts[$rs['result']])) {
                     $this->result_counts[$rs['result']] = 0;
                 }
@@ -247,7 +242,10 @@ class PhpSecInfo
         }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- XHTML 1.0 Transitional -->
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd"> -->
+<!-- HTML5 -->
+<!DOCTYPE html>
 <html>
 <head>
     <title><?php echo $page_title ?></title>
@@ -402,11 +400,7 @@ class PhpSecInfo
 
     .value-error {background-color:#F6AE15;color:#000000;font-weight:bold;}
     .value-error td {background-color:#F6AE15; color:#000000;}
-
-
-
     </style>
-
 </head>
 <body>
     <div class="header">
@@ -415,26 +409,18 @@ class PhpSecInfo
     </div>
 
     <div class="container">
-
-
         <?php
         foreach ($this->test_results as $group_name => $group_results) {
             $this->_outputRenderTable($group_name, $group_results);
         }
-
             $this->_outputRenderNotRunTable();
-
             $this->_outputRenderStatsTable();
-
         ?>
-
     </div>
 </body>
 </html>
         <?php
     }
-
-
     /**
      * This is a helper method that makes it easy to output tables of test results
      * for a given test group
@@ -450,7 +436,9 @@ class PhpSecInfo
             return false;
         }
 
-        ksort($group_results);
+        // Commenté via le code de BigDeej
+        // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
+        // ksort($group_results);
 
         ?>
         <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
@@ -474,7 +462,10 @@ class PhpSecInfo
                     <?php if (isset($test_results['value_current'])) : ?>
                         <tr>
                             <td class="label">Current Value:</td>
-                            <td><?php echo $test_results['value_current'] ?></td>
+                            
+                            <!-- <td><?php echo $test_results['value_current'] ?></td>  -->
+                            <!-- https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core -->
+                            <td><?php echo wordwrap($test_results['value_current'], 55, '<br />', true) ?></td>
                         </tr>
                     <?php endif;?>
                     <?php if (isset($test_results['value_recommended'])) : ?>
@@ -487,7 +478,8 @@ class PhpSecInfo
                 <?php endif; ?>
 
                 <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) : ?>
-                    <div class="moreinfo"><a href="<?php echo $test_results['moreinfo_url']; ?>">More information &raquo;</a></div>
+                    <!-- <div class="moreinfo"><a href="<?php echo $test_results['moreinfo_url']; ?>">More information &raquo;</a></div> -->
+   					<div class="moreinfo"><a href="<?php echo $test_results['moreinfo_url']; ?>" target="_blank">More information &raquo;</a></div>
                 <?php endif; ?>
             </td>
         </tr>
@@ -499,8 +491,6 @@ class PhpSecInfo
         return true;
     }
 
-
-
     /**
      * This outputs a table containing a summary of the test results (counts and % in each result type)
      *
@@ -509,11 +499,23 @@ class PhpSecInfo
      */
     function _outputRenderStatsTable()
     {
-
+        // Add by
+        // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
+        $score = 100;
+        
         foreach ($this->result_counts as $code => $val) {
             if ($code != PHPSECINFO_TEST_RESULT_NOTRUN) {
                 $percentage = round($val/$this->num_tests_run * 100, 2);
 
+                // Add by
+                // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
+                if ($code == PHPSECINFO_TEST_RESULT_NOTICE) {
+                    $score -= $percentage/2;
+                }
+                else if ($code == PHPSECINFO_TEST_RESULT_WARN) {
+                    $score -= $percentage;
+                }
+       
                 $stats[$this->_outputGetResultTypeFromCode($code)] = array( 'count' => $val,
                                                                 'result' => $code,
                                                                 'message' => "$val out of {$this->num_tests_run} ($percentage%)");
@@ -522,8 +524,6 @@ class PhpSecInfo
 
         $this->_outputRenderTable('Test Results Summary', $stats);
     }
-
-
 
     /**
      * This outputs a table containing a summary or test that were not executed, and the reasons why they were skipped
@@ -535,9 +535,6 @@ class PhpSecInfo
 
         $this->_outputRenderTable('Tests Not Run', $this->tests_not_run);
     }
-
-
-
 
     /**
      * This is a helper function that returns a CSS class corresponding to
@@ -576,8 +573,6 @@ class PhpSecInfo
                 break;
         }
     }
-
-
 
     /**
      * This is a helper function that returns a label string corresponding to
@@ -633,7 +628,6 @@ class PhpSecInfo
         $this->runTests();
     }
 
-
     /**
      * returns an associative array of test data.  Four keys are set:
      * - test_results  (array)
@@ -658,8 +652,6 @@ class PhpSecInfo
         return $results;
     }
 
-
-
     /**
      * returns the standard output as a string instead of echoing it to the browser
      *
@@ -677,8 +669,6 @@ class PhpSecInfo
         return $output;
     }
 }
-
-
 
 /**
  * A globally-available function that runs the tests and creates the result page
