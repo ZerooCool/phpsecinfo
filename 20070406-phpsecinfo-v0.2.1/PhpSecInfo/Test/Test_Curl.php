@@ -7,11 +7,9 @@
  */
 
 /**
- * require the main PhpSecInfo class
+ * Require the main PhpSecInfo class
  */
 require_once('PhpSecInfo/Test/Test.php');
-
-
 
 /**
  * This is a skeleton class for PhpSecInfo "Curl" tests
@@ -22,14 +20,11 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
 
     /**
      * This value is used to group test results together.
-     *
      * For example, all tests related to the mysql lib should be grouped under "mysql."
      *
-     * @var string
+     * @public string
      */
-    var $test_group = 'Curl';
-
-
+    public $test_group = 'Curl';
 
     /**
      * "Curl" tests should only be run if the curl extension is installed.  We can check
@@ -48,15 +43,12 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
         return extension_loaded('curl');
     }
 
-
     /**
      * Set the messages for Curl tests
-     *
      */
     function _setMessages()
     {
         parent::_setMessages();
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "CURL support is not enabled in your PHP install");
     }
 }
