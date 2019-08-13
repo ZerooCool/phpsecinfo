@@ -74,6 +74,16 @@ class PhpSecInfo_Test
     public $_language = PHPSECINFO_LANG_DEFAULT;
 
     /**
+     * Permet d'afficher la langue choisie dans PhpSecInfo.php
+     * Si les chaînes n'existent pas, l'anglais est affiché par défaut.
+     * function _setMessage
+     *
+     * @public string
+     */
+    public $langue_defaut;
+    public $langue_definie;
+    
+    /**
      * Enter description here...
      *
      * @public mixed
@@ -254,6 +264,7 @@ class PhpSecInfo_Test
         // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
         if ( $messages[$language_code] === $_language )
         {
+            // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
             $langue_defaut ="en";
             $message = $messages[$langue_defaut];
         } else {
