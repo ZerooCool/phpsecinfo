@@ -45,8 +45,8 @@ v2.0.2 (Dec 5, 2016)
 - Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
 
 # Where is :
-- Added output (HTML) template support (Where ?)
-- Upgraded output (HTML) to Bootstrap 2.0 (Where ?)
+- Added output (HTML) template support (Where ? Fixed URL in Test.php ? ) (THEN OK)
+- Upgraded output (HTML) to Bootstrap 2.0 (Where ? Docs with PHPDocumentor ?) (THEN OK)
 
 ##############################################################
 # La version de base utilisée pour inclure les modifications #
