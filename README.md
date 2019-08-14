@@ -107,6 +107,5 @@ sudo chown www-data:www-data -R phpsecinfo/
 # Utiliser PhpSecInfo
 ```
 http://localhost/phpsecinfo
-
 http://domaine.ext/phpsecinfo
 ```
