@@ -7,12 +7,13 @@ PhpSecInfo fournit un équivalent de la fonction phpinfo() qui rapporte des info
 
 ## Objectifs
 
-Le dépôt de Zer00CooL rassemble les mises à jour de 2012 2015 et 2018 pour obtenir une version v3.x 2019 fonctionnelle et optimisée.
+Ce dépôt rassemble les mises à jour de 2012 2015 et 2018 pour obtenir une version v3.x 2019 fonctionnelle et optimisée.
 
 ```
 Le dépôt Github de Zer00CooL pour PhpSecInfo : https://github.com/ZerooCool/phpsecinfo
-La version v3.0.1, fonctionnelle, en développement : https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1
+La version v3.0.1 en développement : https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1
 ```
+
 
 ```
 Consulter le Wiki depuis Visionduweb : https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
@@ -26,9 +27,9 @@ Consulter le Wiki depuis Github : https://github.com/ZerooCool/phpsecinfo/wiki
 
 # Les différentes versions de PhpSecInfo
 
-Ce dépôt Github partage les 4 versions de PhpSecInfo identifiées en 2019 par Zer00CooL :
-- La dernière version officielle de 2007 peut être téléchargée depuis le site du projet : http://phpsec.org/projects/phpsecinfo/
-- Les 3 autres projets existants sur Github ont contribués à l'évolution de PhpSecInfo, en 2012, 2015 et 2018.
+La branche master met à disposition les 4 versions de PhpSecInfo identifiées sur Github en 2019 :
+- Télécharger la version officielle de 2007 depuis le site du projet : http://phpsec.org/projects/phpsecinfo/
+- Les 3 autres projets partagés ont contribués à l'évolution de PhpSecInfo, en 2012, 2015 et 2018.
 
 ## PhpSecInfo
 ```
