@@ -326,7 +326,7 @@ DIV.header H1, DIV.header H2 {
 }
 
 DIV.header H2 {
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 DIV.header a:link, DIV.header a:visited, DIV.header a:hover {
@@ -494,29 +494,27 @@ DIV.moreinfo {
 	<div class="header">
 		<h1><a href="<?php echo PHPSECINFO_URL ?>" target="_phpsec"><?php echo $page_title ?></a></h1>
 		<h2><?php
-        // Affiche "Version xxx of PhpSecInfo"
+        // Affiche "Version xxx"
         switch (PHPSECINFO_LANG_DEFAULT) {
             case 'fr':
                 echo 'Version ';
                 echo PHPSECINFO_VERSION;
-                echo ' de PhpSecInfo';
                 break;
 
             default:
                 echo 'Version ';
                 echo PHPSECINFO_VERSION;
-                echo ' of PhpSecInfo';
                 break;
         }
         ?> - <?php
         // Affiche "Last update"
         switch (PHPSECINFO_LANG_DEFAULT) {
             case 'fr':
-                echo 'Dernière mise à jour le';
+                echo 'Dernière mise à jour du';
                 break;
 
             default:
-                echo 'Last update on';
+                echo 'Last update the';
                 break;
         }
         ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
