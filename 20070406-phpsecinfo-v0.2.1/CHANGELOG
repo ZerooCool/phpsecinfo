@@ -1,19 +1,22 @@
-###### Inclus v3 2019-2020 - Version Zer00CooL ######
-Intégration du français par défaut, si la traduction en français n'existe pas l'anglais est affiché.
+################################################
+#     v3.0.1 2019-2020 - Version Zer00CooL     #
+################################################
+# Version basée sur la v0.2.1 + Version v2.0.2 #
+################################################
+Intégration du français par défaut dans le fichier PhpSecInfo.php par switch case. Si le français n'est pas présent l'anglais est affiché.
+Intégration du français par défaut dans le fichier Test.php. Si le français n'est pas présent l'anglais est affiché.
 Intégration des correctifs de BigDeej
 Ajout du fichier .gitattributes pour la collaboration Linux / Windows.
 Ajout d'une fin de ligne vide à la fin de chaque fichier.
 Indentation des fichiers aux normes PSR-2.
 Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
-###############################
-# Version basée sur la v0.2.1 #
-###############################
 
-
+# # # # # # # # # # # # # # # # # # #
 ###### A inclure SecurityInfo ! ######
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
+# # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######
 v0.2.2
 - requires are now resolved relative to base phpsecinfo path, so PhpSecInfo does
@@ -29,12 +32,15 @@ v0.2.2
 - Minor CSS fixes in HTML view <Thomas Corbiere>
 ######
 
-###### A été inclus v2.0.2 ! ######
-v2.0.2 (Dec 5, 2016)
+#################################################
+###### A été inclus v2.0.2 (Dec 5, 2016) ! ######
+#################################################
 - Updated PHP Version Test (OK)
 - Added PHP7 Support for Version Test (OK)
 
-###### En progression - Inclure la v2.0.1a (Dec 1, 2015) ######
+################################################
+###### A été inclus v2.0.1a (Dec 1, 2015) ######
+################################################
 # Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
 # Removed Container: PhpSecInfo_Test_Core_CURL (NO)
 # Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
@@ -46,7 +52,6 @@ v2.0.2 (Dec 5, 2016)
 - Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
 - Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
 
-# Where is :
 - Added output (HTML) template support (Where ? Fixed URL in Test.php ? ) (THEN OK)
 - Upgraded output (HTML) to Bootstrap 2.0 (Where ? Docs with PHPDocumentor ?) (THEN OK)
 
