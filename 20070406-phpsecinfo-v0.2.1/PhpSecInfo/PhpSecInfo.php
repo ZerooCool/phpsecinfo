@@ -7,28 +7,35 @@
 
 /**
  * The default language setting.
+ * Use or add your favorite language. Current choice: fr, en
+ * Add a choice with PHP case for translations of this page
+ * Add a line with a new language value in the Test.php file
+ * Untranslated strings will be replaced by English strings : en
+ *
  * Le paramètre de langue par défaut.
  * Utiliser ou ajouter votre langue préférée. Choix possible actuellement : fr, en
- * Ajouter un choix de case multiple sur les choix de langue de cette page
+ * Ajouter un choix avec PHP case pour les traductions de cette page
  * Ajouter une ligne avec une nouvelle valeur de langue dans le fichier Test.php
  * Les chaînes non traduites seront remplacées par les chaînes en anglais : en
  */
 define('PHPSECINFO_LANG_DEFAULT', 'fr');
 
 /**
- * A general version string to differentiate releases
+ * Displays the current version of PhpSecInfo
+ *
+ * Afficher la version courante de PhpSecInfo : 3.0.1 (0.2.1 + v2.0.2)
  */
-define('PHPSECINFO_VERSION', '0.2.1 (2007) + v2.0.2 (2015)');
+define('PHPSECINFO_VERSION', '3.0.1');
 
 /**
  * A YYYY.MM.DD date string to indicate "build" date
  */
-define('PHPSECINFO_BUILD', '2019.08.13');
+define('PHPSECINFO_BUILD', date("d-m-Y"));
 
 /**
  * Homepage for phpsecinfo project
  */
-define('PHPSECINFO_URL', 'https://github.com/ZerooCool/phpsecinfo/');
+define('PHPSECINFO_URL', 'http://phpsec.org/projects/phpsecinfo/');
 
 /**
  * This is the main class for the phpsecinfo system.
@@ -485,9 +492,57 @@ DIV.moreinfo {
 </head>
 <body>
 	<div class="header">
-		<h1><?php echo $page_title ?></h1>
-		<h2>PhpSecInfo Version <?php echo PHPSECINFO_VERSION ?> - Last update : <?php echo PHPSECINFO_BUILD ?> - <a
-				href="<?php echo PHPSECINFO_URL ?>">Project Homepage</a> - <a href="PhpSecInfo/phpinfo.php">Consulter phpinfo()</a>
+		<h1><a href="<?php echo PHPSECINFO_URL ?>" target="_phpsec"><?php echo $page_title ?></a></h1>
+		<h2><?php
+        // Affiche "Version xxx of PhpSecInfo"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Version ';
+                echo PHPSECINFO_VERSION;
+                echo ' de PhpSecInfo';
+                break;
+
+            default:
+                echo 'Version ';
+                echo PHPSECINFO_VERSION;
+                echo ' of PhpSecInfo';
+                break;
+        }
+        ?> - <?php
+        // Affiche "Last update"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Dernière mise à jour le';
+                break;
+
+            default:
+                echo 'Last update on';
+                break;
+        }
+        ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
+				target="_PhpSecInfo"><?php
+        // Affiche "Participate from Github"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Participer depuis Github';
+                break;
+
+            default:
+                echo 'Participate from Github';
+                break;
+        }
+        ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
+        // Affiche "See phpinfo ()"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Consulter phpinfo()';
+                break;
+
+            default:
+                echo 'See phpinfo ()';
+                break;
+        }
+        ?></a>
 		</h2>
 	</div>
 
@@ -529,8 +584,30 @@ DIV.moreinfo {
 
 <table class="results">
 	<tr class="header">
-		<th>Test</th>
-		<th>Result</th>
+		<th><?php
+        // Affiche "Check"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Vérifier';
+                break;
+
+            default:
+                echo 'Check';
+                break;
+        }
+        ?></th>
+		<th><?php
+		// Affiche "Result"
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'fr':
+                echo 'Résultat';
+                break;
+
+            default:
+                echo 'Result';
+                break;
+        }
+        ?></th>
 	</tr>
         <?php foreach ($group_results as $test_name => $test_results) : ?>
         <tr>
@@ -659,8 +736,7 @@ DIV.moreinfo {
     /**
      * This is a helper function that returns a CSS class corresponding to
      * the result code the test returned.
-     * This allows us to color-code
-     * results
+     * This allows us to color-code results
      *
      * @param integer $code
      * @return string
@@ -735,7 +811,6 @@ DIV.moreinfo {
 
     /**
      * Loads and runs all the tests
-     *
      * As loading, then running, is a pretty common process, this saves a extra method call
      *
      * @since 0.1.1
@@ -747,16 +822,15 @@ DIV.moreinfo {
     }
 
     /**
-     * returns an associative array of test data.
+     * Returns an associative array of test data.
      * Four keys are set:
      * - test_results (array)
      * - tests_not_run (array)
      * - result_counts (array)
      * - num_tests_run (integer)
      *
-     * note that this must be called after tests are loaded and run
+     * Note that this must be called after tests are loaded and run
      *
-     * @since 0.1.1
      * @return array
      */
     function getResultsAsArray()
@@ -772,12 +846,9 @@ DIV.moreinfo {
     }
 
     /**
-     * returns the standard output as a string instead of echoing it to the browser
+     * Returns the standard output as a string instead of echoing it to the browser
+     * Note that this must be called after tests are loaded and run
      *
-     * note that this must be called after tests are loaded and run
-     *
-     * @since 0.1.1
-     *       
      * @return string
      */
     function getOutput()
