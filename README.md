@@ -11,13 +11,13 @@ Ce dépôt rassemble les mises à jour de 2012 2015 et 2018 pour obtenir une ver
 
 ## Utiliser la branche en développement v3.0.1
 
-```
-Le dépôt Github pour PhpSecInfo en 2019 : https://github.com/ZerooCool/phpsecinfo
-La branche en développement : https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1
+- Le dépôt Github pour PhpSecInfo en 2019 : https://github.com/ZerooCool/phpsecinfo
+- La branche en développement : https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1
 
-Informations depuis le Wiki de Visionduweb : https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
-Informations depuis le Wiki de PhpSecInfo sur Github : https://github.com/ZerooCool/phpsecinfo/wiki
-```
+- Le Wiki de Visionduweb : https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
+- Le Wiki de Github : https://github.com/ZerooCool/phpsecinfo/wiki
+
+- Voir ci-dessous pour l'installation de la version v3.0.1 sur son serveur web.
 
 ## Soutenir le développement de PhpSecInfo
 - Faire remonter les erreurs.
@@ -66,6 +66,14 @@ Cette mise à jour ne prend pas en compte les mises à jour de la v2.0.1a -> v2.
 Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo
 
 # Installer PhpSecInfo v3.0.1 2019
+
+## Sur un hébergement mutualisé avec un client FTP
+
+- Télécharger PhpSecInfo : https://github.com/ZerooCool/phpsecinfo/archive/phpsecinfo-zeroocool-v3.0.1.zip
+- Décompresser l'archive phpsecinfo-zeroocool-v3.0.1.zip
+- Transférer les fichiers par FTP vers son hébergement mutualisé.
+
+# Sur un serveur GNU/Linux Debian - Ubuntu
 1- Télécharger PhpSecInfo depuis le dépôt de Zer00CooL :
 ```
 sudo wget https://github.com/ZerooCool/phpsecinfo/archive/phpsecinfo-zeroocool-v3.0.1.zip
