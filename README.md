@@ -80,7 +80,7 @@ sudo rm phpsecinfo-zeroocool-v3.0.1.zip
 
 3- Renommer le dossier :
 ```
-sudo mv phpsecinfo-zeroocool-v3.0.1 phpsecinfo
+sudo mv phpsecinfo-phpsecinfo-zeroocool-v3.0.1 phpsecinfo
 ```
 
 4- Ajouter un fichier .htaccess pour ne pas rendre le rendu de PhpSecInfo public :
@@ -98,7 +98,15 @@ EOIPFW"
 sudo chmod 444 .htaccess
 ```
 
-6- Changer le propriétaire du dossier phpsecinfo pour permettre l'affichage depuis le navigateur :
+6- Déplacer le programme dans le dossier phpsecinfo
+```
+cd 2019-phpsecinfo-v3.0.1
+sudo mv * ../
+cd ..
+sudo rm -R 2019-phpsecinfo-v3.0.1
+```
+
+7- Changer le propriétaire du dossier phpsecinfo pour permettre l'affichage depuis le navigateur :
 ```
 cd ..
 sudo chown www-data:www-data -R phpsecinfo/
