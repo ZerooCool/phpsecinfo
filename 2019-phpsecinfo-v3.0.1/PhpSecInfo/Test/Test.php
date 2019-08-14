@@ -151,11 +151,12 @@ class PhpSecInfo_Test
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Ce paramètre peut constituer un grave problème de sécurité');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'fr', 'Une erreur s\'est produite lors de l\'exécution de ce test');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Ce test ne peut pas être exécuté');
+        // Afichier les messages standards en français c'est très bien, mais, ça me prive des messages anglais exisant qui ne sont pas traduits.
+        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
+        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
+        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Ce paramètre peut constituer un grave problème de sécurité');
+        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'fr', 'Une erreur s\'est produite lors de l\'exécution de ce test');
+        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Ce test ne peut pas être exécuté');
     }
 
     /**
