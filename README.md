@@ -43,7 +43,7 @@ Intègre la version v0.2.2 2009 dans son projet.
 La version de SecurityInfo est une version améliorée de PhpSecInfo v0.2.2 en 2018.
 ```
 
-# Vérification des CHANGELOG
+## Vérification des CHANGELOG
 Le lien officiel pour télécharger la version de PhpSecInfo de 2007 v0.2.1 :
 http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
 
@@ -53,17 +53,10 @@ https://github.com/funkatron/phpsecinfo - https://github.com/funkatron/phpsecinf
 Le lien non officiel pour télécharger la version de PhpSecInfo de 2009 v2.0.1a -> v2.0.2 de 2016 :
 https://github.com/bigdeej/PhpSecInfo - https://github.com/bigdeej/PhpSecInfo/blob/master/CHANGELOG
 
-Le lien officiel pour télécharger la version de SecurityInfo de 2019.
-Le fichier CHANGELOG n'est pas présent.
-Cette mise à jour n'a pas du prendre en compte les précédentes mises à jour de la v0.2.2 ou de la v2.0.1a -> v2.0.2 de 2016.
-https://github.com/matomo-org/plugin-SecurityInfo
-
-Un fork de PhpSecInfo vers SecurityInfo.
-Cette version est basée sur la v0.2.2 2009.
+Un fork de PhpSecInfo vers SecurityInfo basé sur la v0.2.2 de 2009
 Le CHANGELOG n'est plus présent pour suivre l'évolution des correctifs de ce projet.
-https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 Cette mise à jour ne prend pas en compte les mises à jour de la v2.0.1a -> v2.0.2 de 2016.
-Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo
+Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo - https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
 # Installer PhpSecInfo v3.0.1 2019
 
@@ -73,7 +66,7 @@ Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https:/
 - Décompresser l'archive phpsecinfo-zeroocool-v3.0.1.zip
 - Transférer les fichiers par FTP vers son hébergement mutualisé.
 
-# Sur un serveur GNU/Linux Debian - Ubuntu
+## Sur un serveur GNU/Linux Debian - Ubuntu
 1- Télécharger PhpSecInfo depuis le dépôt de Zer00CooL :
 ```
 sudo wget https://github.com/ZerooCool/phpsecinfo/archive/phpsecinfo-zeroocool-v3.0.1.zip
