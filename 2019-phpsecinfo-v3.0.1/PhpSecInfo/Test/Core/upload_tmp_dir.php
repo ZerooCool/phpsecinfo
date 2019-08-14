@@ -87,7 +87,6 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     function _setMessages()
     {
         parent::_setMessages();
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'upload_tmp_dir is enabled, which is the recommended setting.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'Unable to retrieve file permissions on upload_tmp_dir');
