@@ -98,7 +98,7 @@ class PhpSecInfo_Test
      *
      * @public array
      */
-    public $_messages = array();
+    public $_messages = [];
 
     /**
      * Constructor for Test skeleton class
@@ -213,11 +213,11 @@ class PhpSecInfo_Test
     function setMessageForResult($result_code, $language_code, $message)
     {
         if (! isset($this->_messages[$result_code])) {
-            $this->_messages[$result_code] = array();
+            $this->_messages[$result_code] = [];
         }
 
         if (! is_array($this->_messages[$result_code])) {
-            $this->_messages[$result_code] = array();
+            $this->_messages[$result_code] = [];
         }
 
         $this->_messages[$result_code][$language_code] = $message;
@@ -494,12 +494,12 @@ class PhpSecInfo_Test
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
 
-            $id_data = array(
+            $id_data = [
                 'uid' => $matches[1],
                 'username' => $matches[2],
                 'gid' => $matches[3],
                 'group' => $matches[4]
-            );
+            ];
 
             if ($matches[5]) {
                 $gs = $matches[5];

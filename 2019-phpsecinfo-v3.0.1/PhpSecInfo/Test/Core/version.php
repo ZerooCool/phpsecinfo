@@ -57,10 +57,10 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 						<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if
 						PhpSecInfo is not up to date.";
 
-            return array(
+            return [
                 'stable' => $this->recommended_value,
                 'eol' => $this->last_eol_value
-            );
+            ];
         }
 
         // Attempt to fetch from server
@@ -87,17 +87,17 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 						<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if
 						PhpSecInfo is not up to date.";
 
-            return array(
+            return [
                 'stable' => $this->recommended_value,
                 'eol' => $this->last_eol_value
-            );
+            ];
         }
 
         // to array
-        $versions = array(
+        $versions = [
             'stable' => $json->stable,
             'eol' => $json->eol
-        );
+        ];
 
         // Update local recommended value (it is used elsewhere and we don't want to modify that code just yet)
         // Mettre à jour la valeur recommandée locale (elle est utilisée ailleurs et nous ne voulons pas modifier ce code pour l'instant)

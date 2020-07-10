@@ -88,7 +88,7 @@ class PhpSecInfo
      *
      * @public array PhpSecInfo_Test
      */
-    public $tests_to_run = array();
+    public $tests_to_run = [];
 
     /**
      * An array of results.
@@ -100,7 +100,7 @@ class PhpSecInfo
      *
      * @public array
      */
-    public $test_results = array();
+    public $test_results = [];
 
     /**
      * An array of tests that were not run
@@ -112,7 +112,7 @@ class PhpSecInfo
      *
      * @public array
      */
-    public $tests_not_run = array();
+    public $tests_not_run = [];
 
     /**
      * The language code used.
@@ -131,7 +131,7 @@ class PhpSecInfo
      *
      * @public array
      */
-    public $result_counts = array();
+    public $result_counts = [];
 
     /**
      * The number of tests that have been run
@@ -194,8 +194,8 @@ class PhpSecInfo
     function runTests()
     {
         // initialize a bunch of arrays
-        $this->test_results = array();
-        $this->result_counts = array();
+        $this->test_results = [];
+        $this->result_counts = [];
         $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN] = 0;
         $this->num_tests_run = 0;
 
@@ -209,13 +209,13 @@ class PhpSecInfo
 
             if ($test->isTestable()) {
                 $test->test();
-                $rs = array(
+                $rs = [
                     'result' => $test->getResult(),
                     'message' => $test->getMessage(),
                     'value_current' => $test->getCurrentTestValue(),
                     'value_recommended' => $test->getRecommendedTestValue(),
                     'moreinfo_url' => $test->getMoreInfoURL()
-                );
+                ];
                 $this->test_results[$test->getTestGroup()][$test->getTestName()] = $rs;
 
                 // Initialize if not yet set
@@ -226,13 +226,13 @@ class PhpSecInfo
                 $this->result_counts[$rs['result']] ++;
                 $this->num_tests_run ++;
             } else {
-                $rs = array(
+                $rs = [
                     'result' => $test->getResult(),
                     'message' => $test->getMessage(),
                     'value_current' => null,
                     'value_recommended' => null,
                     'moreinfo_url' => $test->getMoreInfoURL()
-                );
+                ];
                 $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN] ++;
                 $this->tests_not_run[$test->getTestGroup() . "::" . $test->getTestName()] = $rs;
             }
@@ -710,11 +710,11 @@ DIV.moreinfo {
                     $score -= $percentage;
                 }
 
-                $stats[$this->_outputGetResultTypeFromCode($code)] = array(
+                $stats[$this->_outputGetResultTypeFromCode($code)] = [
                     'count' => $val,
                     'result' => $code,
                     'message' => "$val out of {$this->num_tests_run} ($percentage%)"
-                );
+                ];
             }
         }
 
@@ -833,7 +833,7 @@ DIV.moreinfo {
      */
     function getResultsAsArray()
     {
-        $results = array();
+        $results = [];
 
         $results['test_results'] = $this->test_results;
         $results['tests_not_run'] = $this->tests_not_run;
