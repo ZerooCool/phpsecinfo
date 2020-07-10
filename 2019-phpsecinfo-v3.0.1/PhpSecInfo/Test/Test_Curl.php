@@ -32,21 +32,21 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
-/*      if ( function_exists('curl_init') ) {
-            return true;
-        } else {
-            return false;
-        }
-*/
+        /*      if ( function_exists('curl_init') ) {
+                    return true;
+                } else {
+                    return false;
+                }
+        */
         return extension_loaded('curl');
     }
 
     /**
      * Set the messages for Curl tests
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "CURL support is not enabled in your PHP install");

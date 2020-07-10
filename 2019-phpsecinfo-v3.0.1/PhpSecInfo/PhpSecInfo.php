@@ -120,7 +120,7 @@ class PhpSecInfo
      * is 'en'
      *
      * @public string
-     * @see PHPSECINFO_LANG_DEFAULT
+     * @see    PHPSECINFO_LANG_DEFAULT
      */
     public $language = PHPSECINFO_LANG_DEFAULT;
 
@@ -145,21 +145,22 @@ class PhpSecInfo
      *
      * @return PhpSecInfo
      */
-    function __construct()
-    {}
+    public function __construct()
+    {
+    }
 
     /**
      * recurses through the Test subdir and includes classes in each test group subdir,
      * then builds an array of classnames for the tests that will be run
      */
-    function loadTests()
+    public function loadTests()
     {
         $test_root = dir(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Test');
 
         // echo "<pre>"; echo print_r($test_root, true); echo "</pre>";
 
         while (false !== ($entry = $test_root->read())) {
-            if (is_dir($test_root->path . DIRECTORY_SEPARATOR . $entry) && ! preg_match('|^\.(.*)$|', $entry)) {
+            if (is_dir($test_root->path . DIRECTORY_SEPARATOR . $entry) && !preg_match('|^\.(.*)$|', $entry)) {
                 $test_dirs[] = $entry;
             }
         }
@@ -170,7 +171,7 @@ class PhpSecInfo
             $this_dir = dir($test_root->path . DIRECTORY_SEPARATOR . $test_dir);
 
             while (false !== ($entry = $this_dir->read())) {
-                if (! is_dir($this_dir->path . DIRECTORY_SEPARATOR . $entry)) {
+                if (!is_dir($this_dir->path . DIRECTORY_SEPARATOR . $entry)) {
                     require_once $this_dir->path . DIRECTORY_SEPARATOR . $entry;
                     $classNames[] = "PhpSecInfo_Test_" . $test_dir . "_" . basename($entry, '.php');
                 }
@@ -191,13 +192,13 @@ class PhpSecInfo
      * - $this->num_tests_run
      * - $this->tests_not_run;
      */
-    function runTests()
+    public function runTests()
     {
         // initialize a bunch of arrays
-        $this->test_results = [];
-        $this->result_counts = [];
+        $this->test_results                                 = [];
+        $this->result_counts                                = [];
         $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN] = 0;
-        $this->num_tests_run = 0;
+        $this->num_tests_run                                = 0;
 
         foreach ($this->tests_to_run as $testClass) {
 
@@ -209,31 +210,31 @@ class PhpSecInfo
 
             if ($test->isTestable()) {
                 $test->test();
-                $rs = [
-                    'result' => $test->getResult(),
-                    'message' => $test->getMessage(),
-                    'value_current' => $test->getCurrentTestValue(),
+                $rs                                                              = [
+                    'result'            => $test->getResult(),
+                    'message'           => $test->getMessage(),
+                    'value_current'     => $test->getCurrentTestValue(),
                     'value_recommended' => $test->getRecommendedTestValue(),
-                    'moreinfo_url' => $test->getMoreInfoURL()
+                    'moreinfo_url'      => $test->getMoreInfoURL()
                 ];
                 $this->test_results[$test->getTestGroup()][$test->getTestName()] = $rs;
 
                 // Initialize if not yet set
-                if (! isset($this->result_counts[$rs['result']])) {
+                if (!isset($this->result_counts[$rs['result']])) {
                     $this->result_counts[$rs['result']] = 0;
                 }
 
-                $this->result_counts[$rs['result']] ++;
-                $this->num_tests_run ++;
+                $this->result_counts[$rs['result']]++;
+                $this->num_tests_run++;
             } else {
                 $rs = [
-                    'result' => $test->getResult(),
-                    'message' => $test->getMessage(),
-                    'value_current' => null,
+                    'result'            => $test->getResult(),
+                    'message'           => $test->getMessage(),
+                    'value_current'     => null,
                     'value_recommended' => null,
-                    'moreinfo_url' => $test->getMoreInfoURL()
+                    'moreinfo_url'      => $test->getMoreInfoURL()
                 ];
-                $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN] ++;
+                $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN]++;
                 $this->tests_not_run[$test->getTestGroup() . "::" . $test->getTestName()] = $rs;
             }
         }
@@ -243,7 +244,7 @@ class PhpSecInfo
      * This is the main output method.
      * The look and feel mimics phpinfo()
      */
-    function renderOutput($page_title = "PHP Security Information")
+    public function renderOutput($page_title = "PHP Security Information")
     {
 
         /**
@@ -251,311 +252,313 @@ class PhpSecInfo
          *
          * @see PhpSecInfo_Test::getBooleanIniValue()
          */
-        if (! class_exists('PhpSecInfo_Test')) {
-            include (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
+        if (!class_exists('PhpSecInfo_Test')) {
+            include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
         }
 
         ?>
-<!-- XHTML 1.0 Transitional -->
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd"> -->
-<!-- HTML5 -->
-<!DOCTYPE html>
-<html>
-<head>
-<title><?php echo $page_title ?></title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="robots" content="noindex,nofollow" />
-<style type="text/css">
-.phpblue { #777BB4
-	
-}
-/*
-    #706464
-    #C7C6B3
-    #7B8489
-    #646B70
-    */
-BODY {
-	background-color: #C7C6B3;
-	color: #333333;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
+        <!-- XHTML 1.0 Transitional -->
+        <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd"> -->
+        <!-- HTML5 -->
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title><?php echo $page_title ?></title>
+            <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+            <meta name="robots" content="noindex,nofollow"/>
+            <style type="text/css">
+                .phpblue {
+                    #777BB4
 
-BODY, TD, TH, H1, H2 {
-	font-family: Helvetica, Arial, Sans-serif;
-}
+                }
 
-DIV.logo {
-	float: right;
-}
+                /*
+                    #706464
+                    #C7C6B3
+                    #7B8489
+                    #646B70
+                    */
+                BODY {
+                    background-color: #C7C6B3;
+                    color: #333333;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                }
 
-A:link, A:hover, A:visited {
-	color: #000099;
-	text-decoration: none;
-}
+                BODY, TD, TH, H1, H2 {
+                    font-family: Helvetica, Arial, Sans-serif;
+                }
 
-A:hover {
-	text-decoration: underline !important;
-}
+                DIV.logo {
+                    float: right;
+                }
 
-DIV.container {
-	text-align: center;
-	width: 650px;
-	margin-left: auto;
-	margin-right: auto;
-}
+                A:link, A:hover, A:visited {
+                    color: #000099;
+                    text-decoration: none;
+                }
 
-DIV.header {
-	width: 100%;
-	text-align: left;
-	border-collapse: collapse;
-}
+                A:hover {
+                    text-decoration: underline !important;
+                }
 
-DIV.header {
-	background-color: #4C5B74;
-	color: white;
-	border-bottom: 3px solid #333333;
-	padding: .5em;
-}
+                DIV.container {
+                    text-align: center;
+                    width: 650px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
 
-DIV.header H1, DIV.header H2 {
-	padding: 0;
-	margin: 0;
-}
+                DIV.header {
+                    width: 100%;
+                    text-align: left;
+                    border-collapse: collapse;
+                }
 
-DIV.header H2 {
-	font-size: 1em;
-}
+                DIV.header {
+                    background-color: #4C5B74;
+                    color: white;
+                    border-bottom: 3px solid #333333;
+                    padding: .5em;
+                }
 
-DIV.header a:link, DIV.header a:visited, DIV.header a:hover {
-	color: #ffff99;
-}
+                DIV.header H1, DIV.header H2 {
+                    padding: 0;
+                    margin: 0;
+                }
 
-H2.result-header {
-	margin: 1em 0 .5em 0;
-}
+                DIV.header H2 {
+                    font-size: 1em;
+                }
 
-TABLE.results {
-	border-collapse: collapse;
-	width: 100%;
-	text-align: left;
-}
+                DIV.header a:link, DIV.header a:visited, DIV.header a:hover {
+                    color: #ffff99;
+                }
 
-TD, TH {
-	padding: 0.5em;
-	border: 2px solid #333333;
-}
+                H2.result-header {
+                    margin: 1em 0 .5em 0;
+                }
 
-TR.header {
-	background-color: #706464;
-	color: white;
-}
+                TABLE.results {
+                    border-collapse: collapse;
+                    width: 100%;
+                    text-align: left;
+                }
 
-TD.label {
-	text-align: top;
-	font-weight: bold;
-	background-color: #7B8489;
-	border: 2px solid #333333;
-}
+                TD, TH {
+                    padding: 0.5em;
+                    border: 2px solid #333333;
+                }
 
-TD.value {
-	border: 2px solid #333333
-}
+                TR.header {
+                    background-color: #706464;
+                    color: white;
+                }
 
-.centered {
-	text-align: center;
-}
+                TD.label {
+                    text-align: top;
+                    font-weight: bold;
+                    background-color: #7B8489;
+                    border: 2px solid #333333;
+                }
 
-.centered TABLE {
-	text-align: left;
-}
+                TD.value {
+                    border: 2px solid #333333
+                }
 
-.centered TH {
-	text-align: center;
-}
+                .centered {
+                    text-align: center;
+                }
 
-.result {
-	font-size: 1.2em;
-	font-weight: bold;
-	margin-bottom: .5em;
-}
+                .centered TABLE {
+                    text-align: left;
+                }
 
-.message {
-	line-height: 1.4em;
-}
+                .centered TH {
+                    text-align: center;
+                }
 
-TABLE.values {
-	padding: .5em;
-	margin: .5em;
-	text-align: left;
-	margin: none;
-	width: 90%;
-}
+                .result {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin-bottom: .5em;
+                }
 
-TABLE.values TD {
-	font-size: .9em;
-	border: none;
-	padding: .4em;
-}
+                .message {
+                    line-height: 1.4em;
+                }
 
-TABLE.values TD.label {
-	font-weight: bold;
-	text-align: right;
-	width: 45%;
-}
+                TABLE.values {
+                    padding: .5em;
+                    margin: .5em;
+                    text-align: left;
+                    margin: none;
+                    width: 90%;
+                }
 
-DIV.moreinfo {
-	text-align: right;
-}
+                TABLE.values TD {
+                    font-size: .9em;
+                    border: none;
+                    padding: .4em;
+                }
 
-.value-ok {
-	background-color: #009900;
-	color: #ffffff;
-}
+                TABLE.values TD.label {
+                    font-weight: bold;
+                    text-align: right;
+                    width: 45%;
+                }
 
-.value-ok a:link, .value-ok a:hover, .value-ok a:visited {
-	color: #FFFF99;
-	font-weight: bold;
-	background-color: transparent;
-	text-decoration: none;
-}
+                DIV.moreinfo {
+                    text-align: right;
+                }
 
-.value-ok table td {
-	background-color: #33AA33;
-	color: #ffffff;
-}
+                .value-ok {
+                    background-color: #009900;
+                    color: #ffffff;
+                }
 
-.value-notice {
-	background-color: #FFA500;
-	color: #000000;
-}
+                .value-ok a:link, .value-ok a:hover, .value-ok a:visited {
+                    color: #FFFF99;
+                    font-weight: bold;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
 
-.value-notice a:link, .value-notice a:hover, .value-notice a:visited {
-	color: #000099;
-	font-weight: bold;
-	background-color: transparent;
-	text-decoration: none;
-}
+                .value-ok table td {
+                    background-color: #33AA33;
+                    color: #ffffff;
+                }
 
-.value-notice td {
-	background-color: #FFC933;
-	color: #000000;
-}
+                .value-notice {
+                    background-color: #FFA500;
+                    color: #000000;
+                }
 
-.value-warn {
-	background-color: #990000;
-	color: #ffffff;
-}
+                .value-notice a:link, .value-notice a:hover, .value-notice a:visited {
+                    color: #000099;
+                    font-weight: bold;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
 
-.value-warn a:link, .value-warn a:hover, .value-warn a:visited {
-	color: #FFFF99;
-	font-weight: bold;
-	background-color: transparent;
-	text-decoration: none;
-}
+                .value-notice td {
+                    background-color: #FFC933;
+                    color: #000000;
+                }
 
-.value-warn td {
-	background-color: #AA3333;
-	color: #ffffff;
-}
+                .value-warn {
+                    background-color: #990000;
+                    color: #ffffff;
+                }
 
-.value-notrun {
-	background-color: #cccccc;
-	color: #000000;
-}
+                .value-warn a:link, .value-warn a:hover, .value-warn a:visited {
+                    color: #FFFF99;
+                    font-weight: bold;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
 
-.value-notrun a:link, .value-notrun a:hover, .value-notrun a:visited {
-	color: #000099;
-	font-weight: bold;
-	background-color: transparent;
-	text-decoration: none;
-}
+                .value-warn td {
+                    background-color: #AA3333;
+                    color: #ffffff;
+                }
 
-.value-notrun td {
-	background-color: #dddddd;
-	color: #000000;
-}
+                .value-notrun {
+                    background-color: #cccccc;
+                    color: #000000;
+                }
 
-.value-error {
-	background-color: #F6AE15;
-	color: #000000;
-	font-weight: bold;
-}
+                .value-notrun a:link, .value-notrun a:hover, .value-notrun a:visited {
+                    color: #000099;
+                    font-weight: bold;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
 
-.value-error td {
-	background-color: #F6AE15;
-	color: #000000;
-}
-</style>
-</head>
-<body>
-	<div class="header">
-		<h1><a href="<?php echo PHPSECINFO_URL ?>" target="_phpsec"><?php echo $page_title ?></a></h1>
-		<h2><?php
-        // Affiche "Version xxx"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Version ';
-                echo PHPSECINFO_VERSION;
-                break;
+                .value-notrun td {
+                    background-color: #dddddd;
+                    color: #000000;
+                }
 
-            default:
-                echo 'Version ';
-                echo PHPSECINFO_VERSION;
-                break;
-        }
-        ?> - <?php
-        // Affiche "Last update"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Dernière mise à jour du';
-                break;
+                .value-error {
+                    background-color: #F6AE15;
+                    color: #000000;
+                    font-weight: bold;
+                }
 
-            default:
-                echo 'Last update the';
-                break;
-        }
-        ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
-				target="_PhpSecInfo"><?php
-        // Affiche "Participate from Github"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Participer depuis Github';
-                break;
+                .value-error td {
+                    background-color: #F6AE15;
+                    color: #000000;
+                }
+            </style>
+        </head>
+        <body>
+        <div class="header">
+            <h1><a href="<?php echo PHPSECINFO_URL ?>" target="_phpsec"><?php echo $page_title ?></a></h1>
+            <h2><?php
+                // Affiche "Version xxx"
+                switch (PHPSECINFO_LANG_DEFAULT) {
+                    case 'fr':
+                        echo 'Version ';
+                        echo PHPSECINFO_VERSION;
+                        break;
 
-            default:
-                echo 'Participate from Github';
-                break;
-        }
-        ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
-        // Affiche "See phpinfo ()"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Consulter phpinfo()';
-                break;
+                    default:
+                        echo 'Version ';
+                        echo PHPSECINFO_VERSION;
+                        break;
+                }
+                ?> - <?php
+                // Affiche "Last update"
+                switch (PHPSECINFO_LANG_DEFAULT) {
+                    case 'fr':
+                        echo 'Dernière mise à jour du';
+                        break;
 
-            default:
-                echo 'See phpinfo ()';
-                break;
-        }
-        ?></a>
-		</h2>
-	</div>
+                    default:
+                        echo 'Last update the';
+                        break;
+                }
+                ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
+                                                       target="_PhpSecInfo"><?php
+                    // Affiche "Participate from Github"
+                    switch (PHPSECINFO_LANG_DEFAULT) {
+                        case 'fr':
+                            echo 'Participer depuis Github';
+                            break;
 
-	<div class="container">
+                        default:
+                            echo 'Participate from Github';
+                            break;
+                    }
+                    ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
+                    // Affiche "See phpinfo ()"
+                    switch (PHPSECINFO_LANG_DEFAULT) {
+                        case 'fr':
+                            echo 'Consulter phpinfo()';
+                            break;
+
+                        default:
+                            echo 'See phpinfo ()';
+                            break;
+                    }
+                    ?></a>
+            </h2>
+        </div>
+
+        <div class="container">
+            <?php
+            foreach ($this->test_results as $group_name => $group_results) {
+                $this->_outputRenderTable($group_name, $group_results);
+            }
+            $this->_outputRenderNotRunTable();
+            $this->_outputRenderStatsTable();
+            ?>
+        </div>
+        </body>
+        </html>
         <?php
-        foreach ($this->test_results as $group_name => $group_results) {
-            $this->_outputRenderTable($group_name, $group_results);
-        }
-        $this->_outputRenderNotRunTable();
-        $this->_outputRenderStatsTable();
-        ?>
-    </div>
-</body>
-</html>
-<?php
     }
 
     /**
@@ -563,13 +566,13 @@ DIV.moreinfo {
      * for a given test group
      *
      * @param string $group_name
-     * @param array $group_results
+     * @param array  $group_results
      */
-    function _outputRenderTable($group_name, $group_results)
+    public function _outputRenderTable($group_name, $group_results)
     {
 
         // exit out if $group_results was empty or not an array. This sorta seems a little hacky...
-        if (! is_array($group_results) || sizeof($group_results) < 1) {
+        if (!is_array($group_results) || sizeof($group_results) < 1) {
             return false;
         }
 
@@ -578,111 +581,111 @@ DIV.moreinfo {
         // ksort($group_results);
 
         ?>
-<h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
+        <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
 
-<table class="results">
-	<tr class="header">
-		<th><?php
-        // Affiche "Check"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Vérifier';
-                break;
-
-            default:
-                echo 'Check';
-                break;
-        }
-        ?></th>
-		<th><?php
-		// Affiche "Result"
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'fr':
-                echo 'Résultat';
-                break;
-
-            default:
-                echo 'Result';
-                break;
-        }
-        ?></th>
-	</tr>
-        <?php foreach ($group_results as $test_name => $test_results) : ?>
-        <tr>
-		<td class="label"><?php echo htmlspecialchars($test_name, ENT_QUOTES) ?></td>
-		<td
-			class="value <?php echo $this->_outputGetCssClassFromResult($test_results['result']) ?>">
-                <?php if ($group_name != 'Test Results Summary') : ?>
-                    <div class="result"><?php echo $this->_outputGetResultTypeFromCode($test_results['result']) ?></div>
-                <?php endif; ?>
-                <div class="message"><?php echo $test_results['message'] ?></div>
-
-                <?php if (isset($test_results['value_current']) || isset($test_results['value_recommended'])) : ?>
-                    <table class="values">
-                    <?php if (isset($test_results['value_current'])) : ?>
-                        <tr>
-					<td class="label"><?php
-                    // Affiche "Current Value"
+        <table class="results">
+            <tr class="header">
+                <th><?php
+                    // Affiche "Check"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Valeur actuelle';
+                            echo 'Vérifier';
                             break;
 
                         default:
-                            echo 'Current Value';
+                            echo 'Check';
                             break;
                     }
-                    ?></td>
-
-					<!-- <td><?php echo $test_results['value_current'] ?></td>  -->
-					<!-- https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core -->
-					<td><?php echo wordwrap($test_results['value_current'], 55, '<br />', true) ?></td>
-				</tr>
-                    <?php endif;?>
-                    <?php if (isset($test_results['value_recommended'])) : ?>
-                        <tr>
-					<td class="label"><?php
-                    // Affiche "Recommended Value"
+                    ?></th>
+                <th><?php
+                    // Affiche "Result"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Valeur recommandée';
+                            echo 'Résultat';
                             break;
 
                         default:
-                            echo 'Recommended Value';
+                            echo 'Result';
                             break;
                     }
-                    ?></td>
-					<td><?php echo $test_results['value_recommended'] ?></td>
-				</tr>
-                    <?php endif; ?>
-                    </table>
-                <?php endif; ?>
-                <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) : ?>
-			<div class="moreinfo">
-				<a href="<?php echo $test_results['moreinfo_url']; ?>"
-					target="_blank"><?php
-                // Affiche "More information &raquo;"
-                switch (PHPSECINFO_LANG_DEFAULT) {
-                    case 'fr':
-                        echo 'Plus d\'information &raquo;';
-                        break;
+                    ?></th>
+            </tr>
+            <?php foreach ($group_results as $test_name => $test_results) : ?>
+                <tr>
+                    <td class="label"><?php echo htmlspecialchars($test_name, ENT_QUOTES) ?></td>
+                    <td
+                            class="value <?php echo $this->_outputGetCssClassFromResult($test_results['result']) ?>">
+                        <?php if ($group_name != 'Test Results Summary') : ?>
+                            <div class="result"><?php echo $this->_outputGetResultTypeFromCode($test_results['result']) ?></div>
+                        <?php endif; ?>
+                        <div class="message"><?php echo $test_results['message'] ?></div>
 
-                    default:
-                        echo 'More information &raquo;';
-                        break;
-                }
-                ?></a>
-			</div>
-                <?php endif; ?>
-            </td>
-	</tr>
+                        <?php if (isset($test_results['value_current']) || isset($test_results['value_recommended'])) : ?>
+                            <table class="values">
+                                <?php if (isset($test_results['value_current'])) : ?>
+                                    <tr>
+                                        <td class="label"><?php
+                                            // Affiche "Current Value"
+                                            switch (PHPSECINFO_LANG_DEFAULT) {
+                                                case 'fr':
+                                                    echo 'Valeur actuelle';
+                                                    break;
 
-        <?php endforeach; ?>
+                                                default:
+                                                    echo 'Current Value';
+                                                    break;
+                                            }
+                                            ?></td>
+
+                                        <!-- <td><?php echo $test_results['value_current'] ?></td>  -->
+                                        <!-- https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core -->
+                                        <td><?php echo wordwrap($test_results['value_current'], 55, '<br />', true) ?></td>
+                                    </tr>
+                                <?php endif; ?>
+                                <?php if (isset($test_results['value_recommended'])) : ?>
+                                    <tr>
+                                        <td class="label"><?php
+                                            // Affiche "Recommended Value"
+                                            switch (PHPSECINFO_LANG_DEFAULT) {
+                                                case 'fr':
+                                                    echo 'Valeur recommandée';
+                                                    break;
+
+                                                default:
+                                                    echo 'Recommended Value';
+                                                    break;
+                                            }
+                                            ?></td>
+                                        <td><?php echo $test_results['value_recommended'] ?></td>
+                                    </tr>
+                                <?php endif; ?>
+                            </table>
+                        <?php endif; ?>
+                        <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) : ?>
+                            <div class="moreinfo">
+                                <a href="<?php echo $test_results['moreinfo_url']; ?>"
+                                   target="_blank"><?php
+                                    // Affiche "More information &raquo;"
+                                    switch (PHPSECINFO_LANG_DEFAULT) {
+                                        case 'fr':
+                                            echo 'Plus d\'information &raquo;';
+                                            break;
+
+                                        default:
+                                            echo 'More information &raquo;';
+                                            break;
+                                    }
+                                    ?></a>
+                            </div>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
         </table>
-<br />
+        <br/>
 
-<?php
+        <?php
         return true;
     }
 
@@ -692,7 +695,7 @@ DIV.moreinfo {
      * @see PHPSecInfo::_outputRenderTable()
      * @see PHPSecInfo::_outputGetResultTypeFromCode()
      */
-    function _outputRenderStatsTable()
+    public function _outputRenderStatsTable()
     {
         // Add by
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
@@ -706,13 +709,13 @@ DIV.moreinfo {
                 // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
                 if ($code == PHPSECINFO_TEST_RESULT_NOTICE) {
                     $score -= $percentage / 2;
-                } else if ($code == PHPSECINFO_TEST_RESULT_WARN) {
+                } elseif ($code == PHPSECINFO_TEST_RESULT_WARN) {
                     $score -= $percentage;
                 }
 
                 $stats[$this->_outputGetResultTypeFromCode($code)] = [
-                    'count' => $val,
-                    'result' => $code,
+                    'count'   => $val,
+                    'result'  => $code,
                     'message' => "$val out of {$this->num_tests_run} ($percentage%)"
                 ];
             }
@@ -726,7 +729,7 @@ DIV.moreinfo {
      *
      * @see PHPSecInfo::_outputRenderTable()
      */
-    function _outputRenderNotRunTable()
+    public function _outputRenderNotRunTable()
     {
         $this->_outputRenderTable('Tests Not Run', $this->tests_not_run);
     }
@@ -739,7 +742,7 @@ DIV.moreinfo {
      * @param integer $code
      * @return string
      */
-    function _outputGetCssClassFromResult($code)
+    public function _outputGetCssClassFromResult($code)
     {
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
@@ -774,11 +777,11 @@ DIV.moreinfo {
      * This is mainly used for the Test
      * Results Summary table.
      *
-     * @see PHPSecInfo::_outputRenderStatsTable()
      * @param integer $code
      * @return string
+     * @see PHPSecInfo::_outputRenderStatsTable()
      */
-    function _outputGetResultTypeFromCode($code)
+    public function _outputGetResultTypeFromCode($code)
     {
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
@@ -813,7 +816,7 @@ DIV.moreinfo {
      *
      * @since 0.1.1
      */
-    function loadAndRun()
+    public function loadAndRun()
     {
         $this->loadTests();
         $this->runTests();
@@ -831,11 +834,11 @@ DIV.moreinfo {
      *
      * @return array
      */
-    function getResultsAsArray()
+    public function getResultsAsArray()
     {
         $results = [];
 
-        $results['test_results'] = $this->test_results;
+        $results['test_results']  = $this->test_results;
         $results['tests_not_run'] = $this->tests_not_run;
         $results['result_counts'] = $this->result_counts;
         $results['num_tests_run'] = $this->num_tests_run;
@@ -849,7 +852,7 @@ DIV.moreinfo {
      *
      * @return string
      */
-    function getOutput()
+    public function getOutput()
     {
         ob_start();
         $this->renderOutput();

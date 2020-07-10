@@ -28,7 +28,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
 
     public $recommended_value = false;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('magic_quotes_gpc');
     }
@@ -38,7 +38,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return version_compare(PHP_VERSION, '6', '<');
     }
@@ -46,7 +46,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
     /**
      * Checks to see if allow_url_fopen is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -58,7 +58,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running PHP 6 or later and magic_quotes_gpc has been removed');

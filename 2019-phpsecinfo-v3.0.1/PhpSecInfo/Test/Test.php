@@ -82,7 +82,7 @@ class PhpSecInfo_Test
      */
     public $langue_defaut;
     public $langue_definie;
-    
+
     /**
      * Enter description here...
      *
@@ -105,7 +105,7 @@ class PhpSecInfo_Test
      *
      * @return PhpSecInfo_Test
      */
-    function __construct()
+    public function __construct()
     {
         // $this->_setTestValues();
         $this->_retrieveCurrentValue();
@@ -121,7 +121,7 @@ class PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }
@@ -132,7 +132,7 @@ class PhpSecInfo_Test
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         return PHPSECINFO_TEST_RESULT_NOTRUN;
     }
@@ -143,14 +143,14 @@ class PhpSecInfo_Test
      * messages to be inherited. This is broken out into a separate function rather
      * than the constructor for ease of extension purposes (php4 is whack, man).
      */
-    function _setMessages()
+    public function _setMessages()
     {
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be considered safe');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This could potentially be a security issue');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'This setting may be a serious security problem');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
-        
+
         // Afichier les messages standards en français c'est très bien, mais, ça me prive des messages anglais exisant qui ne sont pas traduits.
         // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
         // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
@@ -162,7 +162,7 @@ class PhpSecInfo_Test
     /**
      * Placeholder - extend for tests
      */
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = "foo";
     }
@@ -170,7 +170,7 @@ class PhpSecInfo_Test
     /**
      * This is the wrapper that executes the test and sets the result code and message
      */
-    function test()
+    public function test()
     {
         $result = $this->_execTest();
         $this->_setResult($result);
@@ -181,7 +181,7 @@ class PhpSecInfo_Test
      *
      * @return integer
      */
-    function getResult()
+    public function getResult()
     {
         return $this->_result;
     }
@@ -191,9 +191,9 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getMessage()
+    public function getMessage()
     {
-        if (! isset($this->_message) || empty($this->_message)) {
+        if (!isset($this->_message) || empty($this->_message)) {
             $this->_setMessage($this->_result, $this->_language);
         }
 
@@ -207,16 +207,16 @@ class PhpSecInfo_Test
      * </code>
      *
      * @param integer $result_code
-     * @param string $language_code
-     * @param string $message
+     * @param string  $language_code
+     * @param string  $message
      */
-    function setMessageForResult($result_code, $language_code, $message)
+    public function setMessageForResult($result_code, $language_code, $message)
     {
-        if (! isset($this->_messages[$result_code])) {
+        if (!isset($this->_messages[$result_code])) {
             $this->_messages[$result_code] = [];
         }
 
-        if (! is_array($this->_messages[$result_code])) {
+        if (!is_array($this->_messages[$result_code])) {
             $this->_messages[$result_code] = [];
         }
 
@@ -230,7 +230,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getCurrentTestValue()
+    public function getCurrentTestValue()
     {
         return $this->getStringValue($this->current_value);
     }
@@ -242,7 +242,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getRecommendedTestValue()
+    public function getRecommendedTestValue()
     {
         return $this->getStringValue($this->recommended_value);
     }
@@ -252,7 +252,7 @@ class PhpSecInfo_Test
      *
      * @param integer $result_code
      */
-    function _setResult($result_code)
+    public function _setResult($result_code)
     {
         $this->_result = $result_code;
     }
@@ -261,24 +261,23 @@ class PhpSecInfo_Test
      * Sets the $this->_message variable based on the passed result and language codes
      *
      * @param integer $result_code
-     * @param string $language_code
+     * @param string  $language_code
      */
-    function _setMessage($result_code, $language_code)
+    public function _setMessage($result_code, $language_code)
     {
         $messages = $this->_messages[$result_code];
 
         // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
         // $message = $messages[$language_code];
-        if ( $messages[$language_code] === $_language )
-        {
+        if ($messages[$language_code] === $_language) {
             // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
-            $langue_defaut ="en";
-            $message = $messages[$langue_defaut];
+            $langue_defaut = "en";
+            $message       = $messages[$langue_defaut];
         } else {
             $langue_definie = PHPSECINFO_LANG_DEFAULT;
-            $message = $messages[$langue_definie];
+            $message        = $messages[$langue_definie];
         }
-        
+
         $this->_message = $message;
     }
 
@@ -286,10 +285,10 @@ class PhpSecInfo_Test
      * Returns a link to a page with detailed information about the test
      * URL is formatted as PHPSECINFO_TEST_MOREINFO_BASEURL + testName
      *
-     * @see PHPSECINFO_TEST_MOREINFO_BASEURL
      * @return string|boolean
+     * @see PHPSECINFO_TEST_MOREINFO_BASEURL
      */
-    function getMoreInfoURL()
+    public function getMoreInfoURL()
     {
         if ($tn = $this->getTestName()) {
             // Fixed URL for 'More Information URL'.
@@ -306,9 +305,9 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getTestName()
+    public function getTestName()
     {
-        if (isset($this->test_name) && ! empty($this->test_name)) {
+        if (isset($this->test_name) && !empty($this->test_name)) {
             return $this->test_name;
         } else {
             return ucwords(str_replace('_', ' ', get_class($this)));
@@ -320,7 +319,7 @@ class PhpSecInfo_Test
      *
      * @param string $test_name
      */
-    function setTestName($test_name)
+    public function setTestName($test_name)
     {
         $this->test_name = $test_name;
     }
@@ -330,7 +329,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getTestGroup()
+    public function getTestGroup()
     {
         return $this->test_group;
     }
@@ -340,7 +339,7 @@ class PhpSecInfo_Test
      *
      * @param string $test_group
      */
-    function setTestGroup($test_group)
+    public function setTestGroup($test_group)
     {
         $this->test_group = $test_group;
     }
@@ -357,11 +356,11 @@ class PhpSecInfo_Test
      * @param string $val
      * @return integer
      */
-    function returnBytes($val)
+    public function returnBytes($val)
     {
         $val = trim($val);
 
-        if ((int) $val === 0) {
+        if ((int)$val === 0) {
             return 0;
         }
 
@@ -387,12 +386,12 @@ class PhpSecInfo_Test
      * @param mixed $val
      * @return string
      */
-    function getStringValue($val)
+    public function getStringValue($val)
     {
         if ($val === false) {
             return "0";
         } else {
-            return (string) $val;
+            return (string)$val;
         }
     }
 
@@ -407,7 +406,7 @@ class PhpSecInfo_Test
      *            the ini_key you need the value of
      * @return boolean|mixed
      */
-    function getBooleanIniValue($ini_key)
+    public function getBooleanIniValue($ini_key)
     {
         $ini_val = ini_get($ini_key);
 
@@ -445,14 +444,14 @@ class PhpSecInfo_Test
      *
      * @return string|NULL
      */
-    function sys_get_temp_dir()
+    public function sys_get_temp_dir()
     {
         // Try to get from environment variable
-        if (! empty($_ENV['TMP'])) {
+        if (!empty($_ENV['TMP'])) {
             return realpath($_ENV['TMP']);
-        } elseif (! empty($_ENV['TMPDIR'])) {
+        } elseif (!empty($_ENV['TMPDIR'])) {
             return realpath($_ENV['TMPDIR']);
-        } elseif (! empty($_ENV['TEMP'])) {
+        } elseif (!empty($_ENV['TEMP'])) {
             return realpath($_ENV['TEMP']);
         } else {
             return null;
@@ -465,7 +464,7 @@ class PhpSecInfo_Test
      *
      * @return boolean
      */
-    function osIsWindows()
+    public function osIsWindows()
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             return true;
@@ -485,20 +484,20 @@ class PhpSecInfo_Test
      *
      * @return array|boolean
      */
-    function getUnixId()
+    public function getUnixId()
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif (function_exists("exec") && ! PhpSecInfo_Test::getBooleanIniValue('safe_mode')) {
+        } elseif (function_exists("exec") && !PhpSecInfo_Test::getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
 
             $id_data = [
-                'uid' => $matches[1],
+                'uid'      => $matches[1],
                 'username' => $matches[2],
-                'gid' => $matches[3],
-                'group' => $matches[4]
+                'gid'      => $matches[3],
+                'group'    => $matches[4]
             ];
 
             if ($matches[5]) {
@@ -513,10 +512,10 @@ class PhpSecInfo_Test
             }
             return $id_data;
         } elseif (function_exists("posix_getpwuid") && function_exists("posix_geteuid") && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
-            $data = posix_getpwuid(posix_getuid());
-            $id_data['uid'] = $data['uid'];
+            $data                = posix_getpwuid(posix_getuid());
+            $id_data['uid']      = $data['uid'];
             $id_data['username'] = $data['name'];
-            $id_data['gid'] = $data['gid'];
+            $id_data['gid']      = $data['gid'];
             // $group_data = posix_getgrgid( posix_getegid() );
             // $id_data['group'] = $group_data['name'];
             $groups = posix_getgroups();

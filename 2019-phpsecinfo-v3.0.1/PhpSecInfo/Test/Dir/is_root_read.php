@@ -35,12 +35,12 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
      *
      * @return
      */
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         // Get current permissions
         if (is_writable('/')) {
             $this->current_value = 'Write+Read';
-        } else if (is_readable('/')) {
+        } elseif (is_readable('/')) {
             $this->current_value = 'Read-Only';
         } else {
             $this->current_value = 'None';
@@ -52,12 +52,12 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         // Check permissions
         if ($this->current_value == 'None') {
             return PHPSECINFO_TEST_RESULT_OK;
-        } else if ($this->current_value == 'Read-Only') {
+        } elseif ($this->current_value == 'Read-Only') {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         } else {
             return PHPSECINFO_TEST_RESULT_WARN;
@@ -67,7 +67,7 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "No permissions granted for the root ('/') directory. This is the most secure setup.");

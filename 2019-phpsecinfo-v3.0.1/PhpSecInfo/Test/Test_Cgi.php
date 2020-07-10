@@ -35,7 +35,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         /*
          * if ( preg_match('/^cgi.*$/', php_sapi_name()) ) {
@@ -50,7 +50,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
     /**
      * Set the messages for CGI tests
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");

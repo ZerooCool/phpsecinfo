@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Session extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }

@@ -24,29 +24,29 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "expose_php";
+    public $test_name         = "expose_php";
     public $recommended_value = false;
-    
-    function _retrieveCurrentValue()
+
+    public function _retrieveCurrentValue()
     {
-        $this->current_value =  $this->returnBytes(ini_get('expose_php'));
+        $this->current_value = $this->returnBytes(ini_get('expose_php'));
     }
-                    
+
     /**
      * Checks to see if expose_php is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
-        
+
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'expose_php is disabled, which is the recommended setting');

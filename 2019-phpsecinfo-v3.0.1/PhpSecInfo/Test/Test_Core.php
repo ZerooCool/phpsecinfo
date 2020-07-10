@@ -17,7 +17,7 @@ require_once('PhpSecInfo/Test/Test.php');
  */
 class PhpSecInfo_Test_Core extends PhpSecInfo_Test
 {
-    
+
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
@@ -25,13 +25,13 @@ class PhpSecInfo_Test_Core extends PhpSecInfo_Test
      * @public string
      */
     public $test_group = 'Core';
-    
+
     /**
      * "Core" tests should pretty much be always testable, so the default is just to return true
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }
