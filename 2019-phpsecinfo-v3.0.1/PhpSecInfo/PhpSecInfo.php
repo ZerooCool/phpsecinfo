@@ -573,7 +573,7 @@ class PhpSecInfo
     {
 
         // exit out if $group_results was empty or not an array. This sorta seems a little hacky...
-        if (!is_array($group_results) || sizeof($group_results) < 1) {
+        if (!is_array($group_results) || count($group_results) < 1) {
             return false;
         }
 
