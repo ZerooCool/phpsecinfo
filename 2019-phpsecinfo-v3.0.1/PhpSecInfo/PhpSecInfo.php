@@ -25,7 +25,7 @@ define('PHPSECINFO_LANG_DEFAULT', 'fr');
  *
  * Afficher la version courante de PhpSecInfo : 3.0.1 (0.2.1 + v2.0.2)
  */
-define('PHPSECINFO_VERSION', '3.0.1');
+define('PHPSECINFO_VERSION', '3.0.2');
 
 /**
  * A YYYY.MM.DD date string to indicate "build" date
