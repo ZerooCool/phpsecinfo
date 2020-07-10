@@ -429,25 +429,18 @@ class PhpSecInfo_Test
         switch ($ini_val) {
             case 'off':
                 return false;
-                break;
             case 'on':
                 return true;
-                break;
             case 'false':
                 return false;
-                break;
             case 'true':
                 return true;
-                break;
             case '0':
                 return false;
-                break;
             case '1':
                 return true;
-                break;
             case '':
                 return false;
-                break;
             default:
                 return $ini_val;
         }

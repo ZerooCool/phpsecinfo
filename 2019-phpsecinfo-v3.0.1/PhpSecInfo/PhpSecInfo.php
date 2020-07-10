@@ -763,22 +763,16 @@ class PhpSecInfo
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
                 return 'value-ok';
-                break;
             case PHPSECINFO_TEST_RESULT_NOTICE:
                 return 'value-notice';
-                break;
             case PHPSECINFO_TEST_RESULT_WARN:
                 return 'value-warn';
-                break;
             case PHPSECINFO_TEST_RESULT_NOTRUN:
                 return 'value-notrun';
-                break;
             case PHPSECINFO_TEST_RESULT_ERROR:
                 return 'value-error';
-                break;
             default:
                 return 'value-notrun';
-                break;
         }
     }
 
@@ -797,22 +791,16 @@ class PhpSecInfo
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
                 return 'Pass';
-                break;
             case PHPSECINFO_TEST_RESULT_NOTICE:
                 return 'Notice';
-                break;
             case PHPSECINFO_TEST_RESULT_WARN:
                 return 'Warning';
-                break;
             case PHPSECINFO_TEST_RESULT_NOTRUN:
                 return 'Not Run';
-                break;
             case PHPSECINFO_TEST_RESULT_ERROR:
                 return 'Error';
-                break;
             default:
                 return 'Invalid Result Code';
-                break;
         }
     }
 
