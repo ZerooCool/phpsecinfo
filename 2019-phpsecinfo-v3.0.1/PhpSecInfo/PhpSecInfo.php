@@ -154,7 +154,7 @@ class PhpSecInfo
      */
     public function loadTests()
     {
-        $test_root = dir(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Test');
+        $test_root = dir(__DIR__ . DIRECTORY_SEPARATOR . 'Test');
 
         // echo "<pre>"; echo print_r($test_root, true); echo "</pre>";
 
@@ -253,7 +253,7 @@ class PhpSecInfo
          * @see PhpSecInfo_Test::getBooleanIniValue()
          */
         if (!class_exists('PhpSecInfo_Test')) {
-            include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
+            include(__DIR__ . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
         }
 
         ?>
