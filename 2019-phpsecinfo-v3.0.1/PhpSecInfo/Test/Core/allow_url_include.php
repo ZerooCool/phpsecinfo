@@ -53,7 +53,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
      */
     public function isTestable()
     {
-        if (version_compare(PHP_VERSION, '5.2', '<')) {
+        if (PHP_VERSION_ID < 50200) {
             return false;
         }
 

@@ -46,7 +46,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
          * }
          */
 
-        return 0 === mb_strpos(php_sapi_name(), 'cgi');
+        return 0 === mb_strpos(PHP_SAPI, 'cgi');
     }
 
     /**

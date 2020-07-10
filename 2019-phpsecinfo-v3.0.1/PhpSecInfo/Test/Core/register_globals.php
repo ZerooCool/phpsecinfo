@@ -41,7 +41,7 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
      */
     public function isTestable()
     {
-        return version_compare(PHP_VERSION, '6', '<');
+        return PHP_VERSION_ID < 60000;
     }
 
     /**
