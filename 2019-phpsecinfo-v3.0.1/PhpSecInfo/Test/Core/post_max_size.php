@@ -46,7 +46,7 @@ class PhpSecInfo_Test_Core_Post_Max_Size extends PhpSecInfo_Test_Core
 
         if ($this->current_value
             && $this->current_value <= $this->recommended_value
-            && $post_max_size != -1) {
+            && -1 != $post_max_size) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 

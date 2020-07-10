@@ -81,7 +81,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         $json = json_decode($data);
 
         // Detect CURL error and return local value
-        if ($data === false || !isset($json->stable) || !isset($json->eol)) {
+        if (false === $data || !isset($json->stable) || !isset($json->eol)) {
             // Override the OK Message - Even if this passes we can't be 100% sure they are accurate since we didn't fetch the latest version
             $this->_message_ok = 'You are running a current stable version of PHP!
 						<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if

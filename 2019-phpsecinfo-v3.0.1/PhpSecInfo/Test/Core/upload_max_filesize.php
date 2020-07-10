@@ -43,7 +43,7 @@ class PhpSecInfo_Test_Core_Upload_Max_Filesize extends PhpSecInfo_Test_Core
      */
     public function _execTest()
     {
-        if ($this->current_value && $this->current_value <= $this->recommended_value && $post_max_size != -1) {
+        if ($this->current_value && $this->current_value <= $this->recommended_value && -1 != $post_max_size) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 

@@ -43,7 +43,7 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif ($this->getUnixId() === false) {
+        } elseif (false === $this->getUnixId()) {
             $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Functions required to retrieve group ID not available');
             return false;
         }

@@ -67,7 +67,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     public function _execTest()
     {
         $perms = @fileperms($this->current_value);
-        if ($perms === false) {
+        if (false === $perms) {
             return PHPSECINFO_TEST_RESULT_WARN;
         } elseif ($this->current_value
                   /* && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) */

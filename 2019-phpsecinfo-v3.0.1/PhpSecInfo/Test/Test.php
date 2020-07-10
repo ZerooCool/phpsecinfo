@@ -359,7 +359,7 @@ class PhpSecInfo_Test
     {
         $val = trim($val);
 
-        if ((int)$val === 0) {
+        if (0 === (int)$val) {
             return 0;
         }
 
@@ -387,7 +387,7 @@ class PhpSecInfo_Test
      */
     public function getStringValue($val)
     {
-        if ($val === false) {
+        if (false === $val) {
             return '0';
         } else {
             return (string)$val;
@@ -465,7 +465,7 @@ class PhpSecInfo_Test
      */
     public function osIsWindows()
     {
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        if ('WIN' === strtoupper(substr(PHP_OS, 0, 3))) {
             return true;
         } else {
             return false;

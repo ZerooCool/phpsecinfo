@@ -616,7 +616,7 @@ class PhpSecInfo
                     <td class="label"><?php echo htmlspecialchars($test_name, ENT_QUOTES) ?></td>
                     <td
                             class="value <?php echo $this->_outputGetCssClassFromResult($test_results['result']) ?>">
-                        <?php if ($group_name != 'Test Results Summary') : ?>
+                        <?php if ('Test Results Summary' != $group_name) : ?>
                             <div class="result"><?php echo $this->_outputGetResultTypeFromCode($test_results['result']) ?></div>
                         <?php endif; ?>
                         <div class="message"><?php echo $test_results['message'] ?></div>
@@ -703,14 +703,14 @@ class PhpSecInfo
         $score = 100;
 
         foreach ($this->result_counts as $code => $val) {
-            if ($code != PHPSECINFO_TEST_RESULT_NOTRUN) {
+            if (PHPSECINFO_TEST_RESULT_NOTRUN != $code) {
                 $percentage = round($val / $this->num_tests_run * 100, 2);
 
                 // Add by
                 // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
-                if ($code == PHPSECINFO_TEST_RESULT_NOTICE) {
+                if (PHPSECINFO_TEST_RESULT_NOTICE == $code) {
                     $score -= $percentage / 2;
-                } elseif ($code == PHPSECINFO_TEST_RESULT_WARN) {
+                } elseif (PHPSECINFO_TEST_RESULT_WARN == $code) {
                     $score -= $percentage;
                 }
 
