@@ -487,7 +487,7 @@ class PhpSecInfo_Test
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif (function_exists("exec") && !PhpSecInfo_Test::getBooleanIniValue('safe_mode')) {
+        } elseif (function_exists("exec") && !self::getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
