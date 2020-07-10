@@ -1,7 +1,7 @@
 <?php
 /**
  * Skeleton Test class file for Dir group
- * 
+ *
  * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
@@ -33,8 +33,6 @@ class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
      */
     public function isTestable()
     {
-
         return true;
     }
-
 }

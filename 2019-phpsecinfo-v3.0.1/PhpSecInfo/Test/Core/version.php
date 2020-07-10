@@ -138,7 +138,10 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', $this->_message_ok);
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en',
-                                   'You are running a version of PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.');
+        $this->setMessageForResult(
+            PHPSECINFO_TEST_RESULT_NOTICE,
+            'en',
+            'You are running a version of PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.'
+        );
     }
 }

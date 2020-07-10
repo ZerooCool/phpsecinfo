@@ -76,9 +76,9 @@ define('PHPSECINFO_URL', 'http://phpsec.org/projects/phpsecinfo/');
  * @see phpsecinfo()
  *
  * @author Ed Finkler <coj@funkatron.com>
- *        
+ *
  *         see CHANGELOG for changes
- *        
+ *
  */
 class PhpSecInfo
 {
@@ -254,9 +254,7 @@ class PhpSecInfo
          */
         if (!class_exists('PhpSecInfo_Test')) {
             include(__DIR__ . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
-        }
-
-        ?>
+        } ?>
         <!-- XHTML 1.0 Transitional -->
         <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd"> -->
         <!-- HTML5 -->
@@ -508,8 +506,7 @@ class PhpSecInfo
                         echo 'Version ';
                         echo PHPSECINFO_VERSION;
                         break;
-                }
-                ?> - <?php
+                } ?> - <?php
                 // Affiche "Last update"
                 switch (PHPSECINFO_LANG_DEFAULT) {
                     case 'fr':
@@ -519,8 +516,7 @@ class PhpSecInfo
                     default:
                         echo 'Last update the';
                         break;
-                }
-                ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
+                } ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
                                                        target="_PhpSecInfo"><?php
                     // Affiche "Participate from Github"
                     switch (PHPSECINFO_LANG_DEFAULT) {
@@ -531,8 +527,7 @@ class PhpSecInfo
                         default:
                             echo 'Participate from Github';
                             break;
-                    }
-                    ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
+                    } ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
                     // Affiche "See phpinfo ()"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
@@ -542,8 +537,7 @@ class PhpSecInfo
                         default:
                             echo 'See phpinfo ()';
                             break;
-                    }
-                    ?></a>
+                    } ?></a>
             </h2>
         </div>
 
@@ -552,9 +546,8 @@ class PhpSecInfo
             foreach ($this->test_results as $group_name => $group_results) {
                 $this->_outputRenderTable($group_name, $group_results);
             }
-            $this->_outputRenderNotRunTable();
-            $this->_outputRenderStatsTable();
-            ?>
+        $this->_outputRenderNotRunTable();
+        $this->_outputRenderStatsTable(); ?>
         </div>
         </body>
         </html>
@@ -579,9 +572,7 @@ class PhpSecInfo
 
         // Commenté via le code de BigDeej
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
-        // ksort($group_results);
-
-        ?>
+        // ksort($group_results); ?>
         <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
 
         <table class="results">
@@ -596,8 +587,7 @@ class PhpSecInfo
                         default:
                             echo 'Check';
                             break;
-                    }
-                    ?></th>
+                    } ?></th>
                 <th><?php
                     // Affiche "Result"
                     switch (PHPSECINFO_LANG_DEFAULT) {
@@ -608,8 +598,7 @@ class PhpSecInfo
                         default:
                             echo 'Result';
                             break;
-                    }
-                    ?></th>
+                    } ?></th>
             </tr>
             <?php foreach ($group_results as $test_name => $test_results) : ?>
                 <tr>
@@ -635,8 +624,7 @@ class PhpSecInfo
                                                 default:
                                                     echo 'Current Value';
                                                     break;
-                                            }
-                                            ?></td>
+                                            } ?></td>
 
                                         <!-- <td><?php echo $test_results['value_current'] ?></td>  -->
                                         <!-- https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core -->
@@ -655,8 +643,7 @@ class PhpSecInfo
                                                 default:
                                                     echo 'Recommended Value';
                                                     break;
-                                            }
-                                            ?></td>
+                                            } ?></td>
                                         <td><?php echo $test_results['value_recommended'] ?></td>
                                     </tr>
                                 <?php endif; ?>
@@ -675,8 +662,7 @@ class PhpSecInfo
                                         default:
                                             echo 'More information &raquo;';
                                             break;
-                                    }
-                                    ?></a>
+                                    } ?></a>
                             </div>
                         <?php endif; ?>
                     </td>

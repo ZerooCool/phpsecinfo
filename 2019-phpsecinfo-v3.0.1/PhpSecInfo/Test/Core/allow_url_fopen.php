@@ -57,7 +57,10 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'allow_url_fopen is disabled, which is the recommended setting');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en',
-                                   'allow_url_fopen is enabled.  This could be a serious security risk.  You should disable allow_url_fopen and consider using the <a href="http://php.net/manual/en/ref.curl.php" target="_blank">PHP cURL functions</a> instead.');
+        $this->setMessageForResult(
+            PHPSECINFO_TEST_RESULT_WARN,
+            'en',
+            'allow_url_fopen is enabled.  This could be a serious security risk.  You should disable allow_url_fopen and consider using the <a href="http://php.net/manual/en/ref.curl.php" target="_blank">PHP cURL functions</a> instead.'
+        );
     }
 }
