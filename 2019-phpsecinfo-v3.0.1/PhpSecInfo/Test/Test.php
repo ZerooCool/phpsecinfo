@@ -469,7 +469,9 @@ class PhpSecInfo_Test
 
         if (!empty($_ENV['TMPDIR'])) {
             return realpath($_ENV['TMPDIR']);
-        } elseif (!empty($_ENV['TEMP'])) {
+        }
+
+        if (!empty($_ENV['TEMP'])) {
             return realpath($_ENV['TEMP']);
         }
 
@@ -484,7 +486,7 @@ class PhpSecInfo_Test
      */
     public function osIsWindows()
     {
-        if ('WIN' === mb_strtoupper(mb_substr(PHP_OS, 0, 3))) {
+        if (0 === mb_stripos(PHP_OS, 'WIN')) {
             return true;
         }
 
@@ -508,7 +510,7 @@ class PhpSecInfo_Test
             return false;
         }
 
-        if (function_exists('exec') && !self::getBooleanIniValue('safe_mode')) {
+        if (function_exists('exec') && !$this->getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
 
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
@@ -538,7 +540,9 @@ class PhpSecInfo_Test
             }
 
             return $id_data;
-        } elseif (function_exists('posix_getpwuid') && function_exists('posix_geteuid') && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
+        }
+
+        if (function_exists('posix_getpwuid') && function_exists('posix_geteuid') && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
             $data = posix_getpwuid(posix_getuid());
 
             $id_data['uid'] = $data['uid'];
