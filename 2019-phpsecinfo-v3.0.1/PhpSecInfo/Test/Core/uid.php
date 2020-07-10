@@ -9,7 +9,8 @@
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
+//require_once('PhpSecInfo/Test/Test_Core.php');
+require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * the minimum "safe" UID that php should be executing as.  This can vary,

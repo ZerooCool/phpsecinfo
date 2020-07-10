@@ -9,7 +9,8 @@
 /**
  * Require the main PhpSecInfo class
  */
-require_once ('PhpSecInfo/Test/Test.php');
+//require_once('PhpSecInfo/Test/Test.php');
+require_once __DIR__ . '/Test.php';
 
 /**
  * This is a skeleton class for PhpSecInfo "Session" tests

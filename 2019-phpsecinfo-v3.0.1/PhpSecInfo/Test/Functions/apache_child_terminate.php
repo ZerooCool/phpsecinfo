@@ -9,7 +9,9 @@
 /**
  * require the PhpSecInfo_Test_Functions class
  */
-require_once ('PhpSecInfo/Test/Test_Functions.php');
+//require_once ('PhpSecInfo/Test/Test_Functions.php');
+require_once dirname(__DIR__) . '/Test_Functions.php';
+
 
 /**
  * Test class for function apache_child_terminate

@@ -9,7 +9,8 @@
 /**
  * Require the PhpSecInfo_Test_Dir class
  */
-require_once ('PhpSecInfo/Test/Test_Dir.php');
+//require_once ('PhpSecInfo/Test/Test_Dir.php');
+require_once dirname(__DIR__) . '/Test_Dir.php';
 
 /**
  * Test class for function is_self_write

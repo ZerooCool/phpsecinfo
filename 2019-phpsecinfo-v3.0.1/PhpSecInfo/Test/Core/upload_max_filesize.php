@@ -9,8 +9,8 @@
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-require_once('PhpSecInfo/Test/Test_Core.php');
-
+//require_once('PhpSecInfo/Test/Test_Core.php');
+require_once dirname(__DIR__) . '/Test_Core.php';
 /**
  * The max recommended size for the upload_max_filesize setting, in bytes (33554432)
  */

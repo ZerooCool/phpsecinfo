@@ -9,7 +9,8 @@
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-require_once ('PhpSecInfo/Test/Test_Session.php');
+//require_once ('PhpSecInfo/Test/Test_Session.php');
+require_once dirname(__DIR__) . '/Test_Session.php';
 
 /**
  * Test class for session save_path
