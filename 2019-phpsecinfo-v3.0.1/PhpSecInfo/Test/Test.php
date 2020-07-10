@@ -9,7 +9,8 @@
 /**
  * Require the main PhpSecInfo class
  */
-require_once ('PhpSecInfo/PhpSecInfo.php');
+//require_once ('PhpSecInfo/PhpSecInfo.php');
+require_once dirname(__DIR__) . '/PhpSecInfo.php';
 
 define('PHPSECINFO_TEST_RESULT_OK', - 1);
 define('PHPSECINFO_TEST_RESULT_NOTICE', - 2);
@@ -268,13 +269,13 @@ class PhpSecInfo_Test
 
         // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
         // $message = $messages[$language_code];
-        if ($messages[$language_code] === $_language) {
+        if (isset($messages[$language_code]) && $messages[$language_code] === $this->_language) {
             // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
             $langue_defaut = 'en';
             $message       = $messages[$langue_defaut];
         } else {
             $langue_definie = PHPSECINFO_LANG_DEFAULT;
-            $message        = $messages[$langue_definie];
+            $message        = isset($messages[$language_code]) ? $messages[$langue_definie]: '';
         }
 
         $this->_message = $message;
