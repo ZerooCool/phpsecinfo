@@ -73,7 +73,7 @@ define('PHPSECINFO_URL', 'http://phpsec.org/projects/phpsecinfo/');
  *
  * The procedural function "phpsecinfo" is defined below this class.
  *
- * @see phpsecinfo()
+ * @see    phpsecinfo()
  *
  * @author Ed Finkler <coj@funkatron.com>
  *
@@ -218,11 +218,11 @@ class PhpSecInfo
                 $test->test();
 
                 $rs = [
-                    'result' => $test->getResult(),
-                    'message' => $test->getMessage(),
-                    'value_current' => $test->getCurrentTestValue(),
+                    'result'            => $test->getResult(),
+                    'message'           => $test->getMessage(),
+                    'value_current'     => $test->getCurrentTestValue(),
                     'value_recommended' => $test->getRecommendedTestValue(),
-                    'moreinfo_url' => $test->getMoreInfoURL(),
+                    'moreinfo_url'      => $test->getMoreInfoURL(),
                 ];
 
                 $this->test_results[$test->getTestGroup()][$test->getTestName()] = $rs;
@@ -237,11 +237,11 @@ class PhpSecInfo
                 $this->num_tests_run++;
             } else {
                 $rs = [
-                    'result' => $test->getResult(),
-                    'message' => $test->getMessage(),
-                    'value_current' => null,
+                    'result'            => $test->getResult(),
+                    'message'           => $test->getMessage(),
+                    'value_current'     => null,
                     'value_recommended' => null,
-                    'moreinfo_url' => $test->getMoreInfoURL(),
+                    'moreinfo_url'      => $test->getMoreInfoURL(),
                 ];
 
                 $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN]++;
@@ -510,49 +510,49 @@ class PhpSecInfo
                 // Affiche "Version xxx"
                 switch (PHPSECINFO_LANG_DEFAULT) {
                     case 'fr':
-                                                                                       echo 'Version ';
+                        echo 'Version ';
                         echo PHPSECINFO_VERSION;
 
-                                                                                      break;
+                        break;
                     default:
-                                                                                       echo 'Version ';
+                        echo 'Version ';
                         echo PHPSECINFO_VERSION;
 
-                                                                                      break;
+                        break;
                 } ?> - <?php
                 // Affiche "Last update"
                 switch (PHPSECINFO_LANG_DEFAULT) {
                     case 'fr':
-                                                                                              echo 'Dernière mise à jour du';
+                        echo 'Dernière mise à jour du';
 
-                                                                                             break;
+                        break;
                     default:
-                                                                                              echo 'Last update the';
+                        echo 'Last update the';
 
-                                                                                             break;
+                        break;
                 } ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
-                                                       target="_PhpSecInfo"><?php
+                                                         target="_PhpSecInfo"><?php
                     // Affiche "Participate from Github"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                                                                                                                                                                       echo 'Participer depuis Github';
+                            echo 'Participer depuis Github';
 
-                                                                                                                                                                      break;
+                            break;
                         default:
-                                                                                                                                                                       echo 'Participate from Github';
+                            echo 'Participate from Github';
 
-                                                                                                                                                                      break;
+                            break;
                     } ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
                     // Affiche "See phpinfo ()"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                                                                                                                                                  echo 'Consulter phpinfo()';
+                            echo 'Consulter phpinfo()';
 
-                                                                                                                                                 break;
+                            break;
                         default:
-                                                                                                                                                  echo 'See phpinfo ()';
+                            echo 'See phpinfo ()';
 
-                                                                                                                                                 break;
+                            break;
                     } ?></a>
             </h2>
         </div>
@@ -563,9 +563,9 @@ class PhpSecInfo
                 $this->_outputRenderTable($group_name, $group_results);
             }
 
-        $this->_outputRenderNotRunTable();
+            $this->_outputRenderNotRunTable();
 
-        $this->_outputRenderStatsTable(); ?>
+            $this->_outputRenderStatsTable(); ?>
         </div>
         </body>
         </html>
@@ -589,7 +589,8 @@ class PhpSecInfo
 
         // Commenté via le code de BigDeej
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
-        // ksort($group_results);?>
+        // ksort($group_results);
+        ?>
         <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
 
         <table class="results">
@@ -598,56 +599,56 @@ class PhpSecInfo
                     // Affiche "Check"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                                                                                             echo 'Vérifier';
+                            echo 'Vérifier';
 
-                                                                                            break;
+                            break;
                         default:
-                                                                                             echo 'Check';
+                            echo 'Check';
 
-                                                                                            break;
+                            break;
                     } ?></th>
                 <th><?php
                     // Affiche "Result"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                                                                                              echo 'Résultat';
+                            echo 'Résultat';
 
-                                                                                             break;
+                            break;
                         default:
-                                                                                              echo 'Result';
+                            echo 'Result';
 
-                                                                                             break;
+                            break;
                     } ?></th>
             </tr>
             <?php foreach ($group_results as $test_name => $test_results) :
-?>
+                ?>
                 <tr>
                     <td class="label"><?php echo htmlspecialchars($test_name, ENT_QUOTES) ?></td>
                     <td
                             class="value <?php echo $this->_outputGetCssClassFromResult($test_results['result']) ?>">
                         <?php if ('Test Results Summary' != $group_name) :
-?>
+                            ?>
                             <div class="result"><?php echo $this->_outputGetResultTypeFromCode($test_results['result']) ?></div>
                         <?php endif; ?>
                         <div class="message"><?php echo $test_results['message'] ?></div>
 
                         <?php if (isset($test_results['value_current']) || isset($test_results['value_recommended'])) :
-?>
+                            ?>
                             <table class="values">
                                 <?php if (isset($test_results['value_current'])) :
-?>
+                                    ?>
                                     <tr>
                                         <td class="label"><?php
                                             // Affiche "Current Value"
                                             switch (PHPSECINFO_LANG_DEFAULT) {
                                                 case 'fr':
-                                                                                                                                                                                           echo 'Valeur actuelle';
+                                                    echo 'Valeur actuelle';
 
-                                                                                                                                                                                          break;
+                                                    break;
                                                 default:
-                                                                                                                                                                                           echo 'Current Value';
+                                                    echo 'Current Value';
 
-                                                                                                                                                                                          break;
+                                                    break;
                                             } ?></td>
 
                                         <!-- <td><?php echo $test_results['value_current'] ?></td>  -->
@@ -656,19 +657,19 @@ class PhpSecInfo
                                     </tr>
                                 <?php endif; ?>
                                 <?php if (isset($test_results['value_recommended'])) :
-?>
+                                    ?>
                                     <tr>
                                         <td class="label"><?php
                                             // Affiche "Recommended Value"
                                             switch (PHPSECINFO_LANG_DEFAULT) {
                                                 case 'fr':
-                                                                                                                                                                                               echo 'Valeur recommandée';
+                                                    echo 'Valeur recommandée';
 
-                                                                                                                                                                                              break;
+                                                    break;
                                                 default:
-                                                                                                                                                                                               echo 'Recommended Value';
+                                                    echo 'Recommended Value';
 
-                                                                                                                                                                                              break;
+                                                    break;
                                             } ?></td>
                                         <td><?php echo $test_results['value_recommended'] ?></td>
                                     </tr>
@@ -676,20 +677,20 @@ class PhpSecInfo
                             </table>
                         <?php endif; ?>
                         <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) :
-?>
+                            ?>
                             <div class="moreinfo">
                                 <a href="<?php echo $test_results['moreinfo_url']; ?>"
                                    target="_blank"><?php
                                     // Affiche "More information &raquo;"
                                     switch (PHPSECINFO_LANG_DEFAULT) {
                                         case 'fr':
-                                                                                                                                                                               echo 'Plus d\'information &raquo;';
+                                            echo 'Plus d\'information &raquo;';
 
-                                                                                                                                                                              break;
+                                            break;
                                         default:
-                                                                                                                                                                               echo 'More information &raquo;';
+                                            echo 'More information &raquo;';
 
-                                                                                                                                                                              break;
+                                            break;
                                     } ?></a>
                             </div>
                         <?php endif; ?>
@@ -729,8 +730,8 @@ class PhpSecInfo
                 }
 
                 $stats[$this->_outputGetResultTypeFromCode($code)] = [
-                    'count' => $val,
-                    'result' => $code,
+                    'count'   => $val,
+                    'result'  => $code,
                     'message' => "$val out of {$this->num_tests_run} ($percentage%)",
                 ];
             }

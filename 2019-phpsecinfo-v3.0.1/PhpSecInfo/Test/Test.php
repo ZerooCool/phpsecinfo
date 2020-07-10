@@ -422,7 +422,7 @@ class PhpSecInfo_Test
     {
         $ini_val = ini_get($ini_key);
 
-        if (is_string($ini_val)){
+        if (is_string($ini_val)) {
             $ini_val = mb_strtolower($ini_val);
         }
 
@@ -515,10 +515,10 @@ class PhpSecInfo_Test
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
 
             $id_data = [
-                'uid' => $matches[1],
+                'uid'      => $matches[1],
                 'username' => $matches[2],
-                'gid' => $matches[3],
-                'group' => $matches[4],
+                'gid'      => $matches[3],
+                'group'    => $matches[4],
             ];
 
             if ($matches[5]) {

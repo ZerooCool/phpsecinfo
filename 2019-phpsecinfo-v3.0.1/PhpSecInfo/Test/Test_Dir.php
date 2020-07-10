@@ -12,6 +12,7 @@ declare(strict_types=1);
  */
 //require_once('PhpSecInfo/Test/Test.php');
 require_once __DIR__ . '/Test.php';
+
 /**
  * This is a skeleton class for PhpSecInfo "Dir" tests
  */
