@@ -43,7 +43,9 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif (false === $this->getUnixId()) {
+        }
+
+        if (false === $this->getUnixId()) {
             $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Functions required to retrieve user ID not available');
             return false;
         }

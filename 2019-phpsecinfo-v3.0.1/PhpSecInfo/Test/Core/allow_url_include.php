@@ -52,9 +52,9 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
 
         if (version_compare(PHP_VERSION, '5.2', '<')) {
             return false;
-        } else {
-            return true;
         }
+
+        return true;
     }
 
     /**

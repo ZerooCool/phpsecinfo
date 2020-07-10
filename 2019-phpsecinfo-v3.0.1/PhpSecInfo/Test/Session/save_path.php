@@ -51,9 +51,9 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
     {
         if ($this->osIsWindows()) {
             return false;
-        } else {
-            return true;
         }
+
+        return true;
     }
 
     /**

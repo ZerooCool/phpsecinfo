@@ -50,9 +50,9 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     {
         if ($this->osIsWindows()) {
             return false;
-        } else {
-            return true;
         }
+
+        return true;
     }
 
     /**
@@ -69,11 +69,13 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
         $perms = @fileperms($this->current_value);
         if (false === $perms) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } elseif ($this->current_value
-                  /* && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) */
-                  && !preg_match('%^' . PHPSECINFO_TEST_COMMON_TMPDIR . '(/|$)%', $this->current_value)
-                  && !($perms & 0x0004)
-                  && !($perms & 0x0002)) {
+        }
+
+        if ($this->current_value
+            /* && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) */
+            && !preg_match('%^' . PHPSECINFO_TEST_COMMON_TMPDIR . '(/|$)%', $this->current_value)
+            && !($perms & 0x0004)
+            && !($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 

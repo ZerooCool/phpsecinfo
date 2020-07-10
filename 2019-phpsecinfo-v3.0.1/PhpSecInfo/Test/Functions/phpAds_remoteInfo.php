@@ -54,9 +54,9 @@ class PhpSecInfo_Test_Functions_PhpAds_RemoteInfo extends PhpSecInfo_Test_Functi
         // Check if function exists
         if (function_exists($this->test_name)) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } else {
-            return PHPSECINFO_TEST_RESULT_OK;
         }
+
+        return PHPSECINFO_TEST_RESULT_OK;
     }
 
     /**

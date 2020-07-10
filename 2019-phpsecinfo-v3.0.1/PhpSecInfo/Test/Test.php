@@ -293,9 +293,9 @@ class PhpSecInfo_Test
             // Fixed URL for 'More Information URL'.
             // https://github.com/bigdeej/PhpSecInfo/commit/f8262613ef6da51e65aa8cf31d9b4f80acb15afd#diff-0d32928ec88998768a1fb2d4fc810e19
             return PHPSECINFO_TEST_MOREINFO_BASEURL . strtolower($tn);
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -308,9 +308,9 @@ class PhpSecInfo_Test
     {
         if (isset($this->test_name) && !empty($this->test_name)) {
             return $this->test_name;
-        } else {
-            return ucwords(str_replace('_', ' ', get_class($this)));
         }
+
+        return ucwords(str_replace('_', ' ', get_class($this)));
     }
 
     /**
@@ -389,9 +389,9 @@ class PhpSecInfo_Test
     {
         if (false === $val) {
             return '0';
-        } else {
-            return (string)$val;
         }
+
+        return (string)$val;
     }
 
     /**
@@ -448,7 +448,9 @@ class PhpSecInfo_Test
         // Try to get from environment variable
         if (!empty($_ENV['TMP'])) {
             return realpath($_ENV['TMP']);
-        } elseif (!empty($_ENV['TMPDIR'])) {
+        }
+
+        if (!empty($_ENV['TMPDIR'])) {
             return realpath($_ENV['TMPDIR']);
         } elseif (!empty($_ENV['TEMP'])) {
             return realpath($_ENV['TEMP']);
@@ -467,9 +469,9 @@ class PhpSecInfo_Test
     {
         if ('WIN' === strtoupper(substr(PHP_OS, 0, 3))) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -487,7 +489,9 @@ class PhpSecInfo_Test
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif (function_exists('exec') && !self::getBooleanIniValue('safe_mode')) {
+        }
+
+        if (function_exists('exec') && !self::getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);

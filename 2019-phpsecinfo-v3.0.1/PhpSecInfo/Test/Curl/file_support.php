@@ -51,9 +51,9 @@ class PhpSecInfo_Test_Curl_File_Support extends PhpSecInfo_Test_Curl
         if (version_compare($this->current_value, '5.1.6', '>=')
             || (version_compare($this->current_value, '4.4.4', '>=')) && (version_compare($this->current_value, '5', '<'))) {
             return PHPSECINFO_TEST_RESULT_OK;
-        } else {
-            return PHPSECINFO_TEST_RESULT_WARN;
         }
+
+        return PHPSECINFO_TEST_RESULT_WARN;
     }
 
     /**

@@ -54,7 +54,9 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
     {
         if (!$this->current_value) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } elseif ($this->returnBytes($this->current_value) <= PHPSECINFO_MEMORY_LIMIT) {
+        }
+
+        if ($this->returnBytes($this->current_value) <= PHPSECINFO_MEMORY_LIMIT) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
         return PHPSECINFO_TEST_RESULT_NOTICE;

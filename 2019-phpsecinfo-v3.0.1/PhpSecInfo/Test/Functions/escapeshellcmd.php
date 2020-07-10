@@ -54,9 +54,9 @@ class PhpSecInfo_Test_Functions_Escapeshellcmd extends PhpSecInfo_Test_Functions
         // Check if function exists
         if (function_exists($this->test_name)) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } else {
-            return PHPSECINFO_TEST_RESULT_OK;
         }
+
+        return PHPSECINFO_TEST_RESULT_OK;
     }
 
     /**
