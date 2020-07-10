@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for register_globals
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,8 +16,6 @@ require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * Test Class for register_globals
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
 {
@@ -24,7 +24,9 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = 'register_globals';
+
+    public $test_name = 'register_globals';
+
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()
@@ -60,8 +62,11 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running PHP 6 or later and register_globals has been removed');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'register_globals is disabled, which is the recommended setting');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'register_globals is enabled.  This could be a serious security risk.  You should disable register_globals immediately');
     }
 }

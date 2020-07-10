@@ -1,7 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for upload_tmp_dir
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,17 +15,15 @@ require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * Test Class for upload_tmp_dir
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'upload_tmp_dir';
 
     public $recommended_value = 'A non-world readable/writable directory';
@@ -68,6 +68,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     public function _execTest()
     {
         $perms = @fileperms($this->current_value);
+
         if (false === $perms) {
             return PHPSECINFO_TEST_RESULT_WARN;
         }
@@ -81,7 +82,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
         }
 
         // Rewrite current_value to display perms
-        $this->current_value .= ' (' . substr(sprintf('%o', $perms), -4) . ')';
+        $this->current_value .= ' (' . mb_substr(sprintf('%o', $perms), -4) . ')';
 
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
@@ -92,9 +93,13 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'upload_tmp_dir is enabled, which is the recommended setting.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'Unable to retrieve file permissions on upload_tmp_dir');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'upload_tmp_dir is disabled, or you use the /tmp directory but
                                                 this naming is not allowed for this test and you must provide a custom directory, or is set
                                                 to a common world-writable directory (xx5). This typically allows other users on this server

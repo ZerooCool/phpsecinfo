@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -12,11 +14,11 @@
 //require_once ('PhpSecInfo/PhpSecInfo.php');
 require_once dirname(__DIR__) . '/PhpSecInfo.php';
 
-define('PHPSECINFO_TEST_RESULT_OK', - 1);
-define('PHPSECINFO_TEST_RESULT_NOTICE', - 2);
-define('PHPSECINFO_TEST_RESULT_WARN', - 4);
-define('PHPSECINFO_TEST_RESULT_ERROR', - 1024);
-define('PHPSECINFO_TEST_RESULT_NOTRUN', - 2048);
+define('PHPSECINFO_TEST_RESULT_OK', -1);
+define('PHPSECINFO_TEST_RESULT_NOTICE', -2);
+define('PHPSECINFO_TEST_RESULT_WARN', -4);
+define('PHPSECINFO_TEST_RESULT_ERROR', -1024);
+define('PHPSECINFO_TEST_RESULT_NOTRUN', -2048);
 define('PHPSECINFO_TEST_COMMON_TMPDIR', '/tmp');
 define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinfo/tests/');
 
@@ -24,18 +26,16 @@ define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinf
  * This is a skeleton class for PhpSecInfo tests You should extend this to make a "group" skeleton
  * to categorize tests under, then make a subdir with your group name that contains test classes
  * extending your group skeleton class.
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
      *
      * @public string
      */
+
     public $test_group = 'misc';
 
     /**
@@ -43,6 +43,7 @@ class PhpSecInfo_Test
      *
      * @public string
      */
+
     public $test_name = 'misc_test';
 
     /**
@@ -50,6 +51,7 @@ class PhpSecInfo_Test
      *
      * @public mixed
      */
+
     public $recommended_value = 'bar';
 
     /**
@@ -57,6 +59,7 @@ class PhpSecInfo_Test
      *
      * @public integer
      */
+
     public $_result = PHPSECINFO_TEST_RESULT_NOTRUN;
 
     /**
@@ -64,6 +67,7 @@ class PhpSecInfo_Test
      *
      * @public string
      */
+
     public $_message;
 
     /**
@@ -72,6 +76,7 @@ class PhpSecInfo_Test
      *
      * @public string
      */
+
     public $_language = PHPSECINFO_LANG_DEFAULT;
 
     /**
@@ -81,7 +86,9 @@ class PhpSecInfo_Test
      *
      * @public string
      */
+
     public $langue_defaut;
+
     public $langue_definie;
 
     /**
@@ -89,6 +96,7 @@ class PhpSecInfo_Test
      *
      * @public mixed
      */
+
     public $current_value;
 
     /**
@@ -99,16 +107,17 @@ class PhpSecInfo_Test
      *
      * @public array
      */
+
     public $_messages = [];
 
     /**
      * Constructor for Test skeleton class
-     *
      */
     public function __construct()
     {
         // $this->_setTestValues();
         $this->_retrieveCurrentValue();
+
         // $this->setRecommendedValue();
         $this->_setMessages();
     }
@@ -146,9 +155,13 @@ class PhpSecInfo_Test
     public function _setMessages()
     {
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be considered safe');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This could potentially be a security issue');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'This setting may be a serious security problem');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
 
         // Afichier les messages standards en français c'est très bien, mais, ça me prive des messages anglais exisant qui ne sont pas traduits.
@@ -173,6 +186,7 @@ class PhpSecInfo_Test
     public function test()
     {
         $result = $this->_execTest();
+
         $this->_setResult($result);
     }
 
@@ -272,10 +286,12 @@ class PhpSecInfo_Test
         if (isset($messages[$language_code]) && $messages[$language_code] === $this->_language) {
             // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
             $langue_defaut = 'en';
-            $message       = $messages[$langue_defaut];
+
+            $message = $messages[$langue_defaut];
         } else {
             $langue_definie = PHPSECINFO_LANG_DEFAULT;
-            $message        = isset($messages[$language_code]) ? $messages[$langue_definie]: '';
+
+            $message = isset($messages[$language_code]) ? $messages[$langue_definie] : '';
         }
 
         $this->_message = $message;
@@ -285,7 +301,7 @@ class PhpSecInfo_Test
      * Returns a link to a page with detailed information about the test
      * URL is formatted as PHPSECINFO_TEST_MOREINFO_BASEURL + testName
      *
-     * @return string|boolean
+     * @return string|bool
      * @see PHPSECINFO_TEST_MOREINFO_BASEURL
      */
     public function getMoreInfoURL()
@@ -293,7 +309,7 @@ class PhpSecInfo_Test
         if ($tn = $this->getTestName()) {
             // Fixed URL for 'More Information URL'.
             // https://github.com/bigdeej/PhpSecInfo/commit/f8262613ef6da51e65aa8cf31d9b4f80acb15afd#diff-0d32928ec88998768a1fb2d4fc810e19
-            return PHPSECINFO_TEST_MOREINFO_BASEURL . strtolower($tn);
+            return PHPSECINFO_TEST_MOREINFO_BASEURL . mb_strtolower($tn);
         }
 
         return false;
@@ -358,26 +374,20 @@ class PhpSecInfo_Test
      */
     public function returnBytes($val)
     {
-        $val = trim($val);
-
         if (0 === (int)$val) {
             return 0;
         }
 
-        $last = strtolower($val{strlen($val) - 1});
-        switch ($last) {
-            // The 'G' modifier is available since PHP 5.1.0
-            case 'g':
-                $val *= 1024;
-                // no break
+        switch (mb_strtolower(substr((string)$val, -1))) {
             case 'm':
-                $val *= 1024;
-                // no break
+                return (int)$val * 1048576;
             case 'k':
-                $val *= 1024;
+                return (int)$val * 1024;
+            case 'g':
+                return (int)$val * 1073741824;
+            default:
+                return $val;
         }
-
-        return $val;
     }
 
     /**
@@ -412,7 +422,11 @@ class PhpSecInfo_Test
     {
         $ini_val = ini_get($ini_key);
 
-        switch (strtolower($ini_val)) {
+        if (is_string($ini_val)){
+            $ini_val = mb_strtolower($ini_val);
+        }
+
+        switch ($ini_val) {
             case 'off':
                 return false;
                 break;
@@ -444,7 +458,7 @@ class PhpSecInfo_Test
      * that is lacking in versions of PHP that do not have the
      * sys_get_temp_dir() function
      *
-     * @return string|NULL
+     * @return string|null
      */
     public function sys_get_temp_dir()
     {
@@ -457,9 +471,9 @@ class PhpSecInfo_Test
             return realpath($_ENV['TMPDIR']);
         } elseif (!empty($_ENV['TEMP'])) {
             return realpath($_ENV['TEMP']);
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     /**
@@ -470,7 +484,7 @@ class PhpSecInfo_Test
      */
     public function osIsWindows()
     {
-        if ('WIN' === strtoupper(substr(PHP_OS, 0, 3))) {
+        if ('WIN' === mb_strtoupper(mb_substr(PHP_OS, 0, 3))) {
             return true;
         }
 
@@ -496,40 +510,53 @@ class PhpSecInfo_Test
 
         if (function_exists('exec') && !self::getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
+
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
 
             $id_data = [
-                'uid'      => $matches[1],
+                'uid' => $matches[1],
                 'username' => $matches[2],
-                'gid'      => $matches[3],
-                'group'    => $matches[4]
+                'gid' => $matches[3],
+                'group' => $matches[4],
             ];
 
             if ($matches[5]) {
                 $gs = $matches[5];
+
                 $gs = explode(',', $gs);
+
                 foreach ($gs as $groupstr) {
                     preg_match("/(\d+)\(([^\)]+)\)/", $groupstr, $subs);
+
                     $groups[$subs[1]] = $subs[2];
                 }
+
                 ksort($groups);
+
                 $id_data['groups'] = $groups;
             }
+
             return $id_data;
         } elseif (function_exists('posix_getpwuid') && function_exists('posix_geteuid') && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
-            $data                = posix_getpwuid(posix_getuid());
-            $id_data['uid']      = $data['uid'];
+            $data = posix_getpwuid(posix_getuid());
+
+            $id_data['uid'] = $data['uid'];
+
             $id_data['username'] = $data['name'];
-            $id_data['gid']      = $data['gid'];
+
+            $id_data['gid'] = $data['gid'];
+
             // $group_data = posix_getgrgid( posix_getegid() );
             // $id_data['group'] = $group_data['name'];
             $groups = posix_getgroups();
+
             foreach ($groups as $gid) {
                 // $group_data = posix_getgrgid(posix_getgid());
                 $id_data['groups'][$gid] = '<unknown>';
             }
         }
+
         return false;
     }
 }

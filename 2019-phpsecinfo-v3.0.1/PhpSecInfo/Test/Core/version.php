@@ -1,9 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for PHP Version
  * Test from : https://github.com/bigdeej/PhpSecInfo/blob/master/PhpSecInfo/Test/Core/version.php
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -17,17 +19,16 @@ require_once dirname(__DIR__) . '/Test_Core.php';
  * Test class for PHP Version
  * Checks the current PHP Version against EOL Versions.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'version_number';
 
     // Cette ligne ne semble pas influencer la version recommandée qui est gérée depuis le fichier .version.json directement.
@@ -40,6 +41,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     public function _retrieveCurrentValue()
     {
         $this->current_value = PHP_VERSION;
+
         // $this->current_value = '5.4.15';
     }
 
@@ -60,21 +62,26 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
             return [
                 'stable' => $this->recommended_value,
-                'eol'    => $this->last_eol_value
+                'eol' => $this->last_eol_value,
             ];
         }
 
         // Attempt to fetch from server
         // Récupérer la version de PHP depuis le fichier .version.json
-        $uri     = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v0.2.1/20070406-phpsecinfo-v0.2.1/.version.json';
-        $ch      = curl_init();
+        $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v0.2.1/20070406-phpsecinfo-v0.2.1/.version.json';
+
+        $ch = curl_init();
+
         $timeout = 5;
 
         // CURL
         curl_setopt($ch, CURLOPT_URL, $uri);
+
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
         // curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $data = curl_exec($ch);
+
         // Close CURL
         curl_close($ch);
 
@@ -90,14 +97,14 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
             return [
                 'stable' => $this->recommended_value,
-                'eol'    => $this->last_eol_value
+                'eol' => $this->last_eol_value,
             ];
         }
 
         // to array
         $versions = [
             'stable' => $json->stable,
-            'eol'    => $json->eol
+            'eol' => $json->eol,
         ];
 
         // Update local recommended value (it is used elsewhere and we don't want to modify that code just yet)
@@ -121,9 +128,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
             return PHPSECINFO_TEST_RESULT_OK;
         } elseif (version_compare($this->current_value, $version['stable'], '<') && version_compare($this->current_value, $version['eol'], '>')) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
-        } else {
-            return PHPSECINFO_TEST_RESULT_WARN;
         }
+
+        return PHPSECINFO_TEST_RESULT_WARN;
     }
 
     /**
@@ -137,7 +144,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         $this->_retrieveCurrentVersions();
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', $this->_message_ok);
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.');
+
         $this->setMessageForResult(
             PHPSECINFO_TEST_RESULT_NOTICE,
             'en',

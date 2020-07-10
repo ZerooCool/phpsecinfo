@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for xmlrpc_entity_decode
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -16,25 +18,22 @@ require_once dirname(__DIR__) . '/Test_Functions.php';
  * Test class for function xmlrpc_entity_decode
  * Checks if dangerous functionality is enabled.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Functions_Xmlrpc_Entity_Decode extends PhpSecInfo_Test_Functions
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'xmlrpc_entity_decode';
 
     public $recommended_value = 'Disabled';
 
     /**
      * Return the current value for this Test
-     *
-     * @return void
      */
     public function _retrieveCurrentValue()
     {
@@ -66,12 +65,15 @@ class PhpSecInfo_Test_Functions_Xmlrpc_Entity_Decode extends PhpSecInfo_Test_Fun
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'You have this function listed in your php.ini under disabled_functions.');
+
         $this->setMessageForResult(
             PHPSECINFO_TEST_RESULT_WARN,
             'en',
             'This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.'
         );
+
         $this->setMessageForResult(
             PHPSECINFO_TEST_RESULT_NOTICE,
             'en',

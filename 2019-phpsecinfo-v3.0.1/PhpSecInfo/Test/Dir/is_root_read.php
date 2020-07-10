@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for is_root_read
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -16,25 +18,22 @@ require_once dirname(__DIR__) . '/Test_Dir.php';
  * Test class for function is_self_write
  * Checks if file permissions are proper for security.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'is_root_read';
 
     public $recommended_value = 'None';
 
     /**
      * Return the current value for this Test
-     *
-     * @return void
      */
     public function _retrieveCurrentValue()
     {
@@ -60,9 +59,9 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
             return PHPSECINFO_TEST_RESULT_OK;
         } elseif ('Read-Only' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
-        } else {
-            return PHPSECINFO_TEST_RESULT_WARN;
         }
+
+        return PHPSECINFO_TEST_RESULT_WARN;
     }
 
     /**
@@ -71,8 +70,11 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "No permissions granted for the root ('/') directory. This is the most secure setup.");
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "Write permission enabled for the root ('/') directory! You should never allow writing outside your www base.");
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', "Read permission enabled. You should under normal instances never allow Reading of the root ('/').");
     }
 }

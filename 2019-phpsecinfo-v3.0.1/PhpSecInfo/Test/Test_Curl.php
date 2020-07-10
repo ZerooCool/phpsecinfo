@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for ` group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,17 +16,16 @@ require_once __DIR__ . '/Test.php';
 
 /**
  * This is a skeleton class for PhpSecInfo "Curl" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
      *
      * @public string
      */
+
     public $test_group = 'Curl';
 
     /**
@@ -41,6 +42,7 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
                     return false;
                 }
         */
+
         return extension_loaded('curl');
     }
 
@@ -50,6 +52,7 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'CURL support is not enabled in your PHP install');
     }
 }

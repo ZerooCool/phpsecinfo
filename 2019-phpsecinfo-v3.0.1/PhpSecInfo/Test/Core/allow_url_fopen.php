@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for allow_url_fopen
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,17 +16,15 @@ require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * Test Class for allow_url_fopen
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'allow_url_fopen';
 
     /**
@@ -32,6 +32,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
      *
      * @public mixed
      */
+
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()
@@ -47,6 +48,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
+
         return PHPSECINFO_TEST_RESULT_WARN;
     }
 
@@ -56,7 +58,9 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'allow_url_fopen is disabled, which is the recommended setting');
+
         $this->setMessageForResult(
             PHPSECINFO_TEST_RESULT_WARN,
             'en',

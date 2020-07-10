@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for open_basedir
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,17 +16,15 @@ require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * Test Class for open_basedir
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Open_Basedir extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'open_basedir';
 
     public $recommended_value = true;
@@ -52,9 +52,11 @@ class PhpSecInfo_Test_Core_Open_Basedir extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'open_basedir is enabled, which is the
 				recommended setting. Keep in mind that other web applications not written in PHP will not
 				be restricted by this setting.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'open_basedir is disabled.  When
 					this is enabled, only files that are in the
 					given directory/directories and their subdirectories can be read by PHP scripts.

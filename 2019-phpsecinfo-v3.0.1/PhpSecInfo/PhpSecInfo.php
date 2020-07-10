@@ -1,7 +1,7 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * Main class file
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -78,16 +78,15 @@ define('PHPSECINFO_URL', 'http://phpsec.org/projects/phpsecinfo/');
  * @author Ed Finkler <coj@funkatron.com>
  *
  *         see CHANGELOG for changes
- *
  */
 class PhpSecInfo
 {
-
     /**
      * An array of tests to run
      *
      * @public array PhpSecInfo_Test
      */
+
     public $tests_to_run = [];
 
     /**
@@ -100,6 +99,7 @@ class PhpSecInfo
      *
      * @public array
      */
+
     public $test_results = [];
 
     /**
@@ -112,6 +112,7 @@ class PhpSecInfo
      *
      * @public array
      */
+
     public $tests_not_run = [];
 
     /**
@@ -122,6 +123,7 @@ class PhpSecInfo
      * @public string
      * @see    PHPSECINFO_LANG_DEFAULT
      */
+
     public $language = PHPSECINFO_LANG_DEFAULT;
 
     /**
@@ -131,6 +133,7 @@ class PhpSecInfo
      *
      * @public array
      */
+
     public $result_counts = [];
 
     /**
@@ -138,11 +141,11 @@ class PhpSecInfo
      *
      * @public integer
      */
+
     public $num_tests_run = 0;
 
     /**
      * Constructor
-     *
      */
     public function __construct()
     {
@@ -163,6 +166,7 @@ class PhpSecInfo
                 $test_dirs[] = $entry;
             }
         }
+
         // echo "<pre>"; echo print_r($test_dirs, true); echo "</pre>";
 
         // include_once all files in each test dir
@@ -172,6 +176,7 @@ class PhpSecInfo
             while (false !== ($entry = $this_dir->read())) {
                 if (!is_dir($this_dir->path . DIRECTORY_SEPARATOR . $entry)) {
                     require_once $this_dir->path . DIRECTORY_SEPARATOR . $entry;
+
                     $classNames[] = 'PhpSecInfo_Test_' . $test_dir . '_' . basename($entry, '.php');
                 }
             }
@@ -194,28 +199,32 @@ class PhpSecInfo
     public function runTests()
     {
         // initialize a bunch of arrays
-        $this->test_results                                 = [];
-        $this->result_counts                                = [];
+        $this->test_results = [];
+
+        $this->result_counts = [];
+
         $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN] = 0;
-        $this->num_tests_run                                = 0;
+
+        $this->num_tests_run = 0;
 
         foreach ($this->tests_to_run as $testClass) {
-
             /**
-             *
              * @public $test PhpSecInfo_Test
              */
+
             $test = new $testClass();
 
             if ($test->isTestable()) {
                 $test->test();
-                $rs                                                              = [
-                    'result'            => $test->getResult(),
-                    'message'           => $test->getMessage(),
-                    'value_current'     => $test->getCurrentTestValue(),
+
+                $rs = [
+                    'result' => $test->getResult(),
+                    'message' => $test->getMessage(),
+                    'value_current' => $test->getCurrentTestValue(),
                     'value_recommended' => $test->getRecommendedTestValue(),
-                    'moreinfo_url'      => $test->getMoreInfoURL()
+                    'moreinfo_url' => $test->getMoreInfoURL(),
                 ];
+
                 $this->test_results[$test->getTestGroup()][$test->getTestName()] = $rs;
 
                 // Initialize if not yet set
@@ -224,16 +233,19 @@ class PhpSecInfo
                 }
 
                 $this->result_counts[$rs['result']]++;
+
                 $this->num_tests_run++;
             } else {
                 $rs = [
-                    'result'            => $test->getResult(),
-                    'message'           => $test->getMessage(),
-                    'value_current'     => null,
+                    'result' => $test->getResult(),
+                    'message' => $test->getMessage(),
+                    'value_current' => null,
                     'value_recommended' => null,
-                    'moreinfo_url'      => $test->getMoreInfoURL()
+                    'moreinfo_url' => $test->getMoreInfoURL(),
                 ];
+
                 $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN]++;
+
                 $this->tests_not_run[$test->getTestGroup() . '::' . $test->getTestName()] = $rs;
             }
         }
@@ -246,12 +258,12 @@ class PhpSecInfo
      */
     public function renderOutput($page_title = 'PHP Security Information')
     {
-
         /**
          * We need to use PhpSecInfo_Test::getBooleanIniValue() below
          *
          * @see PhpSecInfo_Test::getBooleanIniValue()
          */
+
         if (!class_exists('PhpSecInfo_Test')) {
             include(__DIR__ . DIRECTORY_SEPARATOR . 'Test' . DIRECTORY_SEPARATOR . 'Test.php');
         } ?>
@@ -498,45 +510,49 @@ class PhpSecInfo
                 // Affiche "Version xxx"
                 switch (PHPSECINFO_LANG_DEFAULT) {
                     case 'fr':
-                        echo 'Version ';
+                                                                                       echo 'Version ';
                         echo PHPSECINFO_VERSION;
-                        break;
 
+                                                                                      break;
                     default:
-                        echo 'Version ';
+                                                                                       echo 'Version ';
                         echo PHPSECINFO_VERSION;
-                        break;
+
+                                                                                      break;
                 } ?> - <?php
                 // Affiche "Last update"
                 switch (PHPSECINFO_LANG_DEFAULT) {
                     case 'fr':
-                        echo 'Dernière mise à jour du';
-                        break;
+                                                                                              echo 'Dernière mise à jour du';
 
+                                                                                             break;
                     default:
-                        echo 'Last update the';
-                        break;
+                                                                                              echo 'Last update the';
+
+                                                                                             break;
                 } ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/"
                                                        target="_PhpSecInfo"><?php
                     // Affiche "Participate from Github"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Participer depuis Github';
-                            break;
+                                                                                                                                                                       echo 'Participer depuis Github';
 
+                                                                                                                                                                      break;
                         default:
-                            echo 'Participate from Github';
-                            break;
+                                                                                                                                                                       echo 'Participate from Github';
+
+                                                                                                                                                                      break;
                     } ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
                     // Affiche "See phpinfo ()"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Consulter phpinfo()';
-                            break;
+                                                                                                                                                  echo 'Consulter phpinfo()';
 
+                                                                                                                                                 break;
                         default:
-                            echo 'See phpinfo ()';
-                            break;
+                                                                                                                                                  echo 'See phpinfo ()';
+
+                                                                                                                                                 break;
                     } ?></a>
             </h2>
         </div>
@@ -546,7 +562,9 @@ class PhpSecInfo
             foreach ($this->test_results as $group_name => $group_results) {
                 $this->_outputRenderTable($group_name, $group_results);
             }
+
         $this->_outputRenderNotRunTable();
+
         $this->_outputRenderStatsTable(); ?>
         </div>
         </body>
@@ -564,7 +582,6 @@ class PhpSecInfo
      */
     public function _outputRenderTable($group_name, $group_results)
     {
-
         // exit out if $group_results was empty or not an array. This sorta seems a little hacky...
         if (!is_array($group_results) || count($group_results) < 1) {
             return false;
@@ -572,7 +589,7 @@ class PhpSecInfo
 
         // Commenté via le code de BigDeej
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
-        // ksort($group_results); ?>
+        // ksort($group_results);?>
         <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
 
         <table class="results">
@@ -581,49 +598,56 @@ class PhpSecInfo
                     // Affiche "Check"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Vérifier';
-                            break;
+                                                                                             echo 'Vérifier';
 
+                                                                                            break;
                         default:
-                            echo 'Check';
-                            break;
+                                                                                             echo 'Check';
+
+                                                                                            break;
                     } ?></th>
                 <th><?php
                     // Affiche "Result"
                     switch (PHPSECINFO_LANG_DEFAULT) {
                         case 'fr':
-                            echo 'Résultat';
-                            break;
+                                                                                              echo 'Résultat';
 
+                                                                                             break;
                         default:
-                            echo 'Result';
-                            break;
+                                                                                              echo 'Result';
+
+                                                                                             break;
                     } ?></th>
             </tr>
-            <?php foreach ($group_results as $test_name => $test_results) : ?>
+            <?php foreach ($group_results as $test_name => $test_results) :
+?>
                 <tr>
                     <td class="label"><?php echo htmlspecialchars($test_name, ENT_QUOTES) ?></td>
                     <td
                             class="value <?php echo $this->_outputGetCssClassFromResult($test_results['result']) ?>">
-                        <?php if ('Test Results Summary' != $group_name) : ?>
+                        <?php if ('Test Results Summary' != $group_name) :
+?>
                             <div class="result"><?php echo $this->_outputGetResultTypeFromCode($test_results['result']) ?></div>
                         <?php endif; ?>
                         <div class="message"><?php echo $test_results['message'] ?></div>
 
-                        <?php if (isset($test_results['value_current']) || isset($test_results['value_recommended'])) : ?>
+                        <?php if (isset($test_results['value_current']) || isset($test_results['value_recommended'])) :
+?>
                             <table class="values">
-                                <?php if (isset($test_results['value_current'])) : ?>
+                                <?php if (isset($test_results['value_current'])) :
+?>
                                     <tr>
                                         <td class="label"><?php
                                             // Affiche "Current Value"
                                             switch (PHPSECINFO_LANG_DEFAULT) {
                                                 case 'fr':
-                                                    echo 'Valeur actuelle';
-                                                    break;
+                                                                                                                                                                                           echo 'Valeur actuelle';
 
+                                                                                                                                                                                          break;
                                                 default:
-                                                    echo 'Current Value';
-                                                    break;
+                                                                                                                                                                                           echo 'Current Value';
+
+                                                                                                                                                                                          break;
                                             } ?></td>
 
                                         <!-- <td><?php echo $test_results['value_current'] ?></td>  -->
@@ -631,37 +655,41 @@ class PhpSecInfo
                                         <td><?php echo wordwrap($test_results['value_current'], 55, '<br />', true) ?></td>
                                     </tr>
                                 <?php endif; ?>
-                                <?php if (isset($test_results['value_recommended'])) : ?>
+                                <?php if (isset($test_results['value_recommended'])) :
+?>
                                     <tr>
                                         <td class="label"><?php
                                             // Affiche "Recommended Value"
                                             switch (PHPSECINFO_LANG_DEFAULT) {
                                                 case 'fr':
-                                                    echo 'Valeur recommandée';
-                                                    break;
+                                                                                                                                                                                               echo 'Valeur recommandée';
 
+                                                                                                                                                                                              break;
                                                 default:
-                                                    echo 'Recommended Value';
-                                                    break;
+                                                                                                                                                                                               echo 'Recommended Value';
+
+                                                                                                                                                                                              break;
                                             } ?></td>
                                         <td><?php echo $test_results['value_recommended'] ?></td>
                                     </tr>
                                 <?php endif; ?>
                             </table>
                         <?php endif; ?>
-                        <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) : ?>
+                        <?php if (isset($test_results['moreinfo_url']) && $test_results['moreinfo_url']) :
+?>
                             <div class="moreinfo">
                                 <a href="<?php echo $test_results['moreinfo_url']; ?>"
                                    target="_blank"><?php
                                     // Affiche "More information &raquo;"
                                     switch (PHPSECINFO_LANG_DEFAULT) {
                                         case 'fr':
-                                            echo 'Plus d\'information &raquo;';
-                                            break;
+                                                                                                                                                                               echo 'Plus d\'information &raquo;';
 
+                                                                                                                                                                              break;
                                         default:
-                                            echo 'More information &raquo;';
-                                            break;
+                                                                                                                                                                               echo 'More information &raquo;';
+
+                                                                                                                                                                              break;
                                     } ?></a>
                             </div>
                         <?php endif; ?>
@@ -701,9 +729,9 @@ class PhpSecInfo
                 }
 
                 $stats[$this->_outputGetResultTypeFromCode($code)] = [
-                    'count'   => $val,
-                    'result'  => $code,
-                    'message' => "$val out of {$this->num_tests_run} ($percentage%)"
+                    'count' => $val,
+                    'result' => $code,
+                    'message' => "$val out of {$this->num_tests_run} ($percentage%)",
                 ];
             }
         }
@@ -735,23 +763,18 @@ class PhpSecInfo
             case PHPSECINFO_TEST_RESULT_OK:
                 return 'value-ok';
                 break;
-
             case PHPSECINFO_TEST_RESULT_NOTICE:
                 return 'value-notice';
                 break;
-
             case PHPSECINFO_TEST_RESULT_WARN:
                 return 'value-warn';
                 break;
-
             case PHPSECINFO_TEST_RESULT_NOTRUN:
                 return 'value-notrun';
                 break;
-
             case PHPSECINFO_TEST_RESULT_ERROR:
                 return 'value-error';
                 break;
-
             default:
                 return 'value-notrun';
                 break;
@@ -764,7 +787,7 @@ class PhpSecInfo
      * This is mainly used for the Test
      * Results Summary table.
      *
-     * @param integer $code
+     * @param int $code
      * @return string
      * @see PHPSecInfo::_outputRenderStatsTable()
      */
@@ -774,23 +797,18 @@ class PhpSecInfo
             case PHPSECINFO_TEST_RESULT_OK:
                 return 'Pass';
                 break;
-
             case PHPSECINFO_TEST_RESULT_NOTICE:
                 return 'Notice';
                 break;
-
             case PHPSECINFO_TEST_RESULT_WARN:
                 return 'Warning';
                 break;
-
             case PHPSECINFO_TEST_RESULT_NOTRUN:
                 return 'Not Run';
                 break;
-
             case PHPSECINFO_TEST_RESULT_ERROR:
                 return 'Error';
                 break;
-
             default:
                 return 'Invalid Result Code';
                 break;
@@ -806,6 +824,7 @@ class PhpSecInfo
     public function loadAndRun()
     {
         $this->loadTests();
+
         $this->runTests();
     }
 
@@ -825,9 +844,12 @@ class PhpSecInfo
     {
         $results = [];
 
-        $results['test_results']  = $this->test_results;
+        $results['test_results'] = $this->test_results;
+
         $results['tests_not_run'] = $this->tests_not_run;
+
         $results['result_counts'] = $this->result_counts;
+
         $results['num_tests_run'] = $this->num_tests_run;
 
         return $results;
@@ -842,9 +864,10 @@ class PhpSecInfo
     public function getOutput()
     {
         ob_start();
+
         $this->renderOutput();
-        $output = ob_get_clean();
-        return $output;
+
+        return ob_get_clean();
     }
 }
 
@@ -855,6 +878,8 @@ function phpsecinfo()
 {
     // modded this to not throw a PHP5 STRICT notice, although I don't like passing by value here
     $psi = new PhpSecInfo();
+
     $psi->loadAndRun();
+
     $psi->renderOutput();
 }

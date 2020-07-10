@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for is_self_write
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -16,25 +18,22 @@ require_once dirname(__DIR__) . '/Test_Dir.php';
  * Test class for function is_self_write
  * Checks if file permissions are proper for security.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'is_dir_write';
 
     public $recommended_value = 'Read-Only';
 
     /**
      * Return the current value for this Test
-     *
-     * @return void
      */
     public function _retrieveCurrentValue()
     {
@@ -59,9 +58,9 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
             return PHPSECINFO_TEST_RESULT_OK;
         } elseif ('Write+Read' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
-        } else {
-            return PHPSECINFO_TEST_RESULT_WARN;
         }
+
+        return PHPSECINFO_TEST_RESULT_WARN;
     }
 
     /**
@@ -70,8 +69,11 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'Only allowing Read permission. This is the most secure setup.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'Execute permission enabled! You should never allow execution here.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'Write permission enabled. You should consider revoking this permission since it can allow attackers to more easily modify files on your site.');
     }
 }

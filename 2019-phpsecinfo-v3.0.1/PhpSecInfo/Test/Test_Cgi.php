@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Cgi group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,12 +16,9 @@ require_once __DIR__ . '/Test.php';
 
 /**
  * This is a skeleton class for PhpSecInfo "CGI" tests
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      *
@@ -27,6 +26,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
      *
      * @public string
      */
+
     public $test_group = 'CGI';
 
     /**
@@ -45,7 +45,8 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
          * return false;
          * }
          */
-        return 0 === strpos(php_sapi_name(), 'cgi');
+
+        return 0 === mb_strpos(php_sapi_name(), 'cgi');
     }
 
     /**
@@ -54,6 +55,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
     }
 }

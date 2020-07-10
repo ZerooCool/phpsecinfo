@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Dir group
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 /**
@@ -12,11 +14,9 @@
 require_once __DIR__ . '/Test.php';
 /**
  * This is a skeleton class for PhpSecInfo "Dir" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      *
@@ -24,6 +24,7 @@ class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
      *
      * @public string
      */
+
     public $test_group = 'Dir';
 
     /**

@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for allow_url_include
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,8 +16,6 @@ require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * Test Class for allow_url_include
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
 {
@@ -24,7 +24,9 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = 'allow_url_include';
+
+    public $test_name = 'allow_url_include';
+
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()
@@ -40,6 +42,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
+
         return PHPSECINFO_TEST_RESULT_WARN;
     }
 
@@ -63,8 +66,11 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running a version of PHP older than 5.2, and allow_url_include is not available');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'allow_url_include is disabled, which is the recommended setting');
+
         $this->setMessageForResult(
             PHPSECINFO_TEST_RESULT_WARN,
             'en',

@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Core group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,17 +16,16 @@ require_once __DIR__ . '/Test.php';
 
 /**
  * This is a skeleton class for PhpSecInfo "Core" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core extends PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
      *
      * @public string
      */
+
     public $test_group = 'Core';
 
     /**

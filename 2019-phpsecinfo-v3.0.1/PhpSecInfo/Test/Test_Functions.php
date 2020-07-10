@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Core group
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -14,7 +16,6 @@ require_once __DIR__ . '/Test.php';
 
 /**
  * This is a skeleton class for PhpSecInfo "Functions" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Functions extends PhpSecInfo_Test
 {
@@ -24,6 +25,7 @@ class PhpSecInfo_Test_Functions extends PhpSecInfo_Test
      *
      * @public string
      */
+
     public $test_group = 'Functions';
 
     /**

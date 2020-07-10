@@ -1,7 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for GID
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -20,17 +22,15 @@ define('PHPSECINFO_MIN_SAFE_GID', 100);
 
 /**
  * Test class for GID
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+
     public $test_name = 'group_id';
 
     public $recommended_value = PHPSECINFO_MIN_SAFE_GID;
@@ -48,16 +48,20 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 
         if (false === $this->getUnixId()) {
             $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Functions required to retrieve group ID not available');
+
             return false;
         }
+
         return true;
     }
 
     public function _retrieveCurrentValue()
     {
         $id = $this->getUnixId();
+
         if (is_array($id)) {
-            $lowest_gid          = key($id['groups']);
+            $lowest_gid = key($id['groups']);
+
             $this->current_value = $lowest_gid;
         } else {
             $this->current_value = false;
@@ -84,8 +88,11 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
     public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'PHP is executing as what is probably a non-privileged group');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');
     }
 }
