@@ -29,7 +29,7 @@ class PhpSecInfo_Test_Core_Upload_Max_Filesize extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "upload_max_filesize";
+    public $test_name = 'upload_max_filesize';
 
     public $recommended_value = PHPSECINFO_UPLOAD_MAXLIMIT;
 

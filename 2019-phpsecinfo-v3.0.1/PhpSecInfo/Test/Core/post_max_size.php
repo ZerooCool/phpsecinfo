@@ -29,7 +29,7 @@ class PhpSecInfo_Test_Core_Post_Max_Size extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "post_max_size";
+    public $test_name = 'post_max_size';
 
     public $recommended_value = PHPSECINFO_POST_MAXLIMIT;
 

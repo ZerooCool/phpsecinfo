@@ -49,7 +49,7 @@ class PhpSecInfo_Test
      *
      * @public mixed
      */
-    public $recommended_value = "bar";
+    public $recommended_value = 'bar';
 
     /**
      * The result returned from the test
@@ -163,7 +163,7 @@ class PhpSecInfo_Test
      */
     public function _retrieveCurrentValue()
     {
-        $this->current_value = "foo";
+        $this->current_value = 'foo';
     }
 
     /**
@@ -270,7 +270,7 @@ class PhpSecInfo_Test
         // $message = $messages[$language_code];
         if ($messages[$language_code] === $_language) {
             // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
-            $langue_defaut = "en";
+            $langue_defaut = 'en';
             $message       = $messages[$langue_defaut];
         } else {
             $langue_definie = PHPSECINFO_LANG_DEFAULT;
@@ -388,7 +388,7 @@ class PhpSecInfo_Test
     public function getStringValue($val)
     {
         if ($val === false) {
-            return "0";
+            return '0';
         } else {
             return (string)$val;
         }
@@ -487,7 +487,7 @@ class PhpSecInfo_Test
     {
         if ($this->osIsWindows()) {
             return false;
-        } elseif (function_exists("exec") && !self::getBooleanIniValue('safe_mode')) {
+        } elseif (function_exists('exec') && !self::getBooleanIniValue('safe_mode')) {
             $id_raw = exec('id');
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
@@ -510,7 +510,7 @@ class PhpSecInfo_Test
                 $id_data['groups'] = $groups;
             }
             return $id_data;
-        } elseif (function_exists("posix_getpwuid") && function_exists("posix_geteuid") && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
+        } elseif (function_exists('posix_getpwuid') && function_exists('posix_geteuid') && function_exists('posix_getgrgid') && function_exists('posix_getgroups')) {
             $data                = posix_getpwuid(posix_getuid());
             $id_data['uid']      = $data['uid'];
             $id_data['username'] = $data['name'];

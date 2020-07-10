@@ -23,16 +23,16 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "upload_tmp_dir";
+    public $test_name = 'upload_tmp_dir';
 
-    public $recommended_value = "A non-world readable/writable directory";
+    public $recommended_value = 'A non-world readable/writable directory';
 
     public function _retrieveCurrentValue()
     {
         $this->current_value = ini_get('upload_tmp_dir');
 
         if (empty($this->current_value)) {
-            if (function_exists("sys_get_temp_dir")) {
+            if (function_exists('sys_get_temp_dir')) {
                 $this->current_value = sys_get_temp_dir();
             } else {
                 $this->current_value = $this->sys_get_temp_dir();
@@ -71,14 +71,14 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
             return PHPSECINFO_TEST_RESULT_WARN;
         } elseif ($this->current_value
                   /* && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) */
-                  && !preg_match("%^" . PHPSECINFO_TEST_COMMON_TMPDIR . "(/|$)%", $this->current_value)
+                  && !preg_match('%^' . PHPSECINFO_TEST_COMMON_TMPDIR . '(/|$)%', $this->current_value)
                   && !($perms & 0x0004)
                   && !($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
         // Rewrite current_value to display perms
-        $this->current_value .= " (" . substr(sprintf('%o', $perms), -4) . ")";
+        $this->current_value .= ' (' . substr(sprintf('%o', $perms), -4) . ')';
 
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }

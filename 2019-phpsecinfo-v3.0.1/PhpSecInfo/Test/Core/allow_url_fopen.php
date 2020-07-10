@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Fopen extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "allow_url_fopen";
+    public $test_name = 'allow_url_fopen';
 
     /**
      * The recommended setting value

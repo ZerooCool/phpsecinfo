@@ -26,7 +26,7 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
      *
      * @public string
      */
-    public $test_name = "is_root_read";
+    public $test_name = 'is_root_read';
 
     public $recommended_value = 'None';
 

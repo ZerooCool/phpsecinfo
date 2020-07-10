@@ -30,7 +30,7 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "group_id";
+    public $test_name = 'group_id';
 
     public $recommended_value = PHPSECINFO_MIN_SAFE_GID;
 

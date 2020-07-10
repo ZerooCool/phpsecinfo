@@ -27,14 +27,14 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "version_number";
+    public $test_name = 'version_number';
 
     // Cette ligne ne semble pas influencer la version recommandée qui est gérée depuis le fichier .version.json directement.
     public $recommended_value = '7.3.0';
 
     public $last_eol_value = '5.6.15';
 
-    private $_message_ok = "You are running a current stable version of PHP!";
+    private $_message_ok = 'You are running a current stable version of PHP!';
 
     public function _retrieveCurrentValue()
     {
@@ -53,9 +53,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     {
         if (!function_exists('curl_init')) {
             // Override the OK Message - Even if this passes we can't be 100% sure they are accurate since we didn't fetch the latest version
-            $this->_message_ok = "You are running a current stable version of PHP!
+            $this->_message_ok = 'You are running a current stable version of PHP!
 						<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if
-						PhpSecInfo is not up to date.";
+						PhpSecInfo is not up to date.';
 
             return [
                 'stable' => $this->recommended_value,
@@ -83,9 +83,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         // Detect CURL error and return local value
         if ($data === false || !isset($json->stable) || !isset($json->eol)) {
             // Override the OK Message - Even if this passes we can't be 100% sure they are accurate since we didn't fetch the latest version
-            $this->_message_ok = "You are running a current stable version of PHP!
+            $this->_message_ok = 'You are running a current stable version of PHP!
 						<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if
-						PhpSecInfo is not up to date.";
+						PhpSecInfo is not up to date.';
 
             return [
                 'stable' => $this->recommended_value,
@@ -136,7 +136,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         $this->_retrieveCurrentVersions();
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', $this->_message_ok);
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en',
                                    'You are running a version of PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.');
     }

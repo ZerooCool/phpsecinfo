@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_Open_Basedir extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "open_basedir";
+    public $test_name = 'open_basedir';
 
     public $recommended_value = true;
 

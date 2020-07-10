@@ -26,7 +26,7 @@ class PhpSecInfo_Test_Functions_Ftp_Nb_Fput extends PhpSecInfo_Test_Functions
      *
      * @public string
      */
-    public $test_name = "ftp_nb_fput";
+    public $test_name = 'ftp_nb_fput';
 
     public $recommended_value = 'Disabled';
 
@@ -65,9 +65,9 @@ class PhpSecInfo_Test_Functions_Ftp_Nb_Fput extends PhpSecInfo_Test_Functions
     public function _setMessages()
     {
         parent::_setMessages();
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "You have this function listed in your php.ini under disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'You have this function listed in your php.ini under disabled_functions.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en',
-                                   "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
+                                   'This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en',
                                    'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
     }

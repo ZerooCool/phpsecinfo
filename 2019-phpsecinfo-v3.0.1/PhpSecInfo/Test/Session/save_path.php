@@ -24,16 +24,16 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
      *
      * @public string
      */
-    public $test_name = "save_path";
+    public $test_name = 'save_path';
 
-    public $recommended_value = "A non-world readable/writable directory (750 for example)";
+    public $recommended_value = 'A non-world readable/writable directory (750 for example)';
 
     public function _retrieveCurrentValue()
     {
         $this->current_value = ini_get('session.save_path');
 
         if (empty($this->current_value)) {
-            if (function_exists("sys_get_temp_dir")) {
+            if (function_exists('sys_get_temp_dir')) {
                 $this->current_value = sys_get_temp_dir();
             } else {
                 $this->current_value = $this->sys_get_temp_dir();
@@ -66,12 +66,12 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
     public function _execTest()
     {
         $perms = fileperms($this->current_value);
-        if ($this->current_value && !preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && !($perms & 0x0004) && !($perms & 0x0002)) {
+        if ($this->current_value && !preg_match('|' . PHPSECINFO_TEST_COMMON_TMPDIR . '/?|', $this->current_value) && !($perms & 0x0004) && !($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
         // Rewrite current_value to display perms
-        $this->current_value .= " (" . substr(sprintf('%o', $perms), -4) . ")";
+        $this->current_value .= ' (' . substr(sprintf('%o', $perms), -4) . ')';
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
 

@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_File_Uploads extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "file_uploads";
+    public $test_name = 'file_uploads';
 
     public $recommended_value = false;
 

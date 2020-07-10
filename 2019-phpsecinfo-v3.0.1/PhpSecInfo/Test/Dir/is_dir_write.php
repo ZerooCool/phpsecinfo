@@ -26,7 +26,7 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
      *
      * @public string
      */
-    public $test_name = "is_dir_write";
+    public $test_name = 'is_dir_write';
 
     public $recommended_value = 'Read-Only';
 
@@ -69,8 +69,8 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
     public function _setMessages()
     {
         parent::_setMessages();
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "Only allowing Read permission. This is the most secure setup.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "Execute permission enabled! You should never allow execution here.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'Only allowing Read permission. This is the most secure setup.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'Execute permission enabled! You should never allow execution here.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'Write permission enabled. You should consider revoking this permission since it can allow attackers to more easily modify files on your site.');
     }
 }

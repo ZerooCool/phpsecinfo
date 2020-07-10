@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "magic_quotes_gpc";
+    public $test_name = 'magic_quotes_gpc';
 
     public $recommended_value = false;
 

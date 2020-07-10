@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_Display_Errors extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "display_errors";
+    public $test_name = 'display_errors';
 
     public $recommended_value = false;
 

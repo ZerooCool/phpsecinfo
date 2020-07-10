@@ -23,7 +23,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = "allow_url_include";
+    public $test_name         = 'allow_url_include';
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()

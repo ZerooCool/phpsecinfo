@@ -31,7 +31,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name = "memory_limit";
+    public $test_name = 'memory_limit';
 
     public $recommended_value = PHPSECINFO_MEMORY_LIMIT;
 

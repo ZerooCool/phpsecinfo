@@ -30,7 +30,7 @@ define('PHPSECINFO_VERSION', '3.0.1');
 /**
  * A YYYY.MM.DD date string to indicate "build" date
  */
-define('PHPSECINFO_BUILD', date("d-m-Y"));
+define('PHPSECINFO_BUILD', date('d-m-Y'));
 
 /**
  * Homepage for phpsecinfo project
@@ -172,7 +172,7 @@ class PhpSecInfo
             while (false !== ($entry = $this_dir->read())) {
                 if (!is_dir($this_dir->path . DIRECTORY_SEPARATOR . $entry)) {
                     require_once $this_dir->path . DIRECTORY_SEPARATOR . $entry;
-                    $classNames[] = "PhpSecInfo_Test_" . $test_dir . "_" . basename($entry, '.php');
+                    $classNames[] = 'PhpSecInfo_Test_' . $test_dir . '_' . basename($entry, '.php');
                 }
             }
         }
@@ -234,7 +234,7 @@ class PhpSecInfo
                     'moreinfo_url'      => $test->getMoreInfoURL()
                 ];
                 $this->result_counts[PHPSECINFO_TEST_RESULT_NOTRUN]++;
-                $this->tests_not_run[$test->getTestGroup() . "::" . $test->getTestName()] = $rs;
+                $this->tests_not_run[$test->getTestGroup() . '::' . $test->getTestName()] = $rs;
             }
         }
     }
@@ -244,7 +244,7 @@ class PhpSecInfo
      * The look and feel mimics phpinfo()
      * @param string $page_title
      */
-    public function renderOutput($page_title = "PHP Security Information")
+    public function renderOutput($page_title = 'PHP Security Information')
     {
 
         /**

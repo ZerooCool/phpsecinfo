@@ -24,7 +24,7 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = "expose_php";
+    public $test_name         = 'expose_php';
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()

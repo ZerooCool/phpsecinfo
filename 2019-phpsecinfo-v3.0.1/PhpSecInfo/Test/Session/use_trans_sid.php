@@ -25,7 +25,7 @@ class PhpSecInfo_Test_Session_Use_Trans_Sid extends PhpSecInfo_Test_Session
      *
      * @public string
      */
-    public $test_name = "use_trans_sid";
+    public $test_name = 'use_trans_sid';
 
     public $recommended_value = false;
 

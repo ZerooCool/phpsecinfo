@@ -31,7 +31,7 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = "user_id";
+    public $test_name         = 'user_id';
     public $recommended_value = PHPSECINFO_MIN_SAFE_UID;
 
     /**

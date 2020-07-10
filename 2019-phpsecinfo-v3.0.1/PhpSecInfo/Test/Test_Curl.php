@@ -49,6 +49,6 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
     public function _setMessages()
     {
         parent::_setMessages();
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "CURL support is not enabled in your PHP install");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'CURL support is not enabled in your PHP install');
     }
 }

@@ -23,7 +23,7 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
      *
      * @public string
      */
-    public $test_name         = "register_globals";
+    public $test_name         = 'register_globals';
     public $recommended_value = false;
 
     public function _retrieveCurrentValue()
