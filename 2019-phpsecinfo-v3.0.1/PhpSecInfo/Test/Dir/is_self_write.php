@@ -57,7 +57,9 @@ class PhpSecInfo_Test_Dir_Is_Self_Write extends PhpSecInfo_Test_Dir
         // Check permissions
         if ('Read-Only' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_OK;
-        } elseif ('Write+Read' == $this->current_value) {
+        }
+
+        if ('Write+Read' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         }
 

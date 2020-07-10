@@ -126,7 +126,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
         if (version_compare($this->current_value, $version['stable'], '>=')) {
             return PHPSECINFO_TEST_RESULT_OK;
-        } elseif (version_compare($this->current_value, $version['stable'], '<') && version_compare($this->current_value, $version['eol'], '>')) {
+        }
+
+        if (version_compare($this->current_value, $version['stable'], '<') && version_compare($this->current_value, $version['eol'], '>')) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         }
 

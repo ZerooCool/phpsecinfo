@@ -57,7 +57,9 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
         // Check permissions
         if ('None' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_OK;
-        } elseif ('Read-Only' == $this->current_value) {
+        }
+
+        if ('Read-Only' == $this->current_value) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         }
 
