@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

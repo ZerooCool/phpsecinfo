@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Proc_Get_Status extends PhpSecInfo_Test_Function
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

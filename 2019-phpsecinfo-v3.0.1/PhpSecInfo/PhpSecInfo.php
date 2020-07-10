@@ -143,7 +143,6 @@ class PhpSecInfo
     /**
      * Constructor
      *
-     * @return PhpSecInfo
      */
     public function __construct()
     {
@@ -243,6 +242,7 @@ class PhpSecInfo
     /**
      * This is the main output method.
      * The look and feel mimics phpinfo()
+     * @param string $page_title
      */
     public function renderOutput($page_title = "PHP Security Information")
     {
@@ -567,6 +567,7 @@ class PhpSecInfo
      *
      * @param string $group_name
      * @param array  $group_results
+     * @return bool
      */
     public function _outputRenderTable($group_name, $group_results)
     {

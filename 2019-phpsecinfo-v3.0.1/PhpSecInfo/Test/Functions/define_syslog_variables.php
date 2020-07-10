@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Define_Syslog_Variables extends PhpSecInfo_Test_
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_PhpAds_XmlrpcEncode extends PhpSecInfo_Test_Func
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

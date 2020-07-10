@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Proc_Nice extends PhpSecInfo_Test_Functions
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

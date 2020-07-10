@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Dir_Is_Self_Write extends PhpSecInfo_Test_Dir
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

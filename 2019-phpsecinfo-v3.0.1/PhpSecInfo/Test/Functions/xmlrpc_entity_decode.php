@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Xmlrpc_Entity_Decode extends PhpSecInfo_Test_Fun
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

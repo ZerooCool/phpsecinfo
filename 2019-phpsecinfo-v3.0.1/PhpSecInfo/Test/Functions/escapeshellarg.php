@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Escapeshellarg extends PhpSecInfo_Test_Functions
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

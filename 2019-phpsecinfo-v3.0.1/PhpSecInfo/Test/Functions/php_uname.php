@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Php_Uname extends PhpSecInfo_Test_Functions
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

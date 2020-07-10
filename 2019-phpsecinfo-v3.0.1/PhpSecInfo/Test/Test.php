@@ -103,7 +103,6 @@ class PhpSecInfo_Test
     /**
      * Constructor for Test skeleton class
      *
-     * @return PhpSecInfo_Test
      */
     public function __construct()
     {

@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Ini_Get_All extends PhpSecInfo_Test_Functions
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {

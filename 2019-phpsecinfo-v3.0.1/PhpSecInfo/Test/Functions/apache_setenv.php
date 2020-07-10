@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Functions_Apache_Setenv extends PhpSecInfo_Test_Functions
     /**
      * Return the current value for this Test
      *
-     * @return
+     * @return void
      */
     public function _retrieveCurrentValue()
     {
