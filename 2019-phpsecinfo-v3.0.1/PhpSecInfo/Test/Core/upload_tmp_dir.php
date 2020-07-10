@@ -44,7 +44,7 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
      * We are disabling this function on Windows OSes right now until
      * we can be certain of the proper way to check world-readability
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

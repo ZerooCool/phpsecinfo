@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Proc_Get_Status extends PhpSecInfo_Test_Function
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

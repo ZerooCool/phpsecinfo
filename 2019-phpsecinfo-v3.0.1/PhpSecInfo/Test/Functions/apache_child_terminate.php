@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

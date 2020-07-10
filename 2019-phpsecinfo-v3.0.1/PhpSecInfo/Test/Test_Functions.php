@@ -28,7 +28,7 @@ class PhpSecInfo_Test_Functions extends PhpSecInfo_Test
     /**
      * "Functions" tests should pretty much be always testable, so the default is just to return true.
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

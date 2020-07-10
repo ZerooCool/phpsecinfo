@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Proc_Nice extends PhpSecInfo_Test_Functions
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

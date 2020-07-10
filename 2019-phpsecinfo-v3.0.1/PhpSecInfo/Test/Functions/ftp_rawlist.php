@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Ftp_Rawlist extends PhpSecInfo_Test_Functions
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

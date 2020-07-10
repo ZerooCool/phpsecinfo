@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
      * The best way I could think of
      * to test this was to preg against the php_sapi_name() return value.
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

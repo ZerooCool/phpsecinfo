@@ -109,7 +109,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     /**
      * Checks to see if the current PHP version is acceptable
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

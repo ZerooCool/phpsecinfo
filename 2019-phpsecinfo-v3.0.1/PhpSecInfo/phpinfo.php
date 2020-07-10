@@ -12,6 +12,6 @@ echo '<br/>';
 /**
  * Fonction phpinfo() | PhpSecInfo/phpinfo.php
  *
- * @return string|boolean
+ * @return string|bool
  */
 phpinfo();

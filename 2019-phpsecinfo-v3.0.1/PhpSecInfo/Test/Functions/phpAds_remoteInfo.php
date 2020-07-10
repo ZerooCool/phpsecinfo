@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_PhpAds_RemoteInfo extends PhpSecInfo_Test_Functi
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

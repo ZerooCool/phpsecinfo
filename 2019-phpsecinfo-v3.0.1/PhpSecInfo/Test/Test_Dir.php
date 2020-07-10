@@ -28,7 +28,7 @@ class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
     /**
      * "Dir" tests should pretty much be always testable, so the default is just to return true
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

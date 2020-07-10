@@ -45,7 +45,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
     /**
      * allow_url_include is only available since PHP 5.2
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

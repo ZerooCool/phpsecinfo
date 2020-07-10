@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Xmlrpc_Entity_Decode extends PhpSecInfo_Test_Fun
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

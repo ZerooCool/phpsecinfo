@@ -48,7 +48,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      * NOTICE: memory_limit enabled and set to a value greater than 8MB.
      * WARNING: memory_limit disabled (compile time option).
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

@@ -119,7 +119,7 @@ class PhpSecInfo_Test
      * loaded).
      * This is a terrible name, but I couldn't think of a better one atm.
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {
@@ -130,7 +130,7 @@ class PhpSecInfo_Test
      * The "meat" of the test.
      * This is where the real test code goes. You should override this when extending
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {
@@ -179,7 +179,7 @@ class PhpSecInfo_Test
     /**
      * Retrieves the result
      *
-     * @return integer
+     * @return int
      */
     public function getResult()
     {
@@ -206,9 +206,9 @@ class PhpSecInfo_Test
      * $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
      * </code>
      *
-     * @param integer $result_code
-     * @param string  $language_code
-     * @param string  $message
+     * @param int    $result_code
+     * @param string $language_code
+     * @param string $message
      */
     public function setMessageForResult($result_code, $language_code, $message)
     {
@@ -250,7 +250,7 @@ class PhpSecInfo_Test
     /**
      * Sets the result code
      *
-     * @param integer $result_code
+     * @param int $result_code
      */
     public function _setResult($result_code)
     {
@@ -260,8 +260,8 @@ class PhpSecInfo_Test
     /**
      * Sets the $this->_message variable based on the passed result and language codes
      *
-     * @param integer $result_code
-     * @param string  $language_code
+     * @param int    $result_code
+     * @param string $language_code
      */
     public function _setMessage($result_code, $language_code)
     {
@@ -354,7 +354,7 @@ class PhpSecInfo_Test
      *
      * @link http://php.net/manual/en/function.ini-get.php
      * @param string $val
-     * @return integer
+     * @return int
      */
     public function returnBytes($val)
     {
@@ -404,7 +404,7 @@ class PhpSecInfo_Test
      *
      * @param string $ini_key
      *            the ini_key you need the value of
-     * @return boolean|mixed
+     * @return bool|mixed
      */
     public function getBooleanIniValue($ini_key)
     {
@@ -462,7 +462,7 @@ class PhpSecInfo_Test
      * A quick function to determine whether we're running on Windows.
      * Uses the PHP_OS constant.
      *
-     * @return boolean
+     * @return bool
      */
     public function osIsWindows()
     {
@@ -482,7 +482,7 @@ class PhpSecInfo_Test
      * returns FALSE if no suitable function is available to retrieve
      * the data
      *
-     * @return array|boolean
+     * @return array|bool
      */
     public function getUnixId()
     {

@@ -37,7 +37,7 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
     /**
      * This test only works under Unix OSes
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

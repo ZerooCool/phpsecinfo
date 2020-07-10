@@ -34,7 +34,7 @@ class PhpSecInfo_Test_Core_Register_Globals extends PhpSecInfo_Test_Core
     /**
      * register_globals has been removed since PHP 6.0
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

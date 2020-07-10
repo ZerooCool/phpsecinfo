@@ -50,7 +50,7 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

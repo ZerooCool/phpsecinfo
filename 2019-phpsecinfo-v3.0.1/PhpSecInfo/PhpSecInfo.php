@@ -739,7 +739,7 @@ class PhpSecInfo
      * the result code the test returned.
      * This allows us to color-code results
      *
-     * @param integer $code
+     * @param int $code
      * @return string
      */
     public function _outputGetCssClassFromResult($code)

@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Functions_Define_Syslog_Variables extends PhpSecInfo_Test_
     /**
      * Checks to see if the function is enabled
      *
-     * @return integer
+     * @return int
      */
     public function _execTest()
     {

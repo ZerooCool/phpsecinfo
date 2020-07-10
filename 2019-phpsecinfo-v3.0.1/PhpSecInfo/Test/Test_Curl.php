@@ -30,7 +30,7 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
      * "Curl" tests should only be run if the curl extension is installed.  We can check
      * for this by seeing if the function curl_init() is defined
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

@@ -29,7 +29,7 @@ class PhpSecInfo_Test_Core extends PhpSecInfo_Test
     /**
      * "Core" tests should pretty much be always testable, so the default is just to return true
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {

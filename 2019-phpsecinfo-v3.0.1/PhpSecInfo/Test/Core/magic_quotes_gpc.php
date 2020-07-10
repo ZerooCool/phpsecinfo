@@ -36,7 +36,7 @@ class PhpSecInfo_Test_Core_Magic_Quotes_GPC extends PhpSecInfo_Test_Core
     /**
      * magic_quotes_gpc has been removed since PHP 6.0
      *
-     * @return boolean
+     * @return bool
      */
     public function isTestable()
     {
