@@ -1,42 +1,40 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test class for cgi force_redirect
  *
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
 /**
  * Require the PhpSecInfo_Test_Cgi class
  */
-require_once dirname(__DIR__) . '/Test_Cgi.php';
+require_once('PhpSecInfo/Test/Test_Cgi.php');
 
 /**
  * Test class for cgi force_redirect
  *
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
 {
+
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
-
-    public $test_name = 'force_redirect';
+    public $test_name = "force_redirect";
 
     /**
      * The recommended setting value
      *
      * @public mixed
      */
-
     public $recommended_value = true;
 
-    public function _retrieveCurrentValue()
+    function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('cgi.force_redirect');
     }
@@ -44,7 +42,7 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
     /**
      * Checks to see if cgi.force_redirect is enabled
      */
-    public function _execTest()
+    function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -56,12 +54,10 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
     /**
      * Set the messages specific to this test
      */
-    public function _setMessages()
+    function _setMessages()
     {
         parent::_setMessages();
-
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'force_redirect is enabled, which is the recommended setting');
-
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "force_redirect is enabled, which is the recommended setting");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting");
     }
 }

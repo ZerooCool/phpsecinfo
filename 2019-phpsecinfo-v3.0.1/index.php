@@ -1,12 +1,10 @@
-<?php declare(strict_types=1);
-
-require_once('PhpSecInfo/PhpSecInfo.php'); ?>
+<?php require_once('PhpSecInfo/PhpSecInfo.php'); ?>
 <?php phpsecinfo(); ?>
 
 <?php
 /* ## EN ##
  * ## EN ## This is an example page calling the phpsecinfo() function
- *
+ * 
  * If you want to capture output and/or customize the look and feel,
  * you need to do slightly more work.
  *
@@ -33,7 +31,7 @@ require_once('PhpSecInfo/PhpSecInfo.php'); ?>
  *
  * ## FR ##
  * ## FR ## Ceci est un exemple de page appelant la fonction phpsecinfo()
- *
+ * 
  * Si vous souhaitez capturer la sortie et/ou personnaliser l'apparence,
  * vous devez faire un peu plus de travail.
  *

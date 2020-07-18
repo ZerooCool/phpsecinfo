@@ -1,40 +1,39 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test class for session save_path
  *
+ * @package PhpSecInfo
  * @author Thomas CORBIERE <thomas@votre-grandeur-celeste.com>
  */
 
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-//require_once ('PhpSecInfo/Test/Test_Session.php');
-require_once dirname(__DIR__) . '/Test_Session.php';
+require_once ('PhpSecInfo/Test/Test_Session.php');
 
 /**
  * Test class for session save_path
+ *
+ * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
 {
+
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
+    public $test_name = "save_path";
 
-    public $test_name = 'save_path';
+    public $recommended_value = "A non-world readable/writable directory (750 for example)";
 
-    public $recommended_value = 'A non-world readable/writable directory (750 for example)';
-
-    public function _retrieveCurrentValue()
+    function _retrieveCurrentValue()
     {
         $this->current_value = ini_get('session.save_path');
 
         if (empty($this->current_value)) {
-            if (function_exists('sys_get_temp_dir')) {
+            if (function_exists("sys_get_temp_dir")) {
                 $this->current_value = sys_get_temp_dir();
             } else {
                 $this->current_value = $this->sys_get_temp_dir();
@@ -46,15 +45,15 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
      * We are disabling this function on Windows OSes right now until
      * we can be certain of the proper way to check world-readability
      *
-     * @return bool
+     * @return unknown
      */
-    public function isTestable()
+    function isTestable()
     {
         if ($this->osIsWindows()) {
             return false;
+        } else {
+            return true;
         }
-
-        return true;
     }
 
     /**
@@ -64,31 +63,26 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
      *
      * @see PHPSECINFO_TEST_COMMON_TMPDIR
      */
-    public function _execTest()
+    function _execTest()
     {
         $perms = fileperms($this->current_value);
-
-        if ($this->current_value && !preg_match('|' . PHPSECINFO_TEST_COMMON_TMPDIR . '/?|', $this->current_value) && !($perms & 0x0004) && !($perms & 0x0002)) {
+        if ($this->current_value && ! preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
 
         // Rewrite current_value to display perms
-        $this->current_value .= ' (' . mb_substr(sprintf('%o', $perms), -4) . ')';
-
+        $this->current_value .= " (" . substr(sprintf('%o', $perms), - 4) . ")";
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
 
     /**
      * Set the messages specific to this test
      */
-    public function _setMessages()
+    function _setMessages()
     {
         parent::_setMessages();
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'save_path is enabled, which is the recommended setting.');
-
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'save_path is disabled, or is set to a
 						common world-writable directory.  This typically allows other users on this server
 						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
