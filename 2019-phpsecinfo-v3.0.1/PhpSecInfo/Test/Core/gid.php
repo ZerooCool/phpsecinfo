@@ -1,7 +1,7 @@
 <?php
 /**
  * Test class for GID
- * @package PhpSecInfo
+ *
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -19,8 +19,6 @@ define('PHPSECINFO_MIN_SAFE_GID', 100);
 
 /**
  * Test class for GID
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
 {
@@ -84,5 +82,9 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'PHP is executing as what is probably a non-privileged group');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'PHP est executing as what is probably a non-privileged group');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'This test will not run on Windows OSes');
     }
 }

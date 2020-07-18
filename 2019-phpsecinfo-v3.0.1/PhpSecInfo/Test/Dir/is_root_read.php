@@ -2,7 +2,6 @@
 /**
  * Test class for is_root_read
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -15,7 +14,6 @@ require_once ('PhpSecInfo/Test/Test_Dir.php');
  * Test class for function is_self_write
  * Checks if file permissions are proper for security.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
@@ -73,5 +71,10 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "No permissions granted for the root ('/') directory. This is the most secure setup.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "Write permission enabled for the root ('/') directory! You should never allow writing outside your www base.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', "Read permission enabled. You should under normal instances never allow Reading of the root ('/').");
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "No permissions granted for the root ('/') directory. This is the most secure setup.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Write permission enabled for the root ('/') directory! You should never allow writing outside your www base.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', "Read permission enabled. You should under normal instances never allow Reading of the root ('/').");
+        
     }
 }

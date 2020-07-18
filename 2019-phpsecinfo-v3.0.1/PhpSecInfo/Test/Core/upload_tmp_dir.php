@@ -1,7 +1,7 @@
 <?php
 /**
  * Test Class for upload_tmp_dir
- * @package PhpSecInfo
+ *
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -12,8 +12,6 @@ require_once ('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test Class for upload_tmp_dir
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
 {
@@ -95,5 +93,15 @@ class PhpSecInfo_Test_Core_Upload_Tmp_Dir extends PhpSecInfo_Test_Core
                                                 to a common world-writable directory (xx5). This typically allows other users on this server
                                                 to access temporary copies of files uploaded via your PHP scripts. You should set
                                                 upload_tmp_dir to a non-world-readable directory (7x0)');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'A traduire -- Test not run -- currently disabled on Windows OSes');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'A traduire -- upload_tmp_dir is enabled, which is the recommended setting.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'A traduire -- Unable to retrieve file permissions on upload_tmp_dir');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'A traduire -- upload_tmp_dir is disabled, or you use the /tmp directory but
+                                                this naming is not allowed for this test and you must provide a custom directory, or is set
+                                                to a common world-writable directory (xx5). This typically allows other users on this server
+                                                to access temporary copies of files uploaded via your PHP scripts. You should set
+                                                upload_tmp_dir to a non-world-readable directory (7x0)');
+        
     }
 }

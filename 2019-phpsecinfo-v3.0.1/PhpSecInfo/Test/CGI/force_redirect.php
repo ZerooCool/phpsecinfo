@@ -2,7 +2,6 @@
 /**
  * Test class for cgi force_redirect
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,7 +13,6 @@ require_once('PhpSecInfo/Test/Test_Cgi.php');
 /**
  * Test class for cgi force_redirect
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
@@ -59,5 +57,9 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "force_redirect is enabled, which is the recommended setting");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting");
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "force_redirect is enabled, which is the recommended setting");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting");
+        
     }
 }

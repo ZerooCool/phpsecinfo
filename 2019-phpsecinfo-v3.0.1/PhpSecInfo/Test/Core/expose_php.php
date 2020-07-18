@@ -2,7 +2,6 @@
 /**
  * Test class for expose_php
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -14,8 +13,6 @@ require_once('PhpSecInfo/Test/Test_Core.php');
 
 /**
  * Test class for expose_php
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
 {
@@ -51,6 +48,11 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'expose_php is disabled, which is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'expose_php is enabled.  This adds
+				the PHP "signature" to the web server header, including the PHP version number.  This
+				could attract attackers looking for vulnerable versions of PHP');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'expose_php is disabled, which is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'expose_php is enabled.  This adds
 				the PHP "signature" to the web server header, including the PHP version number.  This
 				could attract attackers looking for vulnerable versions of PHP');
     }

@@ -2,7 +2,6 @@
 /**
  * Test class for CURL file_support
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

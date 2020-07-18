@@ -2,7 +2,6 @@
 /**
  * Test Class for upload_max_filesize
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -18,8 +17,6 @@ define('PHPSECINFO_UPLOAD_MAXLIMIT', 32*1024*1024);
 
 /**
  * Test Class for upload_max_filesize
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Upload_Max_Filesize extends PhpSecInfo_Test_Core
 {
@@ -59,5 +56,9 @@ class PhpSecInfo_Test_Core_Upload_Max_Filesize extends PhpSecInfo_Test_Core
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'upload_max_filesize is enabled, and appears to be a relatively low value.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'upload_max_filesize is not enabled, or is set to a high value.  Are you sure your apps require uploading files of this size?  If not, lower the limit, as large file uploads can impact server performance');
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'A traduire -- upload_max_filesize is enabled, and appears to be a relatively low value.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'A traduire -- upload_max_filesize is not enabled, or is set to a high value.  Are you sure your apps require uploading files of this size?  If not, lower the limit, as large file uploads can impact server performance');
+        
     }
 }

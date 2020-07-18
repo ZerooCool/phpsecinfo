@@ -2,7 +2,6 @@
 /**
  * Test Class for post_max_size
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -18,8 +17,6 @@ define('PHPSECINFO_POST_MAXLIMIT', 32*1024*1024);
 
 /**
  * Test Class for post_max_size
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Post_Max_Size extends PhpSecInfo_Test_Core
 {
@@ -55,7 +52,6 @@ class PhpSecInfo_Test_Core_Post_Max_Size extends PhpSecInfo_Test_Core
 
     /**
      * Set the messages specific to this test
-     *
      */
     function _setMessages()
     {
@@ -64,6 +60,11 @@ class PhpSecInfo_Test_Core_Post_Max_Size extends PhpSecInfo_Test_Core
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'post_max_size is enabled, and appears to
 				be a relatively low value');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'post_max_size is not enabled, or is set to
+				a high value. Allowing a large value may open up your server to denial-of-service attacks');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'A traduire -- post_max_size is enabled, and appears to
+				be a relatively low value');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'A traduire -- post_max_size is not enabled, or is set to
 				a high value. Allowing a large value may open up your server to denial-of-service attacks');
     }
 }
