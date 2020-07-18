@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
 /**
 * Page phpinfo() | PhpSecInfo/phpinfo.php
 *
+* @package PhpSecInfo
 * @author Zer00CooL <mail@visionduweb.com>
 */
 
