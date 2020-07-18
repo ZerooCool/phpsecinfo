@@ -1,3 +1,6 @@
+3.02  2020-07-10 (mambax7)
+- PHP7 updates/cosmetics
+
 ################################################
 #     v3.0.1 2019-2020 - Version Zer00CooL     #
 ################################################
@@ -11,12 +14,12 @@ Ajout d'une fin de ligne vide à la fin de chaque fichier.
 Indentation des fichiers aux normes PSR-2.
 Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
 
-# # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # #
 ###### A inclure SecurityInfo ! ######
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
-# # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######
 v0.2.2
 - requires are now resolved relative to base phpsecinfo path, so PhpSecInfo does

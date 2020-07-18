@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for memory_limit setting
  *
- * @package PhpSecInfo
  * @author  Paul Reinheimer
  * @author  Ed Finkler
  * @author  Mark Wallaert <mark@autumnweave.com>
@@ -11,7 +13,8 @@
 /**
  * Require the PhpSecInfo_Test_Core class
  */
-require_once ('PhpSecInfo/Test/Test_Core.php');
+//require_once('PhpSecInfo/Test/Test_Core.php');
+require_once dirname(__DIR__) . '/Test_Core.php';
 
 /**
  * The max recommended size for the memory_limit setting, in bytes (8388608)
@@ -20,22 +23,20 @@ define('PHPSECINFO_MEMORY_LIMIT', 8 * 1024 * 1024);
 
 /**
  * Test Class for memory_limit setting
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
 {
-
     /**
      * This should be a <b>unique</b>, human-readable identifier for this test
      *
      * @public string
      */
-    public $test_name = "memory_limit";
+
+    public $test_name = 'memory_limit';
 
     public $recommended_value = PHPSECINFO_MEMORY_LIMIT;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->returnBytes(ini_get('memory_limit'));
     }
@@ -48,33 +49,36 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      * NOTICE: memory_limit enabled and set to a value greater than 8MB.
      * WARNING: memory_limit disabled (compile time option).
      *
-     * @return integer
+     * @return int
      */
-    function _execTest()
+    public function _execTest()
     {
-        if (! $this->current_value) {
+        if (!$this->current_value) {
             return PHPSECINFO_TEST_RESULT_WARN;
-        } elseif ($this->returnBytes($this->current_value) <= PHPSECINFO_MEMORY_LIMIT) {
+        }
+
+        if ($this->returnBytes($this->current_value) <= PHPSECINFO_MEMORY_LIMIT) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
+
         return PHPSECINFO_TEST_RESULT_NOTICE;
     }
 
     /**
      * Set the messages specific to this test
-     *
-     * @access public
-     * @return null
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'memory_limit is enabled, and appears to be set
 				to a realistic value.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'memory_limit is set to a very high value. Are
 				you sure your apps require this much memory? If not, lower the limit, as certain attacks or poor
 				programming practices can lead to exhaustion of server resources. It is recommended that you set this
 				to a realistic value (8M for example) from which it can be expanded as required.');
+
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'memory_limit does not appear to be enabled.  This
 				leaves the server vulnerable to attacks that attempt to exhaust resources and creates an environment
 				where poor programming practices can propagate unchecked.  This must be enabled at compile time by
