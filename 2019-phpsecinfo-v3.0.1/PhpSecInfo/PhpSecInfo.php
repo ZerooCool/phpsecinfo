@@ -145,7 +145,7 @@ class PhpSecInfo
      *
      * @return PhpSecInfo
      */
-    function PhpSecInfo()
+    function __construct()
     {}
 
     /**
