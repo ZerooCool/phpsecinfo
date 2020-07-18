@@ -1,10 +1,8 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Skeleton Test class file
  * 
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

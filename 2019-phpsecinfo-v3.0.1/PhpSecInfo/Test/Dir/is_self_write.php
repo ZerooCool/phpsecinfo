@@ -1,10 +1,8 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test class for is_self_write
  *
+ * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 

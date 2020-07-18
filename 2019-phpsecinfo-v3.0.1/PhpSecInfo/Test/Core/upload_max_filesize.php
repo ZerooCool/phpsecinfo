@@ -1,10 +1,8 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test Class for upload_max_filesize
  *
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

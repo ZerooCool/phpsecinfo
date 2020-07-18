@@ -1,10 +1,8 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test class for UID
  *
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

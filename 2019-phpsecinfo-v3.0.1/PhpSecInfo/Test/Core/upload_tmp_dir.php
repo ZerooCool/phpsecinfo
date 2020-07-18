@@ -1,10 +1,7 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Test Class for upload_tmp_dir
- * 
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

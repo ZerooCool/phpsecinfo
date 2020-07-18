@@ -1,10 +1,7 @@
 <?php
-
-declare(strict_types=1);
-
 /**
  * Main class file
- *
+ * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
