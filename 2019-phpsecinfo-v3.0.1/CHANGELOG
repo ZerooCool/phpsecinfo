@@ -1,15 +1,15 @@
 ################################################
-#     v3.0.1 2019-2020 - Version Zer00CooL     #
+#     v3.0.2 2020-2021 - Version Zer00CooL     #
 ################################################
-# Version basée sur la v0.2.1 + Version v2.0.2 #
+#     Version basée sur la v3.0.1 2019-2020    #
 ################################################
-Intégration du français par défaut dans le fichier PhpSecInfo.php par switch case. Si le français n'est pas présent l'anglais est affiché.
-Intégration du français par défaut dans le fichier Test.php. Si le français n'est pas présent l'anglais est affiché.
-Intégration des correctifs de BigDeej
-Ajout du fichier .gitattributes pour la collaboration Linux / Windows.
-Ajout d'une fin de ligne vide à la fin de chaque fichier.
-Indentation des fichiers aux normes PSR-2.
-Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
+Modification de l'ancien constructeur PHP.
+Ajout de " declare(strict_types=1); " au début de chaque fichier PHP.
+Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
+
+# # # # # # # # # # # # # # # # # # # # # # # # # #
+###### A inclure Proposition PHP7 de mambax7 ######
+https://github.com/ZerooCool/phpsecinfo/issues/26
 
 # # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######
@@ -31,15 +31,42 @@ v0.2.2
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
-# # # # # # # # # # # # # # # # # # # # # # # # # #
-###### A inclure Proposition PHP7 de mambax7 ######
-https://github.com/ZerooCool/phpsecinfo/issues/26
+
+################################################
+#     v3.0.1 2019-2020 - Version Zer00CooL     #
+################################################
+# Version basée sur la v0.2.1 + Version v2.0.2 #
+################################################
+Intégration du français par défaut dans le fichier PhpSecInfo.php par switch case. Si le français n'est pas présent l'anglais est affiché.
+Intégration du français par défaut dans le fichier Test.php. Si le français n'est pas présent l'anglais est affiché.
+Intégration des correctifs de BigDeej
+Ajout du fichier .gitattributes pour la collaboration Linux / Windows.
+Ajout d'une fin de ligne vide à la fin de chaque fichier.
+Indentation des fichiers aux normes PSR-2.
+Ajout du fichier phpinfo() et un lien de retour vers PhpSecInfo.
 
 #################################################
 ###### A été inclus v2.0.2 (Dec 5, 2016) ! ######
 #################################################
 - Updated PHP Version Test (OK)
 - Added PHP7 Support for Version Test (OK)
+
+################################################
+###### A été inclus v2.0.1a (Dec 1, 2015) ######
+################################################
+# Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
+# Removed Container: PhpSecInfo_Test_Core_CURL (NO)
+# Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
+
+- Updated to PHP5 Objects with public value (OK)
+- Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format (PhpSecInfo.php) (OK)
+- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal> (OK)
+- Updated Test: PhpSecInfo_Test_Core_Memory_Limit - 8MB is far too low for 2016 default memory limit should be below 200MB today (OK)
+- Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
+- Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
+
+- Added output (HTML) template support (Where ? Fixed URL in Test.php ? ) (THEN OK)
+- Upgraded output (HTML) to Bootstrap 2.0 (Where ? Docs with PHPDocumentor ?) (THEN OK)
 
 ##############################################################
 # La version de base utilisée pour inclure les modifications #
@@ -112,19 +139,19 @@ v0.1.1
 v0.1
 - Initial public release
 
-################################################
-###### A été inclus v2.0.1a (Dec 1, 2015) ######
-################################################
-# Removed PHP4 Support (Si il s'agit du test Curl, je ne l'ai pas supprimé.) (NO)
-# Removed Container: PhpSecInfo_Test_Core_CURL (NO)
-# Removed Test: PhpSecInfo_Test_Core_CURL_File_Support (NO)
+###############################################
+# Liens pour accéder aux versions officielles #
+###############################################
+Le lien officiel pour télécharger la version de PhpSecInfo de 2007 v0.2.1 :
+http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
 
-- Updated to PHP5 Objects with public value (OK)
-- Change "Build" format from YYYYMMDD to YYYY.MM.DD for easier human readable format (PhpSecInfo.php) (OK)
-- New Test: PhpSecInfo_Test_Core_Version <Glenn S Crystal> (OK)
-- Updated Test: PhpSecInfo_Test_Core_Memory_Limit - 8MB is far too low for 2016 default memory limit should be below 200MB today (OK)
-- Updated Test: PhpSecInfo_Test_Core_Upload_Max_Filesize - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
-- Updated Test: PhpSecInfo_Test_Core_Post_Max_Size - 1024*256 Bytes is far too low for 2016 default max upload should be at most 32MB (OK)
+Le lien officiel pour télécharger la version de PhpSecInfo de 2009 v0.2.2 :
+https://github.com/funkatron/phpsecinfo - https://github.com/funkatron/phpsecinfo/blob/master/CHANGELOG
 
-- Added output (HTML) template support (Where ? Fixed URL in Test.php ? ) (THEN OK)
-- Upgraded output (HTML) to Bootstrap 2.0 (Where ? Docs with PHPDocumentor ?) (THEN OK)
+Le lien non officiel pour télécharger la version de PhpSecInfo de 2009 v2.0.1a -> v2.0.2 de 2016 :
+https://github.com/bigdeej/PhpSecInfo - https://github.com/bigdeej/PhpSecInfo/blob/master/CHANGELOG
+
+Un fork de PhpSecInfo vers SecurityInfo basé sur la v0.2.2 de 2009
+Le CHANGELOG n'est plus présent pour suivre l'évolution des correctifs de ce projet.
+Cette mise à jour ne prend pas en compte les mises à jour de la v2.0.1a -> v2.0.2 de 2016.
+Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo - https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20

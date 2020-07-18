@@ -43,20 +43,9 @@ Intègre la version v0.2.2 2009 dans son projet.
 La version de SecurityInfo est une version améliorée de PhpSecInfo v0.2.2 en 2018.
 ```
 
-## Vérification des CHANGELOG
-Le lien officiel pour télécharger la version de PhpSecInfo de 2007 v0.2.1 :
-http://phpsec.org/projects/phpsecinfo/phpsecinfo.zip
+## Les dernières mises à jour du projet
 
-Le lien officiel pour télécharger la version de PhpSecInfo de 2009 v0.2.2 :
-https://github.com/funkatron/phpsecinfo - https://github.com/funkatron/phpsecinfo/blob/master/CHANGELOG
-
-Le lien non officiel pour télécharger la version de PhpSecInfo de 2009 v2.0.1a -> v2.0.2 de 2016 :
-https://github.com/bigdeej/PhpSecInfo - https://github.com/bigdeej/PhpSecInfo/blob/master/CHANGELOG
-
-Un fork de PhpSecInfo vers SecurityInfo basé sur la v0.2.2 de 2009
-Le CHANGELOG n'est plus présent pour suivre l'évolution des correctifs de ce projet.
-Cette mise à jour ne prend pas en compte les mises à jour de la v2.0.1a -> v2.0.2 de 2016.
-Le lien officiel pour télécharger la version de SecurityInfo de 2019 : https://github.com/matomo-org/plugin-SecurityInfo - https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
+Consulter le fichier CHANGELOG à la racine du projet.
 
 # Installer PhpSecInfo v3.0.1 2019
 
