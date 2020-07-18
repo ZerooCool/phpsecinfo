@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for phpAds_xmlrpcEncode
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 

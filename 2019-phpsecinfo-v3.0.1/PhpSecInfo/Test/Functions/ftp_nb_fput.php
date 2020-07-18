@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for ftp_nb_fput
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 

@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Core group
  * 
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 

@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Skeleton Test class file for Cgi group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for proc_nice
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 

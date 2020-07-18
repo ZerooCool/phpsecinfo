@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for register_globals
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

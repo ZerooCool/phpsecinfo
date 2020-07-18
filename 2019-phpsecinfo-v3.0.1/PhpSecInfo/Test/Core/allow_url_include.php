@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test Class for allow_url_include
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 

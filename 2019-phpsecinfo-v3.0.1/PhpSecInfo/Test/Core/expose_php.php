@@ -1,11 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Test class for expose_php
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
-
 
 /**
  * Require the PhpSecInfo_Test_Core class
