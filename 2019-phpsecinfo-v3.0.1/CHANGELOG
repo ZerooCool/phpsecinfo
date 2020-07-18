@@ -4,8 +4,9 @@
 #     Version basée sur la v3.0.1 2019-2020    #
 ################################################
 Modification de l'ancien constructeur PHP.
-Ajout de " declare(strict_types=1); " au début de chaque fichier PHP.
+Ajout de " declare(strict_types=1); " au début de chaque fichier PHP. (NON ne fonctionne pas pour le moment. A suivre!)
 Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
+Ajout des variables de langue fr pour chacun des tests effectués.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######

@@ -2,7 +2,6 @@
 /**
  * Test class for posix_kill
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -15,7 +14,6 @@ require_once ('PhpSecInfo/Test/Test_Functions.php');
  * Test class for function posix_kill
  * Checks if dangerous functionality is enabled.
  *
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 class PhpSecInfo_Test_Functions_Posix_Kill extends PhpSecInfo_Test_Functions
@@ -68,5 +66,10 @@ class PhpSecInfo_Test_Functions_Posix_Kill extends PhpSecInfo_Test_Functions
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "You have this function listed in your php.ini under disabled_functions.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "You have this function listed in your php.ini under disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
+        
     }
 }
