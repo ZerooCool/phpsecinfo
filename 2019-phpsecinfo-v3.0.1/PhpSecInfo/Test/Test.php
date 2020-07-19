@@ -264,7 +264,7 @@ class PhpSecInfo_Test
     {
         $messages = $this->_messages[$result_code];
 
-        // Afficher l'anglais par défaut quand la traduction n'existe pas.
+        // Utiliser l'anglais quand les chaînes de la langue principale n'existent pas.
         // $message = $messages[$language_code];
         if ( $messages[$language_code] === $_language )
         {

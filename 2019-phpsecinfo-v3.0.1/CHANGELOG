@@ -3,10 +3,18 @@
 ################################################
 #     Version basée sur la v3.0.1 2019-2020    #
 ################################################
-Modification de l'ancien constructeur PHP.
-Ajout de " declare(strict_types=1); " au début de chaque fichier PHP. (NON ne fonctionne pas pour le moment. A suivre!)
-Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
-Ajout des variables de langue fr pour chacun des tests effectués.
+Améliorations :
+   Modification de l'ancien constructeur PHP.
+   Ajout de " declare(strict_types=1); " au début de index.php.
+   Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
+   Ajout des variables de langue fr pour chacun des tests effectués.
+   Modification de array() par [] dans le fichier PhpSecInfo.php.
+   Amélioration de la description du test is_root_read.
+
+Nouvelles problématiques identifiées :
+   ( Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP. A suivre! )
+   ( Des Notice: Undefined index et variables sont affichées en provenance de Test.php. A suivre! )
+   ( Il faudrait catcher l'erreur pour ne pas afficher de warning sur l'écran si l'affichage des erreurs est autorisé en front. A suivre! )
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
