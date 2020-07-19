@@ -9,7 +9,7 @@ Améliorations :
    Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
    Ajout des variables de langue fr pour chacun des tests effectués.
    Modification de array() par [] dans le fichier PhpSecInfo.php.
-   Amélioration de la description du test is_root_read.
+   Amélioration de la description du test "Dir/is_root_read.php" en anglais et en français. Ajout de la traduction en russe.
 
 Nouvelles problématiques identifiées :
    ( Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP. A suivre! )
