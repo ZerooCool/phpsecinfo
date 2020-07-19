@@ -72,7 +72,7 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "Write permission enabled for the root ('/') directory! You should never allow writing outside your www base.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', "Read permission enabled. You should under normal instances never allow Reading of the root ('/').");
 
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "No permissions granted for the root ('/') directory. This is the most secure setup.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "Comment faire ? No permissions granted for the root ('/') directory. This is the most secure setup.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Write permission enabled for the root ('/') directory! You should never allow writing outside your www base.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', "Read permission enabled. You should under normal instances never allow Reading of the root ('/').");
         

@@ -72,9 +72,9 @@ class PhpSecInfo_Test_Dir_Is_Self_Write extends PhpSecInfo_Test_Dir
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "Execute permission enabled! You should never allow execution here.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'Write permission enabled. You should consider revoking this permission since it can allow attackers to more easily modify files on your site.');
 
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "A traduire -- Only allowing Read permission. This is the most secure setup.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "A traduire -- Execute permission enabled! You should never allow execution here.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'A traduire -- Write permission enabled. You should consider revoking this permission since it can allow attackers to more easily modify files on your site.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "Uniquement autoriser Read permission. This is the most secure setup.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Au vert avec www-data pour propriétaire du dossier principale du serveur. Execute permission enabled! You should never allow execution here.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Au vert avec www-data pour propriétaire du dossier principale du serveur. Write permission enabled. You should consider revoking this permission since it can allow attackers to more easily modify files on your site.');
 
     }
 }

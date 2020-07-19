@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file
  * 
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -23,8 +22,6 @@ define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinf
  * This is a skeleton class for PhpSecInfo tests You should extend this to make a "group" skeleton
  * to categorize tests under, then make a subdir with your group name that contains test classes
  * extending your group skeleton class.
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test
 {
@@ -66,7 +63,7 @@ class PhpSecInfo_Test
     public $_message;
 
     /**
-     * the language code.
+     * The language code.
      * Should be a pointer to the setting in the PhpSecInfo object
      *
      * @public string
@@ -98,7 +95,7 @@ class PhpSecInfo_Test
      *
      * @public array
      */
-    public $_messages = array();
+    public $_messages = [];
 
     /**
      * Constructor for Test skeleton class
@@ -213,11 +210,11 @@ class PhpSecInfo_Test
     function setMessageForResult($result_code, $language_code, $message)
     {
         if (! isset($this->_messages[$result_code])) {
-            $this->_messages[$result_code] = array();
+            $this->_messages[$result_code] = [];
         }
 
         if (! is_array($this->_messages[$result_code])) {
-            $this->_messages[$result_code] = array();
+            $this->_messages[$result_code] = [];
         }
 
         $this->_messages[$result_code][$language_code] = $message;
@@ -267,7 +264,7 @@ class PhpSecInfo_Test
     {
         $messages = $this->_messages[$result_code];
 
-        // Afficher le français par défaut, et, sinon, la langue anglaise quand la traduction n'existe pas.
+        // Afficher l'anglais par défaut quand la traduction n'existe pas.
         // $message = $messages[$language_code];
         if ( $messages[$language_code] === $_language )
         {
@@ -494,12 +491,12 @@ class PhpSecInfo_Test
             // uid=1000(coj) gid=1000(coj) groups=1000(coj),1001(admin)
             preg_match("|uid=(\d+)\((\S+)\)\s+gid=(\d+)\((\S+)\)\s+groups=(.+)|i", $id_raw, $matches);
 
-            $id_data = array(
+            $id_data = [
                 'uid' => $matches[1],
                 'username' => $matches[2],
                 'gid' => $matches[3],
                 'group' => $matches[4]
-            );
+            ];
 
             if ($matches[5]) {
                 $gs = $matches[5];
