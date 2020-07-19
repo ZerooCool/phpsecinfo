@@ -79,10 +79,10 @@ class PhpSecInfo_Test_Dir_Is_Root_Read extends PhpSecInfo_Test_Dir
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', "En temps normal, vous ne devriez jamais autoriser la lecture de la racine ('/'). Vous ne devez jamais autoriser l'écriture en dehors de votre base www. Activer et définir la valeur de open_basedir pour corriger ce problème depuis la configuration de PHP.");
 
         /* ru */
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "Нет прав для корневого каталога ('/'). Это самая безопасная конфигурация.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', "Нет прав для корневого каталога ('/'). Это самая безопасная конфигурация.");
         /* L'affichage du message Warn n'est pas défini. */
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Разрешение на запись активировано для корневого каталога ('/')! Вы никогда не должны позволять писать за пределами вашей базы www.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', "Обычно вы никогда не должны позволять читать корень ('/'). Вы никогда не должны позволять писать за пределами вашей базы www. Включите и установите значение open_basedir, чтобы исправить эту проблему из конфигурации PHP.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "Разрешение на запись активировано для корневого каталога ('/')! Вы никогда не должны позволять писать за пределами вашей базы www.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', "Обычно вы никогда не должны позволять читать корень ('/'). Вы никогда не должны позволять писать за пределами вашей базы www. Включите и установите значение open_basedir, чтобы исправить эту проблему из конфигурации PHP.");
         
     }
 }
