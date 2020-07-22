@@ -10,11 +10,14 @@ Améliorations :
    Ajout des variables de langue fr pour chacun des tests effectués.
    Modification de array() par [] dans le fichier PhpSecInfo.php.
    Amélioration de la description du test "Dir/is_root_read.php" en anglais et en français. Ajout de la traduction en russe.
+   Amélioration de fonctions avec public.
+   Le lien vers la documentation du site officiel est remplacé pour pointer de façon relative vers le dossier documentation du projet Github.
 
 Nouvelles problématiques identifiées :
-   ( Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP. A suivre! )
-   ( Des Notice: Undefined index et variables sont affichées en provenance de Test.php. A suivre! )
-   ( Il faudrait catcher l'erreur pour ne pas afficher de warning sur l'écran si l'affichage des erreurs est autorisé en front. A suivre! )
+   Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP. A suivre!
+   Des Notice: Undefined index et variables sont affichées en provenance de Test.php. A suivre!
+   Il faudrait catcher les warning pour ne plus les afficher sur l'écran si l'affichage des erreurs est autorisé en front. A suivre!
+   Il faudrait recréer la documentation du site officiel vers le Github dans le dossier documentation.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
