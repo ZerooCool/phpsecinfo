@@ -1,0 +1,47 @@
+<html>
+<body>
+
+
+            <h1>PhpSecInfo Test Information</h1>
+            <!-- Markdown syntax reference: http://daringfireball.net/projects/markdown/syntax -->
+
+<p><!-- Test name -->
+</p><h2>upload_max_filesize</h2><p></p>
+
+<p><!-- What the test does -->
+</p><h3>Test Description</h3><p></p>
+
+<p>Checks if upload_max_filesize is greater than 256KB.  </p>
+
+<h3>Security Implications</h3>
+
+<p>upload_max_filesize limits the maximum size of files that PHP will accept through uploads. Attackers may attempt to send grossly oversized files to exhaust your system resources; by setting a realistic value here you can mitigate some of the damage by those attacks. By default, PHP sets this value to 2MB.</p>
+
+<p><!-- What we recommend, and how to implement it -->
+</p><h3>Recommendations</h3><p></p>
+
+<p>You can set upload_max_filesize in the php.ini file:</p>
+
+<pre>; Lower upload_max_filesize for security reasons
+upload_max_filesize = 256K
+</pre>
+
+<p>The setting can also be applied in apache's httpd.conf file, or an .htaccess file:</p>
+
+<pre># Lower upload_max_filesize for security reasons
+php_value  upload_max_filesize  256K
+</pre>
+
+<p><!-- Links to additional sources of information related to this topic -->
+</p><h3>More Information</h3><p></p>
+
+<ul>
+<li><a href="http://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize">PHP.net manual: upload_max_filesize</a></li>
+<li><a href="http://us3.php.net/manual/en/faq.using.php#faq.using.shorthandbytes">PHP.net manual: Using shorthand byte values</a></li>
+</ul>
+
+                        	<p><a href="./index.html">Index de la documentation</a></p>
+            
+            
+</body>
+</html>

@@ -16,7 +16,9 @@ define('PHPSECINFO_TEST_RESULT_WARN', - 4);
 define('PHPSECINFO_TEST_RESULT_ERROR', - 1024);
 define('PHPSECINFO_TEST_RESULT_NOTRUN', - 2048);
 define('PHPSECINFO_TEST_COMMON_TMPDIR', '/tmp');
-define('PHPSECINFO_TEST_MOREINFO_BASEURL', 'http://phpsec.org/projects/phpsecinfo/tests/');
+// Exemple original : http://phpsec.org/projects/phpsecinfo/tests/upload_max_filesize
+// Présent également depuis la ligne 40 du fichier PhpSecInfo.php
+define('PHPSECINFO_TEST_MOREINFO_BASEURL', './documentation/');
 
 /**
  * This is a skeleton class for PhpSecInfo tests You should extend this to make a "group" skeleton
@@ -142,18 +144,23 @@ class PhpSecInfo_Test
      */
     function _setMessages()
     {
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be considered safe');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This could potentially be a security issue');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'This setting may be a serious security problem');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
-        
         // Afichier les messages standards en français c'est très bien, mais, ça me prive des messages anglais exisant qui ne sont pas traduits.
-        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
-        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
-        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Ce paramètre peut constituer un grave problème de sécurité');
-        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'fr', 'Une erreur s\'est produite lors de l\'exécution de ce test');
-        // $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Ce test ne peut pas être exécuté');
+        // Admettons que la langue fr est choisie dans PhpSecInfo.php, et, que les lignes suivantes soient décommentées,
+        // ce message prendra le dessus sur les explications, notamment dans les tests concernant "Session".
+        
+        // Commenter toute la fonction provoque une erreur. A suivre !
+        
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'This setting should be considered safe');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This could potentially be a security issue');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'This setting may be a serious security problem');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'en', 'There was an error running this test');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test cannot be run');
+        
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Ce paramètre devrait pouvoir être considéré comme sûr');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Ceci pourrait potentiellement être un problème de sécurité');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Ce paramètre peut constituer un grave problème de sécurité');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_ERROR, 'fr', 'Une erreur s\'est produite lors de l\'exécution de ce test');
+        //$this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Ce test ne peut pas être exécuté');
     }
 
     /**
