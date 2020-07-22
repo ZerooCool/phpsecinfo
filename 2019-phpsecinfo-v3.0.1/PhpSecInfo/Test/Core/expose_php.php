@@ -25,7 +25,7 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
     
     public function _retrieveCurrentValue()
     {
-        $this->current_value =  $this->returnBytes(ini_get('expose_php'));
+        $this->current_value = $this->returnBytes(ini_get('expose_php'));
     }
                     
     /**

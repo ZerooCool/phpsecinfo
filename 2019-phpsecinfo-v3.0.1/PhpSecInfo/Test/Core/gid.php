@@ -37,22 +37,27 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         if ($this->osIsWindows()) {
             return false;
         } elseif ($this->getUnixId() === false) {
             $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Functions required to retrieve group ID not available');
+            
+            $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Functions required to retrieve group ID not available');
+            
+            $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'eru', 'Functions required to retrieve group ID not available');
+            
             return false;
         }
         return true;
     }
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $id = $this->getUnixId();
         if (is_array($id)) {
-            $lowest_gid = key($id['groups']);
+            $lowest_gid          = key($id['groups']);
             $this->current_value = $lowest_gid;
         } else {
             $this->current_value = false;
@@ -64,27 +69,28 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
      *
      * @see PHPSECINFO_MIN_SAFE_GID
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value >= $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
         }
-
         return PHPSECINFO_TEST_RESULT_WARN;
     }
 
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'PHP is executing as what is probably a non-privileged group');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'PHP est executing as what is probably a non-privileged group');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'This test will not run on Windows OSes');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'PHP peut s\'exécuter en tant que groupe "privilégié", ce qui pourrait être une faille de sécurité sérieuse.');
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'PHP est executing as what is probably a non-privileged group');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
+        
     }
 }

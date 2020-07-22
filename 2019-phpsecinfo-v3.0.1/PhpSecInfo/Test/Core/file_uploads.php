@@ -25,7 +25,7 @@ class PhpSecInfo_Test_Core_File_Uploads extends PhpSecInfo_Test_Core
 
     public $recommended_value = false;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->returnBytes(ini_get('file_uploads'));
     }
@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Core_File_Uploads extends PhpSecInfo_Test_Core
     /**
      * Checks to see if expose_php is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -44,7 +44,7 @@ class PhpSecInfo_Test_Core_File_Uploads extends PhpSecInfo_Test_Core
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'file_uploads are disabled.  Unless you\'re sure you need them, this is the recommended setting');
@@ -52,5 +52,9 @@ class PhpSecInfo_Test_Core_File_Uploads extends PhpSecInfo_Test_Core
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'file_uploads are disabled.  Unless you\'re sure you need them, this is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'file_uploads are enabled.  If you do not require file upload capability, consider disabling them.');
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'file_uploads are disabled.  Unless you\'re sure you need them, this is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'file_uploads are enabled.  If you do not require file upload capability, consider disabling them.');
+        
     }
 }
