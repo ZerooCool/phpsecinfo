@@ -27,7 +27,6 @@ define('PHPSECINFO_TEST_MOREINFO_BASEURL', './documentation/');
  */
 class PhpSecInfo_Test
 {
-
     /**
      * This value is used to group test results together.
      * For example, all tests related to the mysql lib should be grouped under "mysql."
@@ -62,8 +61,8 @@ class PhpSecInfo_Test
      *
      * @public string
      */
-    public $_message;
-
+    public $_message; 
+    
     /**
      * The language code.
      * Should be a pointer to the setting in the PhpSecInfo object
@@ -216,11 +215,11 @@ class PhpSecInfo_Test
      */
     function setMessageForResult($result_code, $language_code, $message)
     {
-        if (! isset($this->_messages[$result_code])) {
+        if (!isset($this->_messages[$result_code])) {
             $this->_messages[$result_code] = [];
         }
 
-        if (! is_array($this->_messages[$result_code])) {
+        if (!is_array($this->_messages[$result_code])) {
             $this->_messages[$result_code] = [];
         }
 
@@ -271,11 +270,12 @@ class PhpSecInfo_Test
     {
         $messages = $this->_messages[$result_code];
 
-        // Utiliser l'anglais quand les chaînes de la langue principale n'existent pas.
-        // $message = $messages[$language_code];
-        if ( $messages[$language_code] === $_language )
+        $_language = !empty(PHPSECINFO_LANG_DEFAULT);
+        
+        if ( $messages[$language_code] != $_language )
         {
-            // $langue_defaut et $langue_definie ne devraient pas être appelées avec public ?
+            // Utiliser l'anglais quand les chaînes de la langue principale définie comme choix n'existent pas.
+            // $message = $messages[$language_code];
             $langue_defaut ="en";
             $message = $messages[$langue_defaut];
         } else {
