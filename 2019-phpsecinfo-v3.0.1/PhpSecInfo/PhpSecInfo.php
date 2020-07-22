@@ -10,13 +10,13 @@
  * Use or add your favorite language. Current choice: fr, en, ru
  * Add a choice with PHP case for translations of this page
  * Add a line with a new language value in the Test.php file
- * Untranslated strings will be replaced by English strings : en
+ * Untranslated strings will be replaced by french strings : fr
  *
  * Le paramètre de langue par défaut.
  * Utiliser ou ajouter votre langue préférée. Choix possible actuellement : fr, en, ru
  * Ajouter un choix avec PHP case pour les traductions de cette page
  * Ajouter une ligne avec une nouvelle valeur de langue dans le fichier Test.php
- * Les chaînes non traduites seront remplacées par les chaînes en anglais : en
+ * Les chaînes non traduites seront remplacées par les chaînes en français : fr
  */
 define('PHPSECINFO_LANG_DEFAULT', 'fr');
 
@@ -311,10 +311,11 @@ DIV.header {
 background-color: #4C5B74;
 color: white;
 border-bottom: 3px solid #333333;
-padding: .5em;
+padding-top: 25px;
+padding-bottom: 25px;
 }
 DIV.header H1, DIV.header H2 {
-padding: 0;
+padding-left: 25px;
 margin: 0;
 }
 DIV.header H2 {
@@ -332,7 +333,7 @@ width: 100%;
 text-align: left;
 }
 TD, TH {
-padding: 0.5em;
+padding: 0.6em;
 border: 2px solid #333333;
 }
 TR.header {
@@ -340,10 +341,10 @@ background-color: #706464;
 color: white;
 }
 TD.label {
-text-align: top;
 font-weight: bold;
 background-color: #7B8489;
 border: 2px solid #333333;
+width: 200px;
 }
 TD.value {
 border: 2px solid #333333
@@ -454,7 +455,7 @@ color: #000000;
 </head>
 <body>
 	<div class="header">
-		<h1><a href="<?php echo PHPSECINFO_URL ?>" target="_phpsec"><?php echo $page_title ?></a></h1>
+		<h1 style="color:red;"><?php echo $page_title ?></h1>
 		<h2><?php
         // Affiche "Version xxx" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
