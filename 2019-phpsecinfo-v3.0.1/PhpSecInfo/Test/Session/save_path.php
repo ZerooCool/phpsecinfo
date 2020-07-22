@@ -81,10 +81,26 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
     function _setMessages()
     {
         parent::_setMessages();
+        
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'Test not run -- currently disabled on Windows OSes');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'save_path is enabled, which is the recommended setting.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'save_path is disabled, or is set to a
 						common world-writable directory.  This typically allows other users on this server
 						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'fr Test not run -- currently disabled on Windows OSes');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'fr save_path is enabled, which is the recommended setting.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'fr save_path is disabled, or is set to a
+						common world-writable directory.  This typically allows other users on this server
+						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
+        
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', 'ru Test not run -- currently disabled on Windows OSes');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'ru save_path is enabled, which is the recommended setting.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'ru save_path is disabled, or is set to a
+						common world-writable directory.  This typically allows other users on this server
+						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
+        
+        
     }
 }

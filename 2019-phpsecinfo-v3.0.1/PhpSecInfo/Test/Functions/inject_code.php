@@ -65,9 +65,13 @@ class PhpSecInfo_Test_Functions_Inject_Code extends PhpSecInfo_Test_Functions
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
 
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "You have this function listed in your php.ini under disabled_functions.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "fr You have this function listed in your php.ini under disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "fr This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'fr This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', "fr You have this function listed in your php.ini under disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "fr This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'fr This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
         
     }
 }
