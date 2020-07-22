@@ -53,6 +53,11 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
     function _setMessages()
     {
         parent::_setMessages();
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI.");
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', "Vous ne semblez pas utiliser le CGI SAPI.");
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', "Вы, кажется, не используете CGI SAPI.");
+        
     }
 }

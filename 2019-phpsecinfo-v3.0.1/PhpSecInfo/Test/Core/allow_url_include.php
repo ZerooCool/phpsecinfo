@@ -23,7 +23,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
     public $test_name = "allow_url_include";
     public $recommended_value = false;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('allow_url_include');
     }
@@ -31,7 +31,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
     /**
      * Checks to see if allow_url_fopen is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -44,7 +44,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
 
         if (version_compare(PHP_VERSION, '5.2', '<')) {
@@ -57,7 +57,7 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'You are running a version of PHP older than 5.2, and allow_url_include is not available');
@@ -65,8 +65,12 @@ class PhpSecInfo_Test_Core_Allow_Url_Include extends PhpSecInfo_Test_Core
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'allow_url_include is enabled.  This could be a serious security risk.  You should disable allow_url_include and consider using the <a href="http://php.net/manual/en/ref.curl.php" target="_blank">PHP cURL functions</a> instead.');
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'You are running a version of PHP older than 5.2, and allow_url_include is not available');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'allow_url_include is disabled, which is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'allow_url_include est désactivé, ce qui est le paramètre recommandé.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'allow_url_include is enabled.  This could be a serious security risk.  You should disable allow_url_include and consider using the <a href="http://php.net/manual/en/ref.curl.php" target="_blank">PHP cURL functions</a> instead.');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', 'You are running a version of PHP older than 5.2, and allow_url_include is not available');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'allow_url_include отключено, что является рекомендуемой настройкой');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', 'allow_url_include is enabled.  This could be a serious security risk.  You should disable allow_url_include and consider using the <a href="http://php.net/manual/en/ref.curl.php" target="_blank">PHP cURL functions</a> instead.');
         
     }
 }

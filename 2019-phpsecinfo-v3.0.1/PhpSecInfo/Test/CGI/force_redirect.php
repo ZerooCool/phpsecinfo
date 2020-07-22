@@ -32,7 +32,7 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
      */
     public $recommended_value = true;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('cgi.force_redirect');
     }
@@ -40,7 +40,7 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
     /**
      * Checks to see if cgi.force_redirect is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -52,7 +52,7 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "force_redirect is enabled, which is the recommended setting");
@@ -60,6 +60,9 @@ class PhpSecInfo_Test_Cgi_Force_Redirect extends PhpSecInfo_Test_Cgi
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "force_redirect is enabled, which is the recommended setting");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting");
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', "force_redirect is enabled, which is the recommended setting");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "force_redirect is disabled.  In most cases, this is a <strong>serious</strong> security vulnerability. Unless you are absolutely sure this is not needed, enable this setting");
         
     }
 }

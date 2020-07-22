@@ -572,7 +572,6 @@ color: #000000;
         // Commenté via le code de BigDeej
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
         // ksort($group_results);
-
         ?>
 <h2 class="result-header"><?php echo htmlspecialchars($group_name, ENT_QUOTES) ?></h2>
 
@@ -728,7 +727,7 @@ color: #000000;
      * @see PHPSecInfo::_outputRenderTable()
      * @see PHPSecInfo::_outputGetResultTypeFromCode()
      */
-    function _outputRenderStatsTable()
+    public function _outputRenderStatsTable()
     {
         // Add by
         // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
@@ -742,14 +741,14 @@ color: #000000;
                 // https://github.com/bigdeej/PhpSecInfo/tree/master/PhpSecInfo/Test/Core
                 if ($code == PHPSECINFO_TEST_RESULT_NOTICE) {
                     $score -= $percentage / 2;
-                } else if ($code == PHPSECINFO_TEST_RESULT_WARN) {
+                } elseif ($code == PHPSECINFO_TEST_RESULT_WARN) {
                     $score -= $percentage;
                 }
 
                 $stats[$this->_outputGetResultTypeFromCode($code)] = [
-                    'count' => $val,
-                    'result' => $code,
-                    'message' => "$val out of {$this->num_tests_run} ($percentage%)"
+                    'count'     => $val,
+                    'result'    => $code,
+                    'message'   => "$val out of {$this->num_tests_run} ($percentage%)"
                 ];
             }
         }
@@ -762,7 +761,7 @@ color: #000000;
      *
      * @see PHPSecInfo::_outputRenderTable()
      */
-    function _outputRenderNotRunTable()
+    public function _outputRenderNotRunTable()
     {
         $this->_outputRenderTable('Tests Not Run', $this->tests_not_run);
     }
@@ -774,7 +773,7 @@ color: #000000;
      * @param integer $code
      * @return string
      */
-    function _outputGetCssClassFromResult($code)
+    public function _outputGetCssClassFromResult($code)
     {
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
@@ -808,15 +807,15 @@ color: #000000;
      * the result code the test returned.
      * This is mainly used for the Test Results Summary table.
      *
-     * @see PHPSecInfo::_outputRenderStatsTable()
      * @param integer $code
      * @return string
+     * @see PHPSecInfo::_outputRenderStatsTable()
      */
-    function _outputGetResultTypeFromCode($code)
+    public function _outputGetResultTypeFromCode($code)
     {
         switch ($code) {
             case PHPSECINFO_TEST_RESULT_OK:
-                return 'Pass';
+                return 'OK';
                 break;
 
             case PHPSECINFO_TEST_RESULT_NOTICE:
@@ -847,7 +846,7 @@ color: #000000;
      *
      * @since 0.1.1
      */
-    function loadAndRun()
+    public function loadAndRun()
     {
         $this->loadTests();
         $this->runTests();
@@ -865,11 +864,11 @@ color: #000000;
      *
      * @return array
      */
-    function getResultsAsArray()
+    public function getResultsAsArray()
     {
         $results = [];
 
-        $results['test_results'] = $this->test_results;
+        $results['test_results']  = $this->test_results;
         $results['tests_not_run'] = $this->tests_not_run;
         $results['result_counts'] = $this->result_counts;
         $results['num_tests_run'] = $this->num_tests_run;
@@ -883,7 +882,7 @@ color: #000000;
      *
      * @return string
      */
-    function getOutput()
+    public function getOutput()
     {
         ob_start();
         $this->renderOutput();
