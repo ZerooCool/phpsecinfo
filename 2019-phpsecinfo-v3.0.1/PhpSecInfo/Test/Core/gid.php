@@ -85,12 +85,15 @@ class PhpSecInfo_Test_Core_Gid extends PhpSecInfo_Test_Core
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'PHP is executing as what is probably a non-privileged group');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'PHP est executing as what is probably a non-privileged group');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'PHP peut s\'exécuter en tant que groupe "privilégié", ce qui pourrait être une faille de sécurité sérieuse.');
-
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'This test will not run on Windows OSes');
+        
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'PHP est executing as what is probably a non-privileged group');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', 'PHP may be executing as a "privileged" group, which could be a serious security vulnerability.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', 'This test will not run on Windows OSes');
         
     }
 }
