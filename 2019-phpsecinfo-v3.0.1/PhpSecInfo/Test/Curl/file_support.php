@@ -69,5 +69,9 @@ class PhpSecInfo_Test_Curl_File_Support extends PhpSecInfo_Test_Curl
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "Vous utilisez PHP 4.4.4 ou supérieur, ou PHP 5.1.6 ou supérieur. Ces versions corrigent les failles de sécurité présentes dans les fonctions cURL qui lui permettent de contourner les restrictions safe_mode et open_basedir.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Une faille de sécurité présente dans votre version de PHP permet aux fonctions cURL de contourner les restrictions safe_mode et open_basedir. Vous devriez passer à la dernière version de PHP.");
+
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', "ru Vous utilisez PHP 4.4.4 ou supérieur, ou PHP 5.1.6 ou supérieur. Ces versions corrigent les failles de sécurité présentes dans les fonctions cURL qui lui permettent de contourner les restrictions safe_mode et open_basedir.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "ru Une faille de sécurité présente dans votre version de PHP permet aux fonctions cURL de contourner les restrictions safe_mode et open_basedir. Vous devriez passer à la dernière version de PHP.");
+        
     }
 }

@@ -10,15 +10,26 @@
  * Use or add your favorite language. Current choice: fr, en, ru
  * Add a choice with PHP case for translations of this page
  * Add a line with a new language value in the Test.php file
- * Untranslated strings will be replaced by french strings : fr
+ * Untranslated strings will be replaced by english strings : en
  *
  * Le paramètre de langue par défaut.
  * Utiliser ou ajouter votre langue préférée. Choix possible actuellement : fr, en, ru
  * Ajouter un choix avec PHP case pour les traductions de cette page
  * Ajouter une ligne avec une nouvelle valeur de langue dans le fichier Test.php
- * Les chaînes non traduites seront remplacées par les chaînes en français : fr
+ * Les chaînes non traduites seront remplacées par les chaînes en anglais : en
  */
-define('PHPSECINFO_LANG_DEFAULT', 'fr');
+
+ /**
+  * La langue par défaut est le français 'fr' lors du premier affichage.
+  * Changer de langue directement depuis le formulaire.
+  * Si une traduction manque, c'est la traduction anglaise 'en' qui est affichée.
+  */
+if (isset($_POST["ChoixLangue"])) {
+    $AppliquerLeChoix = (isset($_POST['ChoixLangue'])) ? $_POST['ChoixLangue'] : "fr"; 
+    define('PHPSECINFO_LANG_DEFAULT', $AppliquerLeChoix);
+} else {
+    define('PHPSECINFO_LANG_DEFAULT', 'fr');
+}
 
 /**
  * Displays the current version of PhpSecInfo
@@ -540,6 +551,26 @@ color: #000000;
         ?></a>
 		</h2>
 	</div>
+
+<!-- Formulaire pour sélectionner la langue directement -->
+<form action="./index.php" method=POST>
+<p>
+<select name="ChoixLangue">
+<option <?php if ($_POST["ChoixLangue"] === "en") {echo "selected";} ?> value="en">Anglais</option>
+<option <?php if ($_POST["ChoixLangue"] === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
+<option <?php if ($_POST["ChoixLangue"] === "ru") {echo "selected";} ?> value="ru">Russe</option>
+</select>
+<input type="submit" value="Go" />
+</form>
+</p>
+<!--
+// <?php
+// Tester la valeur de la langue sélectionnée :
+// if (isset($_POST["ChoixLangue"])) {
+// echo $_POST["ChoixLangue"];
+// }
+// ?>
+-->
 
 	<div class="container">
         <?php
