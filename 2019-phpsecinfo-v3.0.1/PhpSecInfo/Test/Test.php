@@ -15,7 +15,10 @@ define('PHPSECINFO_TEST_RESULT_NOTICE', - 2);
 define('PHPSECINFO_TEST_RESULT_WARN', - 4);
 define('PHPSECINFO_TEST_RESULT_ERROR', - 1024);
 define('PHPSECINFO_TEST_RESULT_NOTRUN', - 2048);
+
 define('PHPSECINFO_TEST_COMMON_TMPDIR', '/tmp');
+
+// Le lien : Plus d'information »
 // Exemple original : http://phpsec.org/projects/phpsecinfo/tests/upload_max_filesize
 // Présent également depuis la ligne 40 du fichier PhpSecInfo.php
 define('PHPSECINFO_TEST_MOREINFO_BASEURL', './documentation/');

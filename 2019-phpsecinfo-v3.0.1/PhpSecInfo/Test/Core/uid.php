@@ -80,8 +80,12 @@ class PhpSecInfo_Test_Core_Uid extends PhpSecInfo_Test_Core
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', 'PHP may be executing as a "privileged" user, which could be a serious security vulnerability.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', 'This test will not run on Windows OSes');
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'A traduire -- PHP is executing as what is probably a non-privileged user');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'A traduire -- PHP may be executing as a "privileged" user, which could be a serious security vulnerability.');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'A traduire -- This test will not run on Windows OSes');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Fr -- PHP is executing as what is probably a non-privileged user');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', 'Fr -- PHP may be executing as a "privileged" user, which could be a serious security vulnerability.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', 'Fr -- This test will not run on Windows OSes');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'Ru -- PHP is executing as what is probably a non-privileged user');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', 'Ru -- PHP may be executing as a "privileged" user, which could be a serious security vulnerability.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', 'Ru -- This test will not run on Windows OSes');
     }
 }
