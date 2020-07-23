@@ -72,7 +72,7 @@ class PhpSecInfo_Test
      *
      * @public string
      */
-    public $_language = PHPSECINFO_LANG_DEFAULT;
+    public $_language_selection = PHPSECINFO_LANG_DEFAULT;
 
     /**
      * Permet d'afficher la langue choisie dans PhpSecInfo.php
@@ -200,7 +200,7 @@ class PhpSecInfo_Test
     function getMessage()
     {
         if (! isset($this->_message) || empty($this->_message)) {
-            $this->_setMessage($this->_result, $this->_language);
+            $this->_setMessage($this->_result, $this->_language_selection);
         }
 
         return $this->_message;
@@ -273,9 +273,11 @@ class PhpSecInfo_Test
     {
         $messages = $this->_messages[$result_code];
 
-        $_language = !empty(PHPSECINFO_LANG_DEFAULT);
+        $_language_selection = !empty(PHPSECINFO_LANG_DEFAULT);
         
-        if ( $messages[$language_code] != $_language )
+        $lemessage = isset($messages[$language_code]);
+        
+        if ( $lemessage != $_language_selection )
         {
             // Utiliser l'anglais quand les chaînes de la langue principale définie comme choix n'existent pas.
             // $message = $messages[$language_code];
