@@ -533,7 +533,7 @@ color: #000000;
         // Affiche "See phpinfo ()" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
             case 'en':
-                echo 'See phpinfo ()';
+                echo 'See phpinfo()';
                 break;
                 
             case 'fr':
@@ -553,24 +553,34 @@ color: #000000;
 	</div>
 
 <!-- Formulaire pour sélectionner la langue directement -->
+<?php
+/**
+ * Si la variable $_POST['ChoixLangue'] existe, alors $variable = $_POST['ChoixLangue'] et sinon elle vaut NULL.
+ */
+$anglais = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
+$francais = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
+$russe = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
+?>
 <form action="./index.php" method=POST>
 <p>
 <select name="ChoixLangue">
-<option <?php if ($_POST["ChoixLangue"] === "en") {echo "selected";} ?> value="en">Anglais</option>
-<option <?php if ($_POST["ChoixLangue"] === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
-<option <?php if ($_POST["ChoixLangue"] === "ru") {echo "selected";} ?> value="ru">Russe</option>
+<option <?php if ("$anglais" === "en") {echo "selected";} ?> value="en">Anglais</option>
+<option <?php if ("$francais" === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
+<option <?php if ("$russe" === "ru") {echo "selected";} ?> value="ru">Russe</option>
 </select>
 <input type="submit" value="Go" />
 </form>
 </p>
-<!--
+<!-- Afficher la langue au dessous du formulaire. -->
+<!-- 
 // <?php
 // Tester la valeur de la langue sélectionnée :
 // if (isset($_POST["ChoixLangue"])) {
 // echo $_POST["ChoixLangue"];
 // }
 // ?>
--->
+ -->
+
 
 	<div class="container">
         <?php
