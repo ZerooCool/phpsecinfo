@@ -557,16 +557,14 @@ color: #000000;
 /**
  * Si la variable $_POST['ChoixLangue'] existe, alors $variable = $_POST['ChoixLangue'] et sinon elle vaut NULL.
  */
-$anglais = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
-$francais = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
-$russe = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
+$PostLangue = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
 ?>
 <form action="./index.php" method=POST>
 <p>
 <select name="ChoixLangue">
-<option <?php if ("$anglais" === "en") {echo "selected";} ?> value="en">Anglais</option>
-<option <?php if ("$francais" === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
-<option <?php if ("$russe" === "ru") {echo "selected";} ?> value="ru">Russe</option>
+<option <?php if ("$PostLangue" === "en") {echo "selected";} ?> value="en">Anglais</option>
+<option <?php if ("$PostLangue" === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
+<option <?php if ("$PostLangue" === "ru") {echo "selected";} ?> value="ru">Russe</option>
 </select>
 <input type="submit" value="Go" />
 </form>
