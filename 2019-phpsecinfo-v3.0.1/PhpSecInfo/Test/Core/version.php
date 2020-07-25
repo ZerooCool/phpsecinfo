@@ -68,7 +68,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         // Attempt to fetch from server
         // Récupérer la version de PHP depuis le fichier .version.json
         $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v3.0.1/2019-phpsecinfo-v3.0.1/.version.json';
-        $ch = curl_init();
+        $ch  = curl_init();
         $timeout = 5;
 
         // CURL
@@ -83,7 +83,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
         $json = json_decode($data);
 
         // Detect CURL error and return local value
-        if ($data === false || ! isset($json->stable) || ! isset($json->eol)) {
+        if ($data === false || ! isset($json->stable) || !isset($json->eol)) {
             // Le message est commenté et implémenté au bas de page pour profiter du multilangue.
             // Override the OK Message - Even if this passes we can't be 100% sure they are accurate since we didn't fetch the latest version
             // $this->_message_ok = "You are running a current stable version of PHP!
@@ -92,14 +92,14 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
             return [
                 'stable' => $this->recommended_value,
-                'eol' => $this->last_eol_value
+                'eol'    => $this->last_eol_value
             ];
         }
 
         // to array
         $versions = [
             'stable' => $json->stable,
-            'eol' => $json->eol
+            'eol'    => $json->eol
         ];
 
         // Update local recommended value (it is used elsewhere and we don't want to modify that code just yet)
@@ -121,7 +121,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
         if (version_compare($this->current_value, $version['stable'], '>=')) {
             return PHPSECINFO_TEST_RESULT_OK;
-        } else if (version_compare($this->current_value, $version['stable'], '<') && version_compare($this->current_value, $version['eol'], '>')) {
+        } elseif (version_compare($this->current_value, $version['stable'], '<') && version_compare($this->current_value, $version['eol'], '>')) {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         } else {
             return PHPSECINFO_TEST_RESULT_WARN;
@@ -135,16 +135,17 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     {
         parent::_setMessages();
 
-        // HACK: Force to grab current versions - this will fetch the latest version
-        $this->_retrieveCurrentVersions();
+        // Force to grab current versions - this will fetch the latest version.
+        // Il me semble que cela ne fonctionne pas, et, que la version est uniquement récupérée via l'URL qui pointe vers le dépôt Github !
+        // $this->_retrieveCurrentVersions();
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'You are running a current stable version of PHP!<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if PhpSecInfo is not up to date.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'en', "You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'You are running a version of PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.');
 
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'You are running a current stable version of PHP!<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if PhpSecInfo is not up to date.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'Vous utilisez la version courante stable de PHP.<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if PhpSecInfo is not up to date.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "Vous utilisez une version de PHP qui a atteint la fin de vie pour le support. You should upgrade to the latest version of PHP immediately.");
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'You are running a version of PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'Vous utilisez une version de PHP that is not the most recent and may be near End of Life for support.  You should begin to migrate to the latest version of PHP as soon as possible.');
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'You are running a current stable version of PHP!<br /><strong>NOTE:</strong> CURL was unable to fetch the latest PHP Versions from the internet. This test may not be accurate if PhpSecInfo is not up to date.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "You are running a version of PHP that has reached End of Life for support.  You should upgrade to the latest version of PHP immediately.");

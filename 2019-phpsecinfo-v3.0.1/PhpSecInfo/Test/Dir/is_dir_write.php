@@ -33,7 +33,7 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
      *
      * @return
      */
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         // Get current permissions
         // if (is_executable('.')) { $this->current_value = 'Execute+Write+Read'; }
@@ -49,12 +49,12 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         // Check permissions
         if ($this->current_value == 'Read-Only') {
             return PHPSECINFO_TEST_RESULT_OK;
-        } else if ($this->current_value == 'Write+Read') {
+        } elseif ($this->current_value == 'Write+Read') {
             return PHPSECINFO_TEST_RESULT_NOTICE;
         } else {
             return PHPSECINFO_TEST_RESULT_WARN;
@@ -64,7 +64,7 @@ class PhpSecInfo_Test_Dir_Is_Dir_Write extends PhpSecInfo_Test_Dir
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "Only allowing Read permission. This is the most secure setup.");
