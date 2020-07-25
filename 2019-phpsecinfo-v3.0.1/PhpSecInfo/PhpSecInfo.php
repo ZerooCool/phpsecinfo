@@ -317,13 +317,12 @@ DIV.header {
 width: 100%;
 text-align: left;
 border-collapse: collapse;
-}
-DIV.header {
 background-color: #4C5B74;
 color: white;
 border-bottom: 3px solid #333333;
-padding-top: 25px;
-padding-bottom: 25px;
+padding-top: 40px;
+padding-bottom: 40px;
+height: 60px;
 }
 DIV.header H1, DIV.header H2 {
 padding-left: 25px;
@@ -466,6 +465,10 @@ color: #000000;
 </head>
 <body>
 	<div class="header">
+	
+	<!-- Bloc gauche du Header pour afficher le titre et la version -->
+	<div style="float:left;padding-left: 40px;">
+	
 		<h1 style="color:red;"><?php echo $page_title ?></h1>
 		<h2><?php
         // Affiche "Version xxx" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
@@ -552,7 +555,8 @@ color: #000000;
 		</h2>
 	</div>
 
-<!-- Formulaire pour sélectionner la langue directement -->
+<!-- Bloc droit du Formulaire pour sélectionner la langue affiché dans le header -->
+<div style="text-align: right;padding-right:40px;"><!-- Formulaire pour sélectionner la langue directement -->
 <?php
 /**
  * Si la variable $_POST['ChoixLangue'] existe, alors $variable = $_POST['ChoixLangue'] et sinon elle vaut NULL.
@@ -569,8 +573,10 @@ $PostLangue_substr = substr("$PostLangue", 0, 2);
 </select>
 <input type="submit" value="Go" />
 </form>
-</p>
-
+</p></div>
+	
+	</div>
+	
 	<div class="container">
         <?php
         foreach ($this->test_results as $group_name => $group_results) {
