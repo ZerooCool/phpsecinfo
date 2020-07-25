@@ -32,7 +32,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
 
     public $recommended_value = PHPSECINFO_MEMORY_LIMIT;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->returnBytes(ini_get('memory_limit'));
     }
@@ -47,7 +47,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         if (! $this->current_value) {
             return PHPSECINFO_TEST_RESULT_WARN;
@@ -63,7 +63,7 @@ class PhpSecInfo_Test_Core_Memory_Limit extends PhpSecInfo_Test_Core
      * @access public
      * @return null
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'memory_limit is enabled, and appears to be set

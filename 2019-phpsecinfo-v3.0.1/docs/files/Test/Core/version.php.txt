@@ -30,9 +30,9 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
     public $test_name = "version_number";
 
     // Cette ligne ne semble pas influencer la version recommandée qui est gérée depuis le fichier .version.json directement.
-    public $recommended_value = '7.3.0';
+    public $recommended_value = '7.4.8';
 
-    public $last_eol_value = '5.6.15';
+    public $last_eol_value = '7.1';
 
     private $_message_ok = "You are running a current stable version of PHP!";
 
