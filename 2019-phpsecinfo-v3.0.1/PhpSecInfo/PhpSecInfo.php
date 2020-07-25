@@ -558,27 +558,18 @@ color: #000000;
  * Si la variable $_POST['ChoixLangue'] existe, alors $variable = $_POST['ChoixLangue'] et sinon elle vaut NULL.
  */
 $PostLangue = isset($_POST['ChoixLangue']) ? $_POST['ChoixLangue'] : NULL;
+$PostLangue_substr = substr("$PostLangue", 0, 2);
 ?>
 <form action="./index.php" method=POST>
 <p>
 <select name="ChoixLangue">
-<option <?php if ("$PostLangue" === "en") {echo "selected";} ?> value="en">Anglais</option>
-<option <?php if ("$PostLangue" === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?> value="fr">Français</option>
-<option <?php if ("$PostLangue" === "ru") {echo "selected";} ?> value="ru">Russe</option>
+<option value="en" <?php if ("$PostLangue_substr" === "en") {echo "selected";} ?>>Anglais</option>
+<option value="fr" <?php if ("$PostLangue_substr" === "fr" or empty($_POST["ChoixLangue"])) {echo "selected";} ?>>Français</option>
+<option value="ru" <?php if ("$PostLangue_substr" === "ru") {echo "selected";} ?>>Russe</option>
 </select>
 <input type="submit" value="Go" />
 </form>
 </p>
-<!-- Afficher la langue au dessous du formulaire. -->
-<!-- 
-// <?php
-// Tester la valeur de la langue sélectionnée :
-// if (isset($_POST["ChoixLangue"])) {
-// echo $_POST["ChoixLangue"];
-// }
-// ?>
- -->
-
 
 	<div class="container">
         <?php
