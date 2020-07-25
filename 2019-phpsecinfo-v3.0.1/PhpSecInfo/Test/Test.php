@@ -317,7 +317,7 @@ class PhpSecInfo_Test
      */
     function getTestName()
     {
-        if (isset($this->test_name) && ! empty($this->test_name)) {
+        if (isset($this->test_name) && !empty($this->test_name)) {
             return $this->test_name;
         } else {
             return ucwords(str_replace('_', ' ', get_class($this)));

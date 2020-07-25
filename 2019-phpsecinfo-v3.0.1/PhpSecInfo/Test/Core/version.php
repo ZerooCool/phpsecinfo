@@ -29,6 +29,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
     // Cette ligne ne semble pas modifier l'affichage de la version recommandée.
     // Modifier le fichier .version.json en complément !
+    // Modifier l'adresse URL ligne 69 permet de récupérer la version depuis le dépôt de Github du projet PhpSecInfo !
     public $recommended_value = '7.4.8';
 
     public $last_eol_value = '7.1';
@@ -66,7 +67,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
         // Attempt to fetch from server
         // Récupérer la version de PHP depuis le fichier .version.json
-        $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v0.2.1/20070406-phpsecinfo-v0.2.1/.version.json';
+        $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v3.0.1/2019-phpsecinfo-v3.0.1/.version.json';
         $ch = curl_init();
         $timeout = 5;
 

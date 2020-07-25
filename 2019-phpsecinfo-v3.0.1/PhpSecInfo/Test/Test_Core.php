@@ -31,7 +31,7 @@ class PhpSecInfo_Test_Core extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }

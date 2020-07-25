@@ -47,18 +47,18 @@ class PhpSecInfo_Test_Core_Expose_Php extends PhpSecInfo_Test_Core
         parent::_setMessages();
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'expose_php is disabled, which is the recommended setting');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'expose_php is enabled.  This adds
-				the PHP "signature" to the web server header, including the PHP version number.  This
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'expose_php is enabled. This adds
+				the PHP "signature" to the web server header, including the PHP version number. This
 				could attract attackers looking for vulnerable versions of PHP');
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'expose_php is disabled, which is the recommended setting');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'expose_php is enabled.  This adds
-				the PHP "signature" to the web server header, including the PHP version number.  This
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'expose_php est désactivé, which is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'expose_php est activé. This adds
+				the PHP "signature" to the web server header, including the PHP version number. This
 				could attract attackers looking for vulnerable versions of PHP');
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'expose_php is disabled, which is the recommended setting');
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'expose_php is enabled.  This adds
-				the PHP "signature" to the web server header, including the PHP version number.  This
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'expose_php is enabled. This adds
+				the PHP "signature" to the web server header, including the PHP version number. This
 				could attract attackers looking for vulnerable versions of PHP');
         
     }
