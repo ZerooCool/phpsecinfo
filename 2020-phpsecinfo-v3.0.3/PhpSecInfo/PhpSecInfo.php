@@ -34,9 +34,9 @@ if (isset($_POST["ChoixLangue"])) {
 /**
  * Displays the current version of PhpSecInfo
  *
- * Afficher la version courante de PhpSecInfo : 3.0.2 (0.2.1 + v2.0.2) + 3.0.1 de Zer00CooL
+ * Afficher la version courante de PhpSecInfo : 3.0.2 (0.2.1 + v2.0.2) + 3.0.1 de Zer00CooL = Stable 3.0.2
  */
-define('PHPSECINFO_VERSION', '3.0.2 Stable');
+define('PHPSECINFO_VERSION', '3.0.3 BETA');
 
 /**
  * A YYYY.MM.DD date string to indicate "build" date
@@ -256,7 +256,7 @@ class PhpSecInfo
      * This is the main output method.
      * The look and feel mimics phpinfo()
      */
-    public function renderOutput($page_title = "PhpSecInfo v3.0.2 Stable")
+    public function renderOutput($page_title = "PhpSecInfo v3.0.3 BETA")
     {
 
         /**
@@ -540,7 +540,7 @@ color: #000000;
 <div style="text-align:right;padding-right:40px;padding-top:10px;">
 
 <!-- Github -->
-<p><strong><a href="https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.2"
+<p><strong><a href="https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.3"
 				target="_PhpSecInfo"><?php
 				// Affiche "Participate from Github" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
