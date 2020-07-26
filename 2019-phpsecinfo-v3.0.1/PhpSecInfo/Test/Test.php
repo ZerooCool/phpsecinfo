@@ -21,7 +21,7 @@ define('PHPSECINFO_TEST_COMMON_TMPDIR', '/tmp');
 // Le lien : Plus d'information »
 // Exemple original : http://phpsec.org/projects/phpsecinfo/tests/upload_max_filesize
 // Présent également depuis la ligne 40 du fichier PhpSecInfo.php
-define('PHPSECINFO_TEST_MOREINFO_BASEURL', './documentation/');
+define('PHPSECINFO_TEST_MOREINFO_BASEURL', './PhpSecInfo/documentation/');
 
 /**
  * This is a skeleton class for PhpSecInfo tests You should extend this to make a "group" skeleton

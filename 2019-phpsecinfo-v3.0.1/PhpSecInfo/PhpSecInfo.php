@@ -256,7 +256,7 @@ class PhpSecInfo
      * This is the main output method.
      * The look and feel mimics phpinfo()
      */
-    public function renderOutput($page_title = "phpsecinfo v3.0.2 Beta")
+    public function renderOutput($page_title = "PhpSecInfo v3.0.2 Beta")
     {
 
         /**
@@ -320,12 +320,11 @@ border-collapse: collapse;
 background-color: #4C5B74;
 color: white;
 border-bottom: 3px solid #333333;
-padding-top: 40px;
-padding-bottom: 40px;
+padding-top: 25px;
+padding-bottom: 80px;
 height: 60px;
 }
 DIV.header H1, DIV.header H2 {
-padding-left: 25px;
 margin: 0;
 }
 DIV.header H2 {
@@ -471,7 +470,7 @@ color: #000000;
 	<!-- Bloc gauche du Header pour afficher le titre et la version -->
 	<div style="float:left;padding-left: 40px;">
 	
-		<h1 style="color:red;"><?php echo $page_title ?></h1>
+		<h1 style="color:red;"><span style="text-align:center;"><img src="./PhpSecInfo/graphisme/phpsecinfo.png"/></span></h1>		
 		<h2><?php
         // Affiche "Version xxx" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
@@ -499,19 +498,19 @@ color: #000000;
         // Affiche "Last update" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
             case 'en':
-                echo 'Last modifications of phpsecinfo files on this server the';
+                echo 'The last installation of PhpSecInfo on this server was';
                 break;
                 
             case 'fr':
-                echo 'Dernières modifications des fichiers de phpsecinfo sur ce serveur le';
+                echo 'La dernière installation de PhpSecInfo sur ce serveur date du';
                 break;
                 
             case 'ru':
-                echo 'Последние изменения файлов phpsecinfo на этом сервере';
+                echo 'Последняя установка PhpSecInfo на этом сервере была';
                 break;
 
             default:
-                echo 'Dernières modifications des fichiers de phpsecinfo sur ce serveur le';
+                echo 'La dernière installation de phpsecinfo sur ce serveur date du';
                 break;
         }
         ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1"
@@ -553,12 +552,13 @@ color: #000000;
                 echo 'Consulter phpinfo()';
                 break;
         }
-        ?></a>
-		</h2>
+        ?></a></h2>
+		
 	</div>
 
 <!-- Bloc droit du Formulaire pour sélectionner la langue affiché dans le header -->
-<div style="text-align: right;padding-right:40px;"><!-- Formulaire pour sélectionner la langue directement -->
+<div style="text-align: right;padding-right:40px;padding-top: 25px;">
+<!-- Formulaire pour sélectionner la langue directement -->
 <?php
 /**
  * Si la variable $_POST['ChoixLangue'] existe, alors $variable = $_POST['ChoixLangue'] et sinon elle vaut NULL.
@@ -576,7 +576,7 @@ $PostLangue_substr = substr("$PostLangue", 0, 2);
 <input type="submit" value="Go" />
 </form>
 </p></div>
-	
+
 	</div>
 	
 	<div class="container">
@@ -588,6 +588,7 @@ $PostLangue_substr = substr("$PostLangue", 0, 2);
         $this->_outputRenderStatsTable();
         ?>
     </div>
+    
 </body>
 </html>
 <?php
