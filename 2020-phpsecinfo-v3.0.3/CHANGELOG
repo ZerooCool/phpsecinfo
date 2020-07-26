@@ -1,32 +1,19 @@
 ################################################
-#     v3.0.2 2020-2021 - Version Zer00CooL     #
+#     v3.0.3 2020-2021 - Version Zer00CooL     #
 ################################################
-#     Version basée sur la v3.0.1 2019-2020    #
+#     Version basée sur la v3.0.2 2019-2020    #
 ################################################
 Améliorations :
-   Modification de l'ancien constructeur PHP.
-   Ajout de " declare(strict_types=1); " au début de index.php.
-   Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
-   Ajout des variables de langue fr pour chacun des tests effectués.
-   Modification de array() par [] dans le fichier PhpSecInfo.php.
-   Amélioration de la description du test "Dir/is_root_read.php".
-   Ajout de la variable ru pour une traduction en russe.
-   Ajout d'un formulaire pour sélectionner une langue.
-   Amélioration de fonctions avec "public".
-   Le lien vers la documentation du site officiel est remplacé pour pointer de façon relative vers le dossier documentation du projet Github.
-   Mise à jour de la version de PHP stable et eol dans le fichier .version.json.
-   Correction d'erreurs Undefined variable affichées en Notice.
-   Correction A non well formed numeric value encountered.
-   Amélioration de l'esthétisme du code, ajout de commentaires.
-   Ajout d'une bannière phpsecinfo en 728px x 90px.
+   README MIS A JOUR.
+   CHANGELOG MIS A JOUR.
 
-Nouvelles problématiques identifiées :
+Problématiques identifiées :
    Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
    Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
-   Partiellement intégré : https://github.com/ZerooCool/phpsecinfo/issues/26
+   Partiellement intégré dans la version 3.0.2 : https://github.com/ZerooCool/phpsecinfo/issues/26
 
 # # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######
@@ -48,6 +35,24 @@ v0.2.2
 Basé sur la v0.2.2, quelques modifications ont été effectuées.
 https://github.com/matomo-org/plugin-SecurityInfo/blob/master/PhpSecInfo/PhpSecInfo.php#L20
 
+################################################
+#     v3.0.2 2020-2021 - Version Zer00CooL     #
+################################################
+Modification de l'ancien constructeur PHP.
+Ajout de " declare(strict_types=1); " au début de index.php.
+Supression de " @package PhpSecInfo " au début de chaque fichier PHP.
+Ajout des variables de langue fr pour chacun des tests effectués.
+Modification de array() par [] dans le fichier PhpSecInfo.php.
+Amélioration de la description du test "Dir/is_root_read.php".
+Ajout de la variable ru pour une traduction en russe.
+Ajout d'un formulaire pour sélectionner une langue.
+Amélioration de fonctions avec "public".
+Le lien vers la documentation du site officiel est remplacé pour pointer de façon relative vers le dossier documentation du projet Github.
+Mise à jour de la version de PHP stable et eol dans le fichier .version.json.
+Correction d'erreurs Undefined variable affichées en Notice.
+Correction A non well formed numeric value encountered.
+Amélioration de l'esthétisme du code, ajout de commentaires.
+Ajout d'une bannière phpsecinfo en 728px x 90px.
 
 ################################################
 #     v3.0.1 2019-2020 - Version Zer00CooL     #
