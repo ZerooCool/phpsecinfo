@@ -370,7 +370,7 @@ text-align: center;
 }
 .result {
 font-size: 1.2em;
-font-weight: bold;
+font-weight:bold;
 margin-bottom: .5em;
 }
 .message {
@@ -379,19 +379,21 @@ line-height: 1.4em;
 TABLE.values {
 padding: .5em;
 margin: .5em;
-text-align: left;
-margin: none;
-width: 90%;
+text-align:left;
+margin:none;
+width: 96%;
 }
 TABLE.values TD {
 font-size: .9em;
 border: none;
 padding: .4em;
+width: 50%;
+text-align:center;
 }
 TABLE.values TD.label {
-font-weight: bold;
-text-align: right;
-width: 45%;
+font-weight:bold;
+text-align:right;
+width:50%;
 }
 DIV.moreinfo {
 text-align: right;

@@ -31,7 +31,7 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
      *
      * @return
      */
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         if (function_exists($this->test_name)) {
             $this->current_value = 'Enabled';
@@ -45,7 +45,7 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         // Check if function exists
         if (function_exists($this->test_name)) {
@@ -58,7 +58,7 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', "You have this function listed in your php.ini under disabled_functions.");
@@ -68,6 +68,10 @@ class PhpSecInfo_Test_Functions_Apache_Child_Terminate extends PhpSecInfo_Test_F
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', "You have this function listed in your php.ini under disabled_functions.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'fr', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
+        
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', "You have this function listed in your php.ini under disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_WARN, 'ru', "This function is not in your php.ini disabled_functions and is enabled.  This function can cause serious security implications, unless you absolutely need this function you should add it to your disabled_functions.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'This function is not in your php.ini disabled_functions and is enabled.  Use caution with this function and if you do not need it explicitly add it to your disabled_functions.');
         
     }
 }
