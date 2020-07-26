@@ -13,8 +13,6 @@ require_once ('PhpSecInfo/Test/Test_Session.php');
 
 /**
  * Test class for session save_path
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
 {
@@ -28,7 +26,7 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
 
     public $recommended_value = "A non-world readable/writable directory (750 for example)";
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = ini_get('session.save_path');
 
@@ -47,7 +45,7 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
      *
      * @return unknown
      */
-    function isTestable()
+    public function isTestable()
     {
         if ($this->osIsWindows()) {
             return false;
@@ -63,7 +61,7 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
      *
      * @see PHPSECINFO_TEST_COMMON_TMPDIR
      */
-    function _execTest()
+    public function _execTest()
     {
         $perms = fileperms($this->current_value);
         if ($this->current_value && ! preg_match("|" . PHPSECINFO_TEST_COMMON_TMPDIR . "/?|", $this->current_value) && ! ($perms & 0x0004) && ! ($perms & 0x0002)) {
@@ -93,14 +91,12 @@ class PhpSecInfo_Test_Session_Save_Path extends PhpSecInfo_Test_Session
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'fr save_path is disabled, or is set to a
 						common world-writable directory.  This typically allows other users on this server
 						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
-        
 
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', 'ru Test not run -- currently disabled on Windows OSes');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'ru save_path is enabled, which is the recommended setting.');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'ru save_path is disabled, or is set to a
 						common world-writable directory.  This typically allows other users on this server
 						to access session files. You should set	save_path to a non-world-readable directory (750 for example)');
-        
         
     }
 }

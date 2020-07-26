@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file for ` group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,7 +12,6 @@ require_once('PhpSecInfo/Test/Test.php');
 
 /**
  * This is a skeleton class for PhpSecInfo "Curl" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
 {
@@ -32,7 +30,7 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
 /*      if ( function_exists('curl_init') ) {
             return true;
@@ -46,13 +44,13 @@ class PhpSecInfo_Test_Curl extends PhpSecInfo_Test
     /**
      * Set the messages for Curl tests
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "CURL support is not enabled in your PHP install");
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', "fr CURL support is not enabled in your PHP install");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', "CURL support is not enabled in your PHP install");
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', "ru CURL support is not enabled in your PHP install");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', "CURL support is not enabled in your PHP install");
     }
 }

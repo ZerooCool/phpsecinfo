@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file for Core group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,7 +12,6 @@ require_once('PhpSecInfo/Test/Test.php');
 
 /**
  * This is a skeleton class for PhpSecInfo "Core" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Core extends PhpSecInfo_Test
 {

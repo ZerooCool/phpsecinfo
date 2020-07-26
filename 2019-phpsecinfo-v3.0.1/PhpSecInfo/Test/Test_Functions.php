@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file for Core group
  * 
- * @package PhpSecInfo
  * @author Glenn S Crystal <glenn@gcosoftware.com>
  */
 
@@ -13,7 +12,6 @@ require_once('PhpSecInfo/Test/Test.php');
 
 /**
  * This is a skeleton class for PhpSecInfo "Functions" tests
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Functions extends PhpSecInfo_Test
 {
@@ -30,7 +28,7 @@ class PhpSecInfo_Test_Functions extends PhpSecInfo_Test
 	 * 
 	 * @return boolean
 	 */
-	function isTestable() {	
+	public function isTestable() {	
 		return true;
 	}	
 }

@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file for Session group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,8 +12,6 @@ require_once ('PhpSecInfo/Test/Test.php');
 
 /**
  * This is a skeleton class for PhpSecInfo "Session" tests
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Session extends PhpSecInfo_Test
 {
@@ -33,7 +30,7 @@ class PhpSecInfo_Test_Session extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }

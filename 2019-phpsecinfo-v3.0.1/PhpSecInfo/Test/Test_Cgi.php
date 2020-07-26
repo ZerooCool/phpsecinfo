@@ -2,7 +2,6 @@
 /**
  * Skeleton Test class file for Cgi group
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,15 +12,12 @@ require_once ('PhpSecInfo/Test/Test.php');
 
 /**
  * This is a skeleton class for PhpSecInfo "CGI" tests
- *
- * @package PhpSecInfo
  */
 class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
 {
 
     /**
      * This value is used to group test results together.
-     *
      * For example, all tests related to the mysql lib should be grouped under "mysql."
      *
      * @public string
@@ -35,7 +31,7 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         /*
          * if ( preg_match('/^cgi.*$/', php_sapi_name()) ) {
@@ -50,12 +46,12 @@ class PhpSecInfo_Test_Cgi extends PhpSecInfo_Test
     /**
      * Set the messages for CGI tests
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using the CGI SAPI.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'en', "You don't seem to be using CGI SAPI.");
         
-        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', "Vous ne semblez pas utiliser le CGI SAPI.");
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'fr', "Vous ne semblez pas utiliser CGI SAPI.");
         
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTRUN, 'ru', "Вы, кажется, не используете CGI SAPI.");
         

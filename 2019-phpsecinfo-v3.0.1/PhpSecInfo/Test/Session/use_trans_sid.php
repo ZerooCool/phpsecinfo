@@ -2,7 +2,6 @@
 /**
  * Test class for session use_trans_sid
  *
- * @package PhpSecInfo
  * @author Ed Finkler <coj@funkatron.com>
  */
 
@@ -13,9 +12,6 @@ require_once ('PhpSecInfo/Test/Test_Session.php');
 
 /**
  * Test class for session use_trans_sid
- *
- * @package PhpSecInfo
- * @author Ed Finkler <coj@funkatron.com>
  */
 class PhpSecInfo_Test_Session_Use_Trans_Sid extends PhpSecInfo_Test_Session
 {
@@ -29,7 +25,7 @@ class PhpSecInfo_Test_Session_Use_Trans_Sid extends PhpSecInfo_Test_Session
 
     public $recommended_value = false;
 
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = $this->getBooleanIniValue('session.use_trans_sid');
     }
@@ -37,7 +33,7 @@ class PhpSecInfo_Test_Session_Use_Trans_Sid extends PhpSecInfo_Test_Session
     /**
      * Checks to see if allow_url_fopen is enabled
      */
-    function _execTest()
+    public function _execTest()
     {
         if ($this->current_value == $this->recommended_value) {
             return PHPSECINFO_TEST_RESULT_OK;
@@ -49,10 +45,19 @@ class PhpSecInfo_Test_Session_Use_Trans_Sid extends PhpSecInfo_Test_Session
     /**
      * Set the messages specific to this test
      */
-    function _setMessages()
+    public function _setMessages()
     {
         parent::_setMessages();
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'en', 'use_trans_sid is disabled, which is the recommended setting');
         $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'en', 'use_trans_sid is enabled. This makes session hijacking easier. Consider disabling this feature');
+
+        parent::_setMessages();
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'fr', 'use_trans_sid is disabled, which is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'fr', 'use_trans_sid is enabled. This makes session hijacking easier. Consider disabling this feature');
+        
+        parent::_setMessages();
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_OK, 'ru', 'use_trans_sid is disabled, which is the recommended setting');
+        $this->setMessageForResult(PHPSECINFO_TEST_RESULT_NOTICE, 'ru', 'use_trans_sid is enabled. This makes session hijacking easier. Consider disabling this feature');
+        
     }
 }

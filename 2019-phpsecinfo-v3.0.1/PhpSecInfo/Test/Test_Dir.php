@@ -16,7 +16,6 @@ class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
 	
 	/**
 	 * This value is used to group test results together.
-	 * 
 	 * For example, all tests related to the mysql lib should be grouped under "mysql."
 	 *
 	 * @public string
@@ -29,9 +28,8 @@ class PhpSecInfo_Test_Dir extends PhpSecInfo_Test
 	 * 
 	 * @return boolean
 	 */
-	function isTestable() {
+	public function isTestable() {
 		
 		return true;
 	}
-	
 }
