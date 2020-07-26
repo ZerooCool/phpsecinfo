@@ -106,7 +106,7 @@ class PhpSecInfo_Test
      *
      * @return PhpSecInfo_Test
      */
-    function __construct()
+    public function __construct()
     {
         // $this->_setTestValues();
         $this->_retrieveCurrentValue();
@@ -122,7 +122,7 @@ class PhpSecInfo_Test
      *
      * @return boolean
      */
-    function isTestable()
+    public function isTestable()
     {
         return true;
     }
@@ -133,7 +133,7 @@ class PhpSecInfo_Test
      *
      * @return integer
      */
-    function _execTest()
+    public function _execTest()
     {
         return PHPSECINFO_TEST_RESULT_NOTRUN;
     }
@@ -144,7 +144,7 @@ class PhpSecInfo_Test
      * messages to be inherited. This is broken out into a separate function rather
      * than the constructor for ease of extension purposes (php4 is whack, man).
      */
-    function _setMessages()
+    public function _setMessages()
     {
         // Afichier les messages standards en français c'est très bien, mais, ça me prive des messages anglais exisant qui ne sont pas traduits.
         // Admettons que la langue fr est choisie dans PhpSecInfo.php, et, que les lignes suivantes soient décommentées,
@@ -168,7 +168,7 @@ class PhpSecInfo_Test
     /**
      * Placeholder - extend for tests
      */
-    function _retrieveCurrentValue()
+    public function _retrieveCurrentValue()
     {
         $this->current_value = "foo";
     }
@@ -176,7 +176,7 @@ class PhpSecInfo_Test
     /**
      * This is the wrapper that executes the test and sets the result code and message
      */
-    function test()
+    public function test()
     {
         $result = $this->_execTest();
         $this->_setResult($result);
@@ -187,7 +187,7 @@ class PhpSecInfo_Test
      *
      * @return integer
      */
-    function getResult()
+    public function getResult()
     {
         return $this->_result;
     }
@@ -197,9 +197,9 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getMessage()
+    public function getMessage()
     {
-        if (! isset($this->_message) || empty($this->_message)) {
+        if (!isset($this->_message) || empty($this->_message)) {
             $this->_setMessage($this->_result, $this->_language_selection);
         }
 
@@ -216,7 +216,7 @@ class PhpSecInfo_Test
      * @param string $language_code
      * @param string $message
      */
-    function setMessageForResult($result_code, $language_code, $message)
+    public function setMessageForResult($result_code, $language_code, $message)
     {
         if (!isset($this->_messages[$result_code])) {
             $this->_messages[$result_code] = [];
@@ -236,7 +236,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getCurrentTestValue()
+    public function getCurrentTestValue()
     {
         return $this->getStringValue($this->current_value);
     }
@@ -248,7 +248,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getRecommendedTestValue()
+    public function getRecommendedTestValue()
     {
         return $this->getStringValue($this->recommended_value);
     }
@@ -258,7 +258,7 @@ class PhpSecInfo_Test
      *
      * @param integer $result_code
      */
-    function _setResult($result_code)
+    public function _setResult($result_code)
     {
         $this->_result = $result_code;
     }
@@ -269,7 +269,7 @@ class PhpSecInfo_Test
      * @param integer $result_code
      * @param string $language_code
      */
-    function _setMessage($result_code, $language_code)
+    public function _setMessage($result_code, $language_code)
     {
         $messages = $this->_messages[$result_code];
 
@@ -298,7 +298,7 @@ class PhpSecInfo_Test
      * @see PHPSECINFO_TEST_MOREINFO_BASEURL
      * @return string|boolean
      */
-    function getMoreInfoURL()
+    public function getMoreInfoURL()
     {
         if ($tn = $this->getTestName()) {
             // Fixed URL for 'More Information URL'.
@@ -315,7 +315,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getTestName()
+    public function getTestName()
     {
         if (isset($this->test_name) && !empty($this->test_name)) {
             return $this->test_name;
@@ -329,7 +329,7 @@ class PhpSecInfo_Test
      *
      * @param string $test_name
      */
-    function setTestName($test_name)
+    public function setTestName($test_name)
     {
         $this->test_name = $test_name;
     }
@@ -339,7 +339,7 @@ class PhpSecInfo_Test
      *
      * @return string
      */
-    function getTestGroup()
+    public function getTestGroup()
     {
         return $this->test_group;
     }
@@ -349,7 +349,7 @@ class PhpSecInfo_Test
      *
      * @param string $test_group
      */
-    function setTestGroup($test_group)
+    public function setTestGroup($test_group)
     {
         $this->test_group = $test_group;
     }
@@ -366,7 +366,7 @@ class PhpSecInfo_Test
      * @param string $val
      * @return integer
      */
-    function returnBytes($val)
+    public function returnBytes($val)
     {
         $val = trim($val);
 
@@ -397,7 +397,7 @@ class PhpSecInfo_Test
      * @param mixed $val
      * @return string
      */
-    function getStringValue($val)
+    public function getStringValue($val)
     {
         if ($val === false) {
             return "0";
@@ -417,7 +417,7 @@ class PhpSecInfo_Test
      *            the ini_key you need the value of
      * @return boolean|mixed
      */
-    function getBooleanIniValue($ini_key)
+    public function getBooleanIniValue($ini_key)
     {
         $ini_val = ini_get($ini_key);
 
@@ -455,7 +455,7 @@ class PhpSecInfo_Test
      *
      * @return string|NULL
      */
-    function sys_get_temp_dir()
+    public function sys_get_temp_dir()
     {
         // Try to get from environment variable
         if (! empty($_ENV['TMP'])) {
@@ -475,7 +475,7 @@ class PhpSecInfo_Test
      *
      * @return boolean
      */
-    function osIsWindows()
+    public function osIsWindows()
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             return true;
@@ -495,7 +495,7 @@ class PhpSecInfo_Test
      *
      * @return array|boolean
      */
-    function getUnixId()
+    public function getUnixId()
     {
         if ($this->osIsWindows()) {
             return false;

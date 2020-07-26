@@ -22,11 +22,11 @@ Améliorations :
 
 Nouvelles problématiques identifiées :
    Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
-   Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP. A suivre!
+   Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
-https://github.com/ZerooCool/phpsecinfo/issues/26
+   Partiellement intégré : https://github.com/ZerooCool/phpsecinfo/issues/26
 
 # # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######

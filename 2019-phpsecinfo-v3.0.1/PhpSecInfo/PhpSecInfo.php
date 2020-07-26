@@ -34,9 +34,9 @@ if (isset($_POST["ChoixLangue"])) {
 /**
  * Displays the current version of PhpSecInfo
  *
- * Afficher la version courante de PhpSecInfo : 3.0.1 (0.2.1 + v2.0.2)
+ * Afficher la version courante de PhpSecInfo : 3.0.2 (0.2.1 + v2.0.2) + 3.0.1 de Zer00CooL
  */
-define('PHPSECINFO_VERSION', '3.0.2 Beta');
+define('PHPSECINFO_VERSION', '3.0.2 Stable');
 
 /**
  * A YYYY.MM.DD date string to indicate "build" date
@@ -256,7 +256,7 @@ class PhpSecInfo
      * This is the main output method.
      * The look and feel mimics phpinfo()
      */
-    public function renderOutput($page_title = "PhpSecInfo v3.0.2 Beta")
+    public function renderOutput($page_title = "PhpSecInfo v3.0.2 Stable")
     {
 
         /**
@@ -513,27 +513,7 @@ color: #000000;
                 echo 'La dernière installation de phpsecinfo sur ce serveur date du';
                 break;
         }
-        ?> <?php echo PHPSECINFO_BUILD ?> - <a href="https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.1"
-				target="_PhpSecInfo"><?php
-				// Affiche "Participate from Github" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
-        switch (PHPSECINFO_LANG_DEFAULT) {
-            case 'en':
-                echo 'Participate from Github';
-                break;
-                
-            case 'fr':
-                echo 'Participer depuis Github';
-                break;
-                
-            case 'ru':
-                echo 'Participer depuis Github';
-                break;
-
-            default:
-                echo 'Participer depuis Github';
-                break;
-        }
-        ?></a> - <a href="PhpSecInfo/phpinfo.php"><?php
+        ?> <?php echo PHPSECINFO_BUILD ?> - <a href="PhpSecInfo/phpinfo.php"><?php
         // Affiche "See phpinfo ()" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
         switch (PHPSECINFO_LANG_DEFAULT) {
             case 'en':
@@ -557,7 +537,31 @@ color: #000000;
 	</div>
 
 <!-- Bloc droit du Formulaire pour sélectionner la langue affiché dans le header -->
-<div style="text-align: right;padding-right:40px;padding-top: 25px;">
+<div style="text-align:right;padding-right:40px;padding-top:10px;">
+
+<!-- Github -->
+<p><strong><a href="https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.2"
+				target="_PhpSecInfo"><?php
+				// Affiche "Participate from Github" dans la langue sélectionnée par défaut, ou, sinon, en français par défaut.
+        switch (PHPSECINFO_LANG_DEFAULT) {
+            case 'en':
+                echo 'Participate from Github';
+                break;
+                
+            case 'fr':
+                echo 'Participer depuis Github';
+                break;
+                
+            case 'ru':
+                echo 'Participer depuis Github';
+                break;
+
+            default:
+                echo 'Participer depuis Github';
+                break;
+        }
+        ?></a></strong></p>
+
 <!-- Formulaire pour sélectionner la langue directement -->
 <?php
 /**

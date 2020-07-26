@@ -67,7 +67,7 @@ class PhpSecInfo_Test_Core_Version extends PhpSecInfo_Test_Core
 
         // Attempt to fetch from server
         // Récupérer la version de PHP depuis le fichier .version.json
-        $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v3.0.1/2019-phpsecinfo-v3.0.1/.version.json';
+        $uri = 'https://raw.githubusercontent.com/ZerooCool/phpsecinfo/phpsecinfo-zeroocool-v3.0.2/2020-phpsecinfo-v3.0.2/.version.json';
         $ch  = curl_init();
         $timeout = 5;
 
