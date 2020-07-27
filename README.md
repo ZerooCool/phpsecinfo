@@ -3,7 +3,9 @@
 PhpSecInfo est un projet datant de 2007 et sponsorisé en partie par CERIAS à l'Université de Purdue.
 Noter que Purdue est l’Université de Ian Murdock fondateur du projet Debian.
 
-PhpSecInfo fournit un équivalent de la fonction phpinfo() qui rapporte des informations de sécurité sur l’environnement PHP et offre des suggestions d’amélioration. Il ne remplace pas les techniques de développement sécurisées et ne fait aucun type d’audit de code ou d’application, mais, il peut constituer un outil utile dans une approche de sécurité multicouche.
+PhpSecInfo fournit un équivalent de la fonction phpinfo() qui rapporte des informations de sécurité sur l'environnement PHP et offre des suggestions d'amélioration.
+Il ne remplace pas les techniques de développement sécurisées et ne fait aucun type d'audit de code ou d'application.
+Néamoins, PhpSecInfo est un outil indispensable dans une approche de sécurité multicouche.
 
 ## Branche master
 
