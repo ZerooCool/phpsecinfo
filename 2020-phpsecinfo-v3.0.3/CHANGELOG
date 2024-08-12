@@ -6,9 +6,9 @@
 Améliorations :
 	README MIS A JOUR.
 	CHANGELOG MIS A JOUR.
-   Connexion du projet PhpSecInfo de Github vers le Discord de Visionduweb avec zapier.com : https://discord.gg/5EXwGUV
-   Amélioration du message posté sur Discord, avec le lien du commit.
-   Ajout de la bannière phpsecinfo.png au format .webp.
+	Connexion du projet PhpSecInfo de Github vers le Discord de Visionduweb avec zapier.com : https://discord.gg/5EXwGUV
+	Amélioration du message posté sur Discord, avec le lien du commit.
+	Ajout de la bannière phpsecinfo.png au format .webp.
 
 Problématiques identifiées :
 	Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
@@ -20,7 +20,7 @@ Nouvelles problématiques identifiées :
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
-   Partiellement intégré dans la version 3.0.2 : https://github.com/ZerooCool/phpsecinfo/issues/26
+	Partiellement intégré dans la version 3.0.2 : https://github.com/ZerooCool/phpsecinfo/issues/26
 
 # # # # # # # # # # # # # # # # # #
 ###### A inclure la v0.2.2 ! ######
