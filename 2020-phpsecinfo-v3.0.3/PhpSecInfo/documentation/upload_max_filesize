@@ -8,7 +8,7 @@
 <p><!-- Nom du test -->
 </p><h2>upload_max_filesize</h2><p></p>
 
-<p><!-- What the test does -->
+<p><!-- Ce que fais le test -->
 </p><h3>Test Description</h3><p></p>
 
 <p>Checks if upload_max_filesize is greater than 256KB.  </p>
