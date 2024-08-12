@@ -5,7 +5,7 @@
 <h1>PhpSecInfo Test Information</h1>
 <!-- Markdown syntax reference: http://daringfireball.net/projects/markdown/syntax -->
 
-<p><!-- Test name -->
+<p><!-- Nom du test -->
 </p><h2>upload_max_filesize</h2><p></p>
 
 <p><!-- What the test does -->
