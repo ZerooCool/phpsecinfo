@@ -4,15 +4,19 @@
 #     Version basée sur la v3.0.2 2019-2020    #
 ################################################
 Améliorations :
-   README MIS A JOUR.
+	README MIS A JOUR.
    CHANGELOG MIS A JOUR.
    Connexion du projet PhpSecInfo de Github vers le Discord de Visionduweb avec zapier.com : https://discord.gg/5EXwGUV
    Amélioration du message posté sur Discord, avec le lien du commit.
    Ajout de la bannière phpsecinfo.png au format .webp.
 
 Problématiques identifiées :
-   Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
-   Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
+	Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
+	Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
+
+Nouvelles problématiques identifiées :
+	GitHub found 6 vulnerabilities on ZerooCool/phpsecinfo's default branch (6 moderate). To find out more, visit:
+    https://github.com/ZerooCool/phpsecinfo/security/dependabot
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###### A inclure Proposition PHP7 de mambax7 ######
