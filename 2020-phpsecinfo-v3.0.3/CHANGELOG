@@ -8,6 +8,7 @@ Améliorations :
    CHANGELOG MIS A JOUR.
    Connexion du projet PhpSecInfo de Github vers le Discord de Visionduweb avec zapier.com : https://discord.gg/5EXwGUV
    Amélioration du message posté sur Discord, avec le lien du commit.
+   Ajout de la bannière phpsecinfo.png au format .webp.
 
 Problématiques identifiées :
    Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
