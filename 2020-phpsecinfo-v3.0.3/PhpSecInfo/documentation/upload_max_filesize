@@ -1,7 +1,6 @@
 <html>
 <body>
 
-
 <h1>PhpSecInfo Test Information</h1>
 <!-- Markdown syntax reference: http://daringfireball.net/projects/markdown/syntax -->
 
@@ -40,7 +39,6 @@ php_value  upload_max_filesize  256K
 </ul>
 
 <p><a href="./index.html">Index de la documentation</a></p>
-            
-            
+
 </body>
 </html>
