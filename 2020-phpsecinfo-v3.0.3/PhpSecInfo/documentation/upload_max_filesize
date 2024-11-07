@@ -14,7 +14,6 @@
 <p>Checks if upload_max_filesize is greater than 256KB.  </p>
 
 <h3>Security Implications</h3>
-
 <p>upload_max_filesize limits the maximum size of files that PHP will accept through uploads. Attackers may attempt to send grossly oversized files to exhaust your system resources; by setting a realistic value here you can mitigate some of the damage by those attacks. By default, PHP sets this value to 2MB.</p>
 
 <p><!-- What we recommend, and how to implement it -->
@@ -40,7 +39,7 @@ php_value  upload_max_filesize  256K
 <li><a href="http://us3.php.net/manual/en/faq.using.php#faq.using.shorthandbytes">PHP.net manual: Using shorthand byte values</a></li>
 </ul>
 
-                        	<p><a href="./index.html">Index de la documentation</a></p>
+<p><a href="./index.html">Index de la documentation</a></p>
             
             
 </body>
