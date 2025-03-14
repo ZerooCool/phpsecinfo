@@ -13,6 +13,7 @@ Améliorations :
 Problématiques identifiées :
 	Il est nécessaire de recréer la documentation du site officiel vers le Github dans le dossier documentation.
 	Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
+	PHPSecInfo ne fonctionne plus avec PHP 8.x.
 
 Nouvelles problématiques identifiées :
 	GitHub found 6 vulnerabilities on ZerooCool/phpsecinfo's default branch (6 moderate). To find out more, visit:
