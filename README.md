@@ -16,7 +16,7 @@ La branche master rassemble les mises à jour de 2012 2015 et 2018 pour obtenir 
 - Le dépôt Github pour PhpSecInfo en 2020 : https://github.com/ZerooCool/phpsecinfo
 - La branche en développement : https://github.com/ZerooCool/phpsecinfo/tree/phpsecinfo-zeroocool-v3.0.3
 
-- Le Wiki de Visionduweb : https://wiki.visionduweb.fr/index.php?title=Installer_PHP#PhpSecInfo
+- Le Wiki de Amis SH : https://wiki.amis-sh.fr/index.php?title=Installer_PHP#PhpSecInfo
 - Le Wiki de Github : https://github.com/ZerooCool/phpsecinfo/wiki
 
 - Voir ci-dessous pour l'installation de la version v3.0.3 sur son serveur web.
