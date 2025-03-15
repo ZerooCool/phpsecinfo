@@ -15,7 +15,10 @@ Problématiques identifiées :
 	Pour le moment, phpsecinfo ne fonctionne plus si " declare(strict_types=1); " est affichée sur chaque fichier PHP.
 	PHPSecInfo ne fonctionne plus avec PHP 8.x.
 
-Nouvelles problématiques identifiées :
+    [proxy_fcgi:error] AH01071: Got error 'PHP message: PHP Fatal error:
+    Array and string offset access syntax with curly braces is no longer supported in
+    /phpsecinfo/phpsecinfo/2019-phpsecinfo-v3.0.1/PhpSecInfo/Test/Test.php on line 365'
+
 	GitHub found 6 vulnerabilities on ZerooCool/phpsecinfo's default branch (6 moderate). To find out more, visit:
     https://github.com/ZerooCool/phpsecinfo/security/dependabot
 
